@@ -1,0 +1,17 @@
+{
+  "_snapshot": "Stars and last push read from the GitHub API on 2026-11-19.",
+  "lists": [
+    {"name": "kairunwen/Awesome-Robot-Use-Agent", "url": "https://github.com/kairunwen/Awesome-Robot-Use-Agent", "stars": 200, "pushed": "2026-11-17", "angle": "The largest robot-use-agent list: papers, projects, social demos, benchmarks, searchable site."},
+    {"name": "visitworld123/Awesome-Robot-Use-Agent", "url": "https://github.com/visitworld123/Awesome-Robot-Use-Agent", "stars": 107, "pushed": "2026-11-17", "angle": "Robot-use agents, a dual-system section, self-evolving agents, runtimes."},
+    {"name": "zjwzcx/Awesome-Astra-Embodied-AI", "url": "https://github.com/zjwzcx/Awesome-Astra-Embodied-AI", "stars": 1249, "pushed": "2026-10-28", "angle": "GPT-6 Astra only; mostly case-by-case demos (X / RedNote)."},
+    {"name": "showlab/Awesome-Multimodal-Embodied-Agent", "url": "https://github.com/showlab/Awesome-Multimodal-Embodied-Agent", "stars": 292, "pushed": "2026-11-14", "angle": "Paper list behind Show Lab's computer-use → robot-use survey."},
+    {"name": "benchflow-ai/awesome-embodied-agents", "url": "https://github.com/benchflow-ai/awesome-embodied-agents", "stars": 5, "pushed": "2026-10-25", "angle": "Strong editorial rules (verbatim numbers, who judged success, trial counts). This list borrows them."},
+    {"name": "w-xb/awesome-agentic-robotics", "url": "https://github.com/w-xb/awesome-agentic-robotics", "stars": 32, "pushed": "2026-11-07", "angle": "Memory, planning, world models, verification, failure recovery."},
+    {"name": "tantansir/llm-for-robot-control", "url": "https://github.com/tantansir/llm-for-robot-control", "stars": 1, "pushed": "2026-10-07", "angle": "Survey catalog of ~220 systems organized by action interface."},
+    {"name": "chonghanqin/Awesome-Agentic-Robots", "url": "https://github.com/chonghanqin/Awesome-Agentic-Robots", "stars": null, "pushed": null, "angle": "Companion list to the 'Towards Agentic Robots' survey."},
+    {"name": "lysandre001/awesome-code-as-policy-Robot-learning", "url": "https://github.com/lysandre001/awesome-code-as-policy-Robot-learning", "stars": 18, "pushed": "2026-06-24", "angle": "Short code-as-policy list (17 entries)."},
+    {"name": "GT-RIPL/Awesome-LLM-Robotics", "url": "https://github.com/GT-RIPL/Awesome-LLM-Robotics", "stars": 4503, "pushed": "2026-10-29", "angle": "The classic broad LLM-for-robotics list."},
+    {"name": "zchoi/Awesome-Embodied-Robotics-and-Agent", "url": "https://github.com/zchoi/Awesome-Embodied-Robotics-and-Agent", "stars": 1922, "pushed": "2026-11-14", "angle": "Broad embodied AI with LLMs."},
+    {"name": "SajjadPSavoji/awesome-weight-space-programming", "url": "https://github.com/SajjadPSavoji/awesome-weight-space-programming", "stars": 4, "pushed": "2026-11-19", "angle": "Not robotics-specific; its data-driven, daily-rebuilt format inspired this list."}
+  ]
+}

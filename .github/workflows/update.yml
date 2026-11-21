@@ -1,0 +1,58 @@
+name: validate-and-build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 6 * * *"   # daily, 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Schema + arXiv title check
+        run: python3 scripts/validate.py --arxiv
+      - name: README is generated from data
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/build_readme.py --check
+      - name: Rebuild README on main
+        if: github.event_name != 'pull_request'
+        run: |
+          python3 scripts/build_readme.py
+          if ! git diff --quiet README.md; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -am "chore: rebuild README from data"
+            git push
+          fi
+
+  daily:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Link check (non-blocking)
+        continue-on-error: true
+        run: python3 scripts/validate.py --links
+      - name: arXiv watch -> triage issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/arxiv_watch.py --days 2 > candidates.md
+          if ! grep -q "_No new candidates._" candidates.md; then
+            gh issue create --title "arXiv candidates $(date -u +%F)" --body-file candidates.md --label triage \
+              || gh issue create --title "arXiv candidates $(date -u +%F)" --body-file candidates.md
+          fi

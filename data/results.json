@@ -1,0 +1,472 @@
+{
+  "_note": "Numbers are quoted from the cited source. 'measured_by' = whose run produced the number; 'source' = entry id where it is reported. Rows with different settings are NOT directly comparable; read the 'setting' column.",
+  "benchmarks": [
+    {
+      "id": "robolab-120",
+      "title": "RoboLab-120 (simulation, zero-shot, DROID-style arm)",
+      "metric": "success rate",
+      "rows": [
+        {
+          "system": "AMP1",
+          "model": "frontier agent (best config)",
+          "kind": "frontier: agentic",
+          "value": "85.6%",
+          "setting": "zero-shot",
+          "measured_by": "Apple (AMP1)",
+          "source": "amp1"
+        },
+        {
+          "system": "Astra — Agentic",
+          "model": "GPT-6 Astra (Codex)",
+          "kind": "frontier: agentic",
+          "value": "74.8%",
+          "setting": "5 seeds/task",
+          "measured_by": "NVIDIA (Astranomy)",
+          "source": "astranomy"
+        },
+        {
+          "system": "Astra — Orchestrated",
+          "model": "GPT-6 Astra + Cosmos3-Nano-Policy",
+          "kind": "frontier over System 1",
+          "value": "66.5%",
+          "setting": "5 seeds/task",
+          "measured_by": "NVIDIA (Astranomy)",
+          "source": "astranomy"
+        },
+        {
+          "system": "Astra — Direct (EEF)",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: direct",
+          "value": "66.3%",
+          "setting": "5 seeds/task",
+          "measured_by": "NVIDIA (Astranomy)",
+          "source": "astranomy"
+        },
+        {
+          "system": "π0.5",
+          "model": "VLA",
+          "kind": "learned System 1",
+          "value": "49.2%",
+          "setting": "leaderboard number cited by AMP1",
+          "measured_by": "RoboLab leaderboard (via AMP1)",
+          "source": "amp1"
+        },
+        {
+          "system": "FLUX 3 Action",
+          "model": "WAM",
+          "kind": "learned System 1",
+          "value": "42.9%",
+          "setting": "leaderboard number cited by AMP1",
+          "measured_by": "RoboLab leaderboard (via AMP1)",
+          "source": "amp1"
+        },
+        {
+          "system": "Cosmos3-Nano-Policy",
+          "model": "WAM (DROID-finetuned)",
+          "kind": "learned System 1",
+          "value": "36.8%",
+          "setting": "5 seeds/task",
+          "measured_by": "NVIDIA (Astranomy)",
+          "source": "astranomy"
+        },
+        {
+          "system": "π0.5",
+          "model": "VLA",
+          "kind": "learned System 1",
+          "value": "28.0%",
+          "setting": "5 seeds/task",
+          "measured_by": "NVIDIA (Astranomy)",
+          "source": "astranomy"
+        }
+      ],
+      "note": "π0.5 appears twice: 49.2% (leaderboard, cited by AMP1) vs 28.0% (Astranomy's own run). That 21-point gap on one benchmark is why every row says who measured it."
+    },
+    {
+      "id": "robodojo-sim",
+      "title": "RoboDojo (simulation, 42 tasks)",
+      "metric": "success rate / RoboDojo Score",
+      "rows": [
+        {
+          "system": "AMP1+ (after practice)",
+          "model": "frontier agent + memory",
+          "kind": "frontier: agentic + memory",
+          "value": "84.1% SR",
+          "setting": "few-shot practice, no weight updates",
+          "measured_by": "Apple (AMP1)",
+          "source": "amp1"
+        },
+        {
+          "system": "AMP1 (zero-shot)",
+          "model": "frontier agent",
+          "kind": "frontier: agentic",
+          "value": "26.4% SR",
+          "setting": "zero-shot",
+          "measured_by": "Apple (AMP1)",
+          "source": "amp1"
+        },
+        {
+          "system": "JustRUA",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: agentic (lean harness)",
+          "value": "Score 50.3",
+          "setting": "no learned policy / self-improvement / task tuning; official L3 harness = 29.7",
+          "measured_by": "Wang et al.",
+          "source": "justrua"
+        },
+        {
+          "system": "InteractVLA",
+          "model": "VL agent + steerable VLA",
+          "kind": "frontier over System 1",
+          "value": "48.62%",
+          "setting": "with recursive self-improvement",
+          "measured_by": "Zhao et al.",
+          "source": "interactvla"
+        },
+        {
+          "system": "uni-robot-agent",
+          "model": "Qwen3.8-Flash-Next (open)",
+          "kind": "open model: agentic",
+          "value": "Score 31.39",
+          "setting": "no privileged inputs",
+          "measured_by": "Yuan et al.",
+          "source": "democratizing-rua"
+        },
+        {
+          "system": "LLM as policy",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: direct",
+          "value": "22.48% SR · Score 28.97",
+          "setting": "official 50 eps/task",
+          "measured_by": "Zhang et al.",
+          "source": "robodojo-astra"
+        },
+        {
+          "system": "LLM as policy",
+          "model": "DeepSeek-Flash",
+          "kind": "frontier: direct",
+          "value": "1.92% SR",
+          "setting": "10 eps/task",
+          "measured_by": "Zhang et al.",
+          "source": "robodojo-astra"
+        },
+        {
+          "system": "LLM as policy",
+          "model": "GPT-5.5",
+          "kind": "frontier: direct",
+          "value": "0.88% SR",
+          "setting": "official 50 eps/task",
+          "measured_by": "Zhang et al.",
+          "source": "robodojo-astra"
+        }
+      ],
+      "note": "The Astra direct-policy entry ranked above all 40 public policies at the time. See Critiques for leaderboard entries that did not survive retesting."
+    },
+    {
+      "id": "libero-pro",
+      "title": "LIBERO-PRO (perturbed LIBERO)",
+      "metric": "success rate",
+      "rows": [
+        {
+          "system": "ASPIRE",
+          "model": "Claude Opus 5.5",
+          "kind": "frontier: self-improving code",
+          "value": "99%",
+          "setting": "all 80 tasks; with skill learning",
+          "measured_by": "NVIDIA GEAR",
+          "source": "aspire"
+        },
+        {
+          "system": "AMP1",
+          "model": "frontier agent",
+          "kind": "frontier: agentic",
+          "value": "95.2%",
+          "setting": "zero-shot via CaP-Gym (project page)",
+          "measured_by": "Apple (AMP1)",
+          "source": "amp1"
+        },
+        {
+          "system": "OpenRUA",
+          "model": "Claude Code + Opus 5",
+          "kind": "frontier: agentic",
+          "value": "87.0%",
+          "setting": "zero-shot",
+          "measured_by": "Chu et al.",
+          "source": "openrua"
+        },
+        {
+          "system": "RACaP",
+          "model": "GPT-5.6 ReAct",
+          "kind": "frontier: agentic",
+          "value": "45.0%",
+          "setting": "zero-shot",
+          "measured_by": "Li et al.",
+          "source": "racap"
+        },
+        {
+          "system": "PEAR / RURL",
+          "model": "open 27B, RL in sim",
+          "kind": "open model: direct",
+          "value": "57.4%",
+          "setting": "new task in familiar scene (π0.5: 0.75%)",
+          "measured_by": "Tang et al.",
+          "source": "pear-rurl"
+        }
+      ],
+      "note": "Papers use different LIBERO-PRO conditions and subsets. Treat as indicative, not a single leaderboard."
+    },
+    {
+      "id": "aa-robotics",
+      "title": "AA-Robotics (real 6-axis arm, 8 tasks, human-graded)",
+      "metric": "score / 100",
+      "rows": [
+        {
+          "system": "Codex",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: agentic",
+          "value": "69.4",
+          "setting": "high effort",
+          "measured_by": "Artificial Analysis",
+          "source": "aa-robotics"
+        },
+        {
+          "system": "Codex",
+          "model": "GPT-6.1 Sol",
+          "kind": "frontier: agentic",
+          "value": "64.6",
+          "setting": "high effort",
+          "measured_by": "Artificial Analysis",
+          "source": "aa-robotics"
+        },
+        {
+          "system": "Antigravity",
+          "model": "Gemini 4 Argon",
+          "kind": "frontier: agentic",
+          "value": "55.3",
+          "setting": "high effort",
+          "measured_by": "Artificial Analysis",
+          "source": "aa-robotics"
+        },
+        {
+          "system": "Claude Code",
+          "model": "Claude Opus 5.5",
+          "kind": "frontier: agentic",
+          "value": "48.8",
+          "setting": "high effort",
+          "measured_by": "Artificial Analysis",
+          "source": "aa-robotics"
+        },
+        {
+          "system": "Claude Code",
+          "model": "Claude Fable 5.1",
+          "kind": "frontier: agentic",
+          "value": "46.3",
+          "setting": "high effort",
+          "measured_by": "Artificial Analysis",
+          "source": "aa-robotics"
+        }
+      ],
+      "note": "Independent third party, but no VLA baseline."
+    },
+    {
+      "id": "libero-10-direct",
+      "title": "LIBERO-10 (direct EEF control via tool calls)",
+      "metric": "success rate",
+      "rows": [
+        {
+          "system": "direct EEF",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: direct",
+          "value": "44%",
+          "setting": "best effort level",
+          "measured_by": "Espinola et al.",
+          "source": "libero10-frontier"
+        },
+        {
+          "system": "direct EEF",
+          "model": "Gemini-4 Argon",
+          "kind": "frontier: direct",
+          "value": "43%",
+          "setting": "best effort level",
+          "measured_by": "Espinola et al.",
+          "source": "libero10-frontier"
+        }
+      ],
+      "note": "6 models × 3 effort levels, 1,800 episodes total; only the top two are quoted in the abstract."
+    },
+    {
+      "id": "real-world",
+      "title": "Real-world head-to-heads",
+      "metric": "successes / trials",
+      "rows": [
+        {
+          "system": "AMP1",
+          "model": "Claude Opus 5.5 (main)",
+          "kind": "frontier: agentic",
+          "value": "104 / 108",
+          "setting": "12 tasks × 3 robots",
+          "measured_by": "Apple (AMP1)",
+          "source": "amp1"
+        },
+        {
+          "system": "FLUX 3 Action",
+          "model": "WAM",
+          "kind": "learned System 1",
+          "value": "49 / 108",
+          "setting": "same tasks",
+          "measured_by": "Apple (AMP1)",
+          "source": "amp1"
+        },
+        {
+          "system": "π0.5",
+          "model": "VLA",
+          "kind": "learned System 1",
+          "value": "30 / 108",
+          "setting": "same tasks",
+          "measured_by": "Apple (AMP1)",
+          "source": "amp1"
+        },
+        {
+          "system": "ACE-CaP-0 (frozen programs)",
+          "model": "coding agent at dev time only",
+          "kind": "frontier-developed code",
+          "value": "221 / 240",
+          "setting": "8 tasks; no model in loop at runtime",
+          "measured_by": "ACE-CaP Team",
+          "source": "ace-cap-0"
+        },
+        {
+          "system": "Reins",
+          "model": "GPT-6.1 Sol",
+          "kind": "frontier: agentic",
+          "value": "88% of episodes",
+          "setting": "5 long-horizon dual-arm tasks",
+          "measured_by": "Ye et al.",
+          "source": "reins"
+        },
+        {
+          "system": "PEAR / RURL",
+          "model": "open 27B, RL in sim",
+          "kind": "open model: direct",
+          "value": "60% of trials",
+          "setting": "real dual-arm; base model 0%",
+          "measured_by": "Tang et al.",
+          "source": "pear-rurl"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: agentic",
+          "value": "19 / 20 bowl · 2 / 20 puzzle",
+          "setting": "bimanual YAM; unblinded graders",
+          "measured_by": "Robocurve",
+          "source": "robocurve-astra"
+        },
+        {
+          "system": "GTA-2",
+          "model": "Gemini 3.1 Pro",
+          "kind": "frontier: agentic",
+          "value": "73.9% avg",
+          "setting": "14 tasks, zero-shot; vs π0.5 + CaP baselines (best baseline 31.4 pp lower)",
+          "measured_by": "Seker et al.",
+          "source": "gta-2"
+        }
+      ],
+      "note": null
+    }
+  ],
+  "speed": {
+    "title": "The speed gap (the open problem)",
+    "rows": [
+      {
+        "system": "Helix System 1",
+        "rate": "200 Hz",
+        "cost": "onboard",
+        "source": "helix"
+      },
+      {
+        "system": "GR00T N1 action module",
+        "rate": "≈120 Hz",
+        "cost": "onboard",
+        "source": "gr00t-n1"
+      },
+      {
+        "system": "Fast-in-Slow",
+        "rate": "117.7 Hz",
+        "cost": "onboard",
+        "source": "fast-in-slow"
+      },
+      {
+        "system": "DASH System 1",
+        "rate": "20 Hz, independent of 0.8B–8B backbone",
+        "cost": "onboard",
+        "source": "dash"
+      },
+      {
+        "system": "π0.5",
+        "rate": "46.96 ms / call",
+        "cost": "—",
+        "source": "astranomy"
+      },
+      {
+        "system": "Cosmos3-Nano-Policy",
+        "rate": "713.76 ms / call",
+        "cost": "—",
+        "source": "astranomy"
+      },
+      {
+        "system": "Claude models (non-reasoning)",
+        "rate": "≈0.2–0.4 Hz",
+        "cost": "—",
+        "source": "anthropic-robotics"
+      },
+      {
+        "system": "GPT-6 Astra — Direct",
+        "rate": "18.56 s / call",
+        "cost": "$1.96 / episode",
+        "source": "astranomy"
+      },
+      {
+        "system": "GPT-6 Astra — Orchestrated",
+        "rate": "11.50 s / 2.74 s (as listed)",
+        "cost": "$17.72 / episode",
+        "source": "astranomy"
+      },
+      {
+        "system": "GPT-6 Astra — Agentic",
+        "rate": "13.37 s",
+        "cost": "$36.40 / episode",
+        "source": "astranomy"
+      },
+      {
+        "system": "GPT-6 Astra (Robocurve bowl)",
+        "rate": "≈2.5 min / run",
+        "cost": "$0.94 / run",
+        "source": "robocurve-astra"
+      },
+      {
+        "system": "AA-Robotics agents",
+        "rate": "≈30 min / task (human ≈20 s)",
+        "cost": "≈10× human hourly wage",
+        "source": "aa-robotics"
+      },
+      {
+        "system": "RACaP distilled (Qwen3-VL-8B)",
+        "rate": "13.2× faster per decision than GPT-5.6 teacher",
+        "cost": "—",
+        "source": "racap"
+      },
+      {
+        "system": "ACE-CaP-0 frozen programs",
+        "rate": "0.97–2.27 min / task, zero model calls",
+        "cost": "dev-time only",
+        "source": "ace-cap-0"
+      },
+      {
+        "system": "H2E distilled VLA",
+        "rate": "3.7× faster than agent + VLA",
+        "cost": "zero LLM tokens",
+        "source": "h2e"
+      }
+    ]
+  }
+}

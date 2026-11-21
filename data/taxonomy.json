@@ -1,0 +1,87 @@
+{
+  "sections": [
+    {
+      "id": "direct",
+      "title": "Frontier Model as Direct Policy",
+      "emoji": "🎯",
+      "blurb": "The general-purpose model itself emits the next action (end-effector pose, joint target, trajectory) at every step. No learned System 1 underneath; the only thing below it is IK / a position controller."
+    },
+    {
+      "id": "agentic",
+      "title": "Agentic & Code-Writing Policies",
+      "emoji": "🧑‍💻",
+      "blurb": "The model acts through a harness: it writes and runs code against sensing/perception/motion APIs, observes the outcome, and repairs. Learned System 1 is absent; motion is analytic (IK, waypoints, ROS)."
+    },
+    {
+      "id": "orchestrated",
+      "title": "Frontier Model over a Learned System 1 / System 0",
+      "emoji": "🎛️",
+      "blurb": "The general model supervises, steers, or edits the output of a learned low-level controller (a VLA, a world-action model, or a whole-body tracker). This is where the 'is System 1 still needed?' question is decided."
+    },
+    {
+      "id": "self-improving",
+      "title": "Getting Better Without Weight Updates",
+      "emoji": "📈",
+      "blurb": "Memory, practice, skill libraries, and in-context learning: the general model improves across episodes while its weights stay frozen (or it trains a separate policy for you)."
+    },
+    {
+      "id": "fast",
+      "title": "Making It Fast & Cheap",
+      "emoji": "⚡",
+      "blurb": "Latency and dollar cost are the main open problem. Distillation into small models, open-weight harnesses, asynchronous planning/execution. Thin on purpose: this is the research gap."
+    },
+    {
+      "id": "dual-system",
+      "title": "The Incumbent: Dual-System VLAs",
+      "emoji": "🧠",
+      "blurb": "The architecture being challenged. A VLM 'System 2' fused with a fast learned 'System 1' action module, plus the work on how training one damages the other."
+    },
+    {
+      "id": "benchmarks",
+      "title": "Benchmarks & Evaluation Reports",
+      "emoji": "📊",
+      "blurb": "Shared yardsticks where frontier models and learned policies are scored on the same tasks."
+    },
+    {
+      "id": "critiques",
+      "title": "Analyses, Critiques & Reproducibility",
+      "emoji": "🔍",
+      "blurb": "Negative results, retests, benchmark-integrity problems, and the limits authors admit about their own systems."
+    },
+    {
+      "id": "perspectives",
+      "title": "Surveys, Essays & Perspectives",
+      "emoji": "🗺️",
+      "blurb": "Big-picture framing: where System 2 ends, what System 1 / System 0 becomes, and what it means for the field."
+    },
+    {
+      "id": "foundations",
+      "title": "Foundations (pre-2025)",
+      "emoji": "🏛️",
+      "blurb": "The LLM-as-planner and code-as-policy lineage this area grew from."
+    }
+  ],
+  "enums": {
+    "kind": ["paper", "report", "blog", "essay", "benchmark", "survey", "project", "news"],
+    "status": ["peer-reviewed", "preprint", "code", "post-only", "secondary", "unverified"],
+    "mode": ["direct-action", "agentic-code", "orchestrates-learned-policy", "self-improving", "dual-system-vla", "hierarchical-vla", "benchmark", "analysis", "survey", "foundation"],
+    "system1": ["none", "analytic", "frozen-learned", "jointly-trained", "trained-by-agent", "n/a"],
+    "eval": ["sim", "real", "sim+real", "n/a"]
+  },
+  "status_badges": {
+    "peer-reviewed": "📄 peer-reviewed",
+    "preprint": "📝 preprint",
+    "code": "💻 code / results",
+    "post-only": "💬 post only",
+    "secondary": "🔁 secondary report",
+    "unverified": "⚠️ needs verification"
+  },
+  "system1_labels": {
+    "none": "none",
+    "analytic": "analytic (IK / waypoints / scripted)",
+    "frozen-learned": "frozen learned policy",
+    "jointly-trained": "jointly trained",
+    "trained-by-agent": "trained by the agent",
+    "n/a": "—"
+  }
+}

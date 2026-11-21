@@ -1,0 +1,11 @@
+{
+  "slug": "liuxjerry/awesome-frontier-models-as-robot-policies",
+  "title": "Awesome Frontier Models (LLMs / VLMs) as Robot Policies",
+  "description": "Frontier LLMs/VLMs (GPT, Claude, Gemini, Qwen) as robot policies: robot-use agents, agent-as-policy, code-as-policy, and what's left for System 1 VLAs. Leaderboards with who-measured-what.",
+  "topics": [
+    "awesome", "awesome-list", "robotics", "llm", "vlm", "vla", "vision-language-action",
+    "robot-learning", "robot-manipulation", "embodied-ai", "llm-agents", "robot-use-agent",
+    "agent-as-policy", "code-as-policies", "foundation-models", "humanoid", "gpt", "claude",
+    "gemini", "system-1-system-2"
+  ]
+}
