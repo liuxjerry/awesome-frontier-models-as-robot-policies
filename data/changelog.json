@@ -1,6 +1,29 @@
 [
   {
     "date": "2026-11-21",
+    "added": [
+      "agentrobocritic",
+      "forceharness",
+      "roboteam",
+      "physevo",
+      "push-t-agentic",
+      "embodyagent",
+      "astra-visuotactile",
+      "reasoning-on-call",
+      "lexp",
+      "retrace",
+      "ladder"
+    ],
+    "updated": [
+      "hi-robot",
+      "efficient-vla-survey",
+      "faea"
+    ],
+    "screened": 42,
+    "note": "ForceHarness lets frozen frontier models use force without a wrist sensor, lifting GPT-6 Astra from 2/60 to 54/60 on six real contact tasks."
+  },
+  {
+    "date": "2026-11-21",
     "added": [],
     "updated": [],
     "screened": 0,

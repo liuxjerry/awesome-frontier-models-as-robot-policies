@@ -105,6 +105,15 @@
           "source": "amp1"
         },
         {
+          "system": "PhysEvo",
+          "model": "Astra (frozen)",
+          "kind": "frontier: self-improving",
+          "value": "62.00% SR · Score 68.14",
+          "setting": "held-out layouts; retained task-specific deployment versions; five-dimension weighting",
+          "measured_by": "Tian et al.",
+          "source": "physevo"
+        },
+        {
           "system": "JustRUA",
           "model": "GPT-6 Astra",
           "kind": "frontier: agentic (lean harness)",
@@ -369,6 +378,51 @@
           "setting": "14 tasks, zero-shot; vs π0.5 + CaP baselines (best baseline 31.4 pp lower)",
           "measured_by": "Seker et al.",
           "source": "gta-2"
+        },
+        {
+          "system": "ForceHarness",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: agentic",
+          "value": "54 / 60",
+          "setting": "Franka FR3, 6 contact tasks × 10; operator-judged",
+          "measured_by": "Sun et al.",
+          "source": "forceharness"
+        },
+        {
+          "system": "ForceHarness",
+          "model": "GPT-6.1 Sol",
+          "kind": "frontier: agentic",
+          "value": "47 / 60",
+          "setting": "same tasks",
+          "measured_by": "Sun et al.",
+          "source": "forceharness"
+        },
+        {
+          "system": "Same harness, no force",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: agentic",
+          "value": "2 / 60",
+          "setting": "same tasks",
+          "measured_by": "Sun et al.",
+          "source": "forceharness"
+        },
+        {
+          "system": "LEXP",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: direct + experience",
+          "value": "23 / 36",
+          "setting": "bimanual YAM, 12 tasks × 3; human-annotated; vanilla Astra 2 / 36",
+          "measured_by": "Zeng et al.",
+          "source": "lexp"
+        },
+        {
+          "system": "RoC",
+          "model": "frontier agent over FastWAM",
+          "kind": "frontier over System 1",
+          "value": "73.3% avg",
+          "setting": "SO-ARM101, 3 tasks × 10; FastWAM alone 30.0%",
+          "measured_by": "Cen et al.",
+          "source": "reasoning-on-call"
         }
       ],
       "note": null
@@ -466,6 +520,12 @@
         "rate": "3.7× faster than agent + VLA",
         "cost": "zero LLM tokens",
         "source": "h2e"
+      },
+      {
+        "system": "GPT-6 Astra direct control",
+        "rate": "median 31.9 s per decision (π0.5: 0.11 s)",
+        "cost": "API",
+        "source": "agentrobocritic"
       }
     ]
   }

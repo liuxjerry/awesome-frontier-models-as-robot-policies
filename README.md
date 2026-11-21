@@ -1,6 +1,6 @@
 # Awesome Frontier Models (LLMs / VLMs) as Robot Policies [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-![entries](https://img.shields.io/badge/entries-72-blue?style=flat-square) ![newest](https://img.shields.io/badge/newest%20entry-2026--11--17-green?style=flat-square) ![license](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)
+![entries](https://img.shields.io/badge/entries-83-blue?style=flat-square) ![newest](https://img.shields.io/badge/newest%20entry-2026--11--19-green?style=flat-square) ![license](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)
 
 > **Can a general-purpose frontier model (GPT, Claude, Gemini, Qwen…) *be* the robot policy, and if so, what is left for the learned System 1?**
 >
@@ -24,6 +24,7 @@
 <a id="latest-updates"></a>
 ## 📰 Latest updates
 
+- **2026-11-21** · ➕ [AgentRoboCritic](#agentrobocritic), [ForceHarness](#forceharness), [RoboTeam](#roboteam), [PhysEvo](#physevo), [Push-T, revisited](#push-t-agentic), [EmbodyAgent](#embodyagent), [Astra as visuo-tactile policy](#astra-visuotactile), [RoC](#reasoning-on-call), [LEXP](#lexp), [ReTrace](#retrace), [LADDER](#ladder) · ✏️ [Hi Robot](#hi-robot), [Efficient VLA survey](#efficient-vla-survey), [FAEA](#faea) · ForceHarness lets frozen frontier models use force without a wrist sensor, lifting GPT-6 Astra from 2/60 to 54/60 on six real contact tasks. · <sub>42 candidates screened</sub>
 - **2026-11-21** · List published with 72 entries; daily automated maintenance switched on.
 
 ## Contents
@@ -32,14 +33,14 @@
 - [🏁 Milestones](#milestones)
 - [📊 Leaderboards: who measured what](#leaderboards)
 - [🗂️ At a glance: what sits below the frontier model?](#at-a-glance)
-- [🎯 Frontier Model as Direct Policy](#direct) (6)
-- [🧑‍💻 Agentic & Code-Writing Policies](#agentic) (9)
-- [🎛️ Frontier Model over a Learned System 1 / System 0](#orchestrated) (7)
-- [📈 Getting Better Without Weight Updates](#self-improving) (4)
-- [⚡ Making It Fast & Cheap](#fast) (6)
+- [🎯 Frontier Model as Direct Policy](#direct) (7)
+- [🧑‍💻 Agentic & Code-Writing Policies](#agentic) (11)
+- [🎛️ Frontier Model over a Learned System 1 / System 0](#orchestrated) (8)
+- [📈 Getting Better Without Weight Updates](#self-improving) (7)
+- [⚡ Making It Fast & Cheap](#fast) (7)
 - [🧠 The Incumbent: Dual-System VLAs](#dual-system) (16)
-- [📊 Benchmarks & Evaluation Reports](#benchmarks) (7)
-- [🔍 Analyses, Critiques & Reproducibility](#critiques) (3)
+- [📊 Benchmarks & Evaluation Reports](#benchmarks) (9)
+- [🔍 Analyses, Critiques & Reproducibility](#critiques) (4)
 - [🗺️ Surveys, Essays & Perspectives](#perspectives) (9)
 - [🏛️ Foundations (pre-2025)](#foundations) (5)
 - [Legend](#legend) · [Maintenance](#how-this-list-is-maintained) · [Related lists](#related-lists) · [Contributing](#contributing) · [Citation](#citation)
@@ -95,6 +96,7 @@
 |---|---|---|---|---|---|---|
 | AMP1+ (after practice) | frontier agent + memory | frontier: agentic + memory | **84.1% SR** | few-shot practice, no weight updates | Apple (AMP1) | [AMP1](#amp1) |
 | AMP1 (zero-shot) | frontier agent | frontier: agentic | **26.4% SR** | zero-shot | Apple (AMP1) | [AMP1](#amp1) |
+| PhysEvo | Astra (frozen) | frontier: self-improving | **62.00% SR · Score 68.14** | held-out layouts; retained task-specific deployment versions; five-dimension weighting | Tian et al. | [PhysEvo](#physevo) |
 | JustRUA | GPT-6 Astra | frontier: agentic (lean harness) | **Score 50.3** | no learned policy / self-improvement / task tuning; official L3 harness = 29.7 | Wang et al. | [JustRUA](#justrua) |
 | InteractVLA | VL agent + steerable VLA | frontier over System 1 | **48.62%** | with recursive self-improvement | Zhao et al. | [InteractVLA](#interactvla) |
 | uni-robot-agent | Qwen3.8-Flash-Next (open) | open model: agentic | **Score 31.39** | no privileged inputs | Yuan et al. | [uni-robot-agent](#democratizing-rua) |
@@ -149,6 +151,11 @@
 | PEAR / RURL | open 27B, RL in sim | open model: direct | **60% of trials** | real dual-arm; base model 0% | Tang et al. | [PEAR / RURL](#pear-rurl) |
 | Inspect Robots agent | GPT-6 Astra | frontier: agentic | **19 / 20 bowl · 2 / 20 puzzle** | bimanual YAM; unblinded graders | Robocurve | [Robocurve Astra eval](#robocurve-astra) |
 | GTA-2 | Gemini 3.1 Pro | frontier: agentic | **73.9% avg** | 14 tasks, zero-shot; vs π0.5 + CaP baselines (best baseline 31.4 pp lower) | Seker et al. | [GTA-2](#gta-2) |
+| ForceHarness | GPT-6 Astra | frontier: agentic | **54 / 60** | Franka FR3, 6 contact tasks × 10; operator-judged | Sun et al. | [ForceHarness](#forceharness) |
+| ForceHarness | GPT-6.1 Sol | frontier: agentic | **47 / 60** | same tasks | Sun et al. | [ForceHarness](#forceharness) |
+| Same harness, no force | GPT-6 Astra | frontier: agentic | **2 / 60** | same tasks | Sun et al. | [ForceHarness](#forceharness) |
+| LEXP | GPT-6 Astra | frontier: direct + experience | **23 / 36** | bimanual YAM, 12 tasks × 3; human-annotated; vanilla Astra 2 / 36 | Zeng et al. | [LEXP](#lexp) |
+| RoC | frontier agent over FastWAM | frontier over System 1 | **73.3% avg** | SO-ARM101, 3 tasks × 10; FastWAM alone 30.0% | Cen et al. | [RoC](#reasoning-on-call) |
 
 ### ⏱️ The speed gap (the open problem)
 
@@ -169,13 +176,17 @@
 | RACaP distilled (Qwen3-VL-8B) | 13.2× faster per decision than GPT-5.6 teacher | — | [RACaP](#racap) |
 | ACE-CaP-0 frozen programs | 0.97–2.27 min / task, zero model calls | dev-time only | [ACE-CaP-0](#ace-cap-0) |
 | H2E distilled VLA | 3.7× faster than agent + VLA | zero LLM tokens | [H2E](#h2e) |
+| GPT-6 Astra direct control | median 31.9 s per decision (π0.5: 0.11 s) | API | [AgentRoboCritic](#agentrobocritic) |
 
 <a id="at-a-glance"></a>
 ## 🗂️ At a glance: what sits below the frontier model?
 
 | Work | Date | Frontier model | Role | Below it | Eval | Judged by |
 |---|---|---|---|---|---|---|
+| [EmbodyAgent](#embodyagent) | 2026-11-19 | Astra Medium (black-box teacher), Qwen3.5-9B (student) | agentic / code | none | sim | LIBERO BDDL success predicate |
+| [RoC](#reasoning-on-call) | 2026-11-19 | GPT-6.1 Sol (xhigh), FastWAM (low-level) | orchestrator | frozen learned policy | sim+real | — |
 | [InteractVLA](#interactvla) | 2026-11-17 | vision-language agent | orchestrator | frozen learned policy | sim | benchmark checkers |
+| [ForceHarness](#forceharness) | 2026-11-16 | GPT-6 Astra, GPT-6.1 Sol, Claude Fable 5.2 | agentic / code | analytic (IK / waypoints / scripted) | sim+real | human operator (real); ForceBench public evaluator; HiddenPhys code check on final state |
 | [ATLAS](#atlas) | 2026-11-13 | VLM agent (unnamed on page) | orchestrator | frozen learned policy | sim+real | authors |
 | [PEAR / RURL](#pear-rurl) | 2026-11-13 | open-weight 27B reasoning model (RL-trained) | direct | analytic (IK / waypoints / scripted) | sim+real | — |
 | [Reins](#reins) | 2026-11-12 | GPT-6.1 Sol, GPT-6 Astra, Claude Opus 5.5 | agentic / code | analytic (IK / waypoints / scripted) | real | — |
@@ -183,10 +194,14 @@
 | [H2E](#h2e) | 2026-11-12 | LLM planner (teacher) + 8B VLA (student) | self-improving | trained by the agent | sim | benchmark |
 | [AMP1](#amp1) | 2026-11-06 | Claude Opus 5.5 (main real-world), Gemini 4 Argon, 13 models incl. 6 open-weight | agentic / code | analytic (IK / waypoints / scripted) | sim+real | benchmark checkers (sim); experimenters (real) |
 | [uni-robot-agent](#democratizing-rua) | 2026-11-01 | Qwen3.8-Flash-Next (open-weight) | agentic / code | analytic (IK / waypoints / scripted) | sim+real | — |
+| [LEXP](#lexp) | 2026-10-30 | GPT-6 Astra, Opus 5.5, Sol 5.6 | self-improving | none | real | human annotation against predefined completion criteria, independent of the actor's own declaration |
 | [Frontier models on LIBERO-10](#libero10-frontier) | 2026-10-21 | GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna, Claude Opus 5, Claude Opus 5.5, Gemini-4 Argon | direct | analytic (IK / waypoints / scripted) | sim | LIBERO checker |
+| [Astra as visuo-tactile policy](#astra-visuotactile) | 2026-10-19 | GPT-6 Astra (xhigh) | direct | none | sim | simulator checker (official success criteria; one task's criterion relaxed) |
 | [Bitter Lesson → Robotics](#bitter-lesson-robotics) | 2026-10-18 | 9 frontier multimodal LMs at multiple effort / service tiers | direct | analytic (IK / waypoints / scripted) | real | — |
 | [Astranomy](#astranomy) | 2026-10-14 | GPT-6 Astra | direct | analytic (IK / waypoints / scripted) | sim | RoboLab task checkers |
 | [SEAR](#sear) | 2026-10-13 | 7 frontier LMs | self-improving | trained by the agent | sim+real | benchmark with controls |
+| [ReTrace](#retrace) | 2026-10-11 | GPT-6 Astra (high, learner), GPT-6 Astra-low, GPT-6 Sol-xhigh | self-improving | none | real | — |
+| [PhysEvo](#physevo) | 2026-10-06 | Astra (frozen; task agent and meta-agent) | self-improving | none | sim+real | RoboDojo native evaluator (sim); authors' rubric (real) |
 | [OpenRUA](#openrua) | 2026-10-01 | Claude Code + Claude Opus 5 | agentic / code | analytic (IK / waypoints / scripted) | sim | benchmark checkers |
 | [RAPID](#rapid) | 2026-09-24 | coding agent | agentic / code | analytic (IK / waypoints / scripted) | sim+real | — |
 | [HarnessPAI](#harnesspai) | 2026-09-24 | — | orchestrator | frozen learned policy | sim+real | — |
@@ -197,6 +212,7 @@
 | [Show-Harness](#show-harness) | 2026-09-09 | closed frontier VLMs, small open VLMs (fine-tuned) | direct | analytic (IK / waypoints / scripted) | sim+real | — |
 | [GTA-2](#gta-2) | 2026-09-09 | Gemini 3.1 Pro (all agents) | agentic / code | analytic (IK / waypoints / scripted) | real | authors |
 | [EMERGE-Policy](#emerge-policy) | 2026-08-30 | — | orchestrator | frozen learned policy | sim+real | — |
+| [Push-T, revisited](#push-t-agentic) | 2026-08-18 | Claude Code with Fable 5 | agentic / code | analytic (IK / waypoints / scripted) | sim | gym_pusht coverage threshold (simulator checker) |
 | [Gemini Robotics 2](#gemini-robotics-2) | 2026-07-30 | Gemini Robotics ER 2, Gemini Robotics 2 (VLA), Gemini Robotics On-Device 2 | orchestrator | jointly trained | real | — |
 | [Harness VLA](#harness-vla) | 2026-07-09 | LLM coding agent | orchestrator | frozen learned policy | sim+real | benchmark checkers |
 | [Claude on robotics](#anthropic-robotics) | 2026-07-09 | Claude Mythos Preview, Opus 4.5–4.7, GPT-5.4, Gemini 3.1 Pro, Kimi K2.6, Qwen 3.6+ | direct | frozen learned policy | sim+real | simulator; informal real Go2 runs |
@@ -212,7 +228,7 @@
 
 *The general-purpose model itself emits the next action (end-effector pose, joint target, trajectory) at every step. No learned System 1 underneath; the only thing below it is IK / a position controller.*
 
-<details open><summary><b>6 entries</b> + 2 cross-listed</summary>
+<details open><summary><b>7 entries</b> + 7 cross-listed</summary>
 
 <a id="libero10-frontier"></a>
 - **[From Reasoning to Action: Benchmarking Frontier AI Models on LIBERO-10 Robot Manipulation Tasks](https://arxiv.org/abs/2610.30051)**
@@ -221,6 +237,14 @@
   Best is Astra at 44%, then Gemini-4 Argon at 43%. More reasoning effort generally helps, at extra cost. Models do well on placement and struggle with precise spatial arrangement and multi-step interaction.  
   <sub>**Model:** GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna, Claude Opus 5, Claude Opus 5.5, Gemini-4 Argon · **Below it:** analytic (IK / waypoints / scripted) · **Interface:** Structured tool calls specifying target EEF poses and gripper commands · **Eval:** sim · **Judged by:** LIBERO checker · **Trials:** 18 configurations, 1,800 episodes</sub>  
   <sub>↪ also in: [Benchmarks & Evaluation Reports](#benchmarks)</sub>
+
+<a id="astra-visuotactile"></a>
+- **[GPT-6 Astra Is a Native Visuo-Tactile Policy for Contact-Rich Manipulation](https://arxiv.org/abs/2610.26846)**
+  Tsinghua University / Alibaba (Amap) · *Paper* · 2026-10-19 · `💻 code / results`  
+  [[Paper](https://arxiv.org/abs/2610.26846)] [[Project](https://tactalent.github.io/)] [[Code](https://github.com/ccyydd/TacTalent)] ![stars](https://img.shields.io/github/stars/ccyydd/TacTalent?style=flat-square&label=%E2%98%85)  
+  First demonstration that a frontier model reads vision-based tactile images and uses contact cues, few-shot and closed loop. With visuo-tactile input Astra reaches 93.8% (UniVTAC) and 81.8% (OpenViTac), 22.9 and 13.1 points above the strongest reported specialist baselines; vision-only reaches 76.3% and 80.6%.  
+  <sub>**Model:** GPT-6 Astra (xhigh) · **Below it:** none · **Interface:** Scene + tactile RGB images and in-context demos in; ordered 7-D EEF-delta + gripper commands out, converted by a benchmark adapter · **Eval:** sim · **Judged by:** simulator checker (official success criteria; one task's criterion relaxed) · **Trials:** 19 tasks (UniVTAC + OpenViTac), 210 sampled scene seeds per setting · **Speed/cost:** median response 15.4 s (vision) / 14.0 s (visuo-tactile); 335.97 million tokens, CNY 7,505.05 for both phases</sub>  
+  ⚠️ <sub>Authors: simulation only; cost limits most tasks to ten episodes instead of the full 100-episode evaluation, while baselines are published full-benchmark numbers. Uses task-specific successful demonstrations in context. Tactile input hurts on some tasks.</sub>  
 
 <a id="bitter-lesson-robotics"></a>
 - **[The Bitter Lesson Comes to Robotics](https://arxiv.org/abs/2610.25287)**
@@ -267,7 +291,12 @@
 
 **Cross-listed here:**
 
+- ↪ **[AgentRoboCritic](#agentrobocritic)**: AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control <sub>(listed under [Analyses, Critiques & Reproducibility](#critiques))</sub>
+- ↪ **[ForceHarness](#forceharness)**: ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models <sub>(listed under [Agentic & Code-Writing Policies](#agentic))</sub>
 - ↪ **[PEAR / RURL](#pear-rurl)**: Training Reasoning Models in Simulation to Natively Use Real Robots <sub>(listed under [Making It Fast & Cheap](#fast))</sub>
+- ↪ **[LEXP](#lexp)**: Learning from Physical Experience:Context-Space Adaptation for Robotic Manipulation <sub>(listed under [Getting Better Without Weight Updates](#self-improving))</sub>
+- ↪ **[ReTrace](#retrace)**: ReTrace: Cross-Stage Failure Attribution for Self-Improving Robotic Manipulation <sub>(listed under [Getting Better Without Weight Updates](#self-improving))</sub>
+- ↪ **[PhysEvo](#physevo)**: PhysEvo: Astra Can Act, Let It <sub>(listed under [Getting Better Without Weight Updates](#self-improving))</sub>
 - ↪ **[Robocurve Astra eval](#robocurve-astra)**: GPT-6 Astra vs Claude Fable 5 / 5.1 on bimanual YAM arms <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
 
 </details>
@@ -277,7 +306,16 @@
 
 *The model acts through a harness: it writes and runs code against sensing/perception/motion APIs, observes the outcome, and repairs. Learned System 1 is absent; motion is analytic (IK, waypoints, ROS).*
 
-<details open><summary><b>9 entries</b> + 6 cross-listed</summary>
+<details open><summary><b>11 entries</b> + 9 cross-listed</summary>
+
+<a id="forceharness"></a>
+- **[ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models](https://arxiv.org/abs/2611.21099)**
+  Show Lab, NUS · *Paper* · 2026-11-16 · `📝 preprint`  
+  [[Paper](https://arxiv.org/abs/2611.21099)] [[Project](https://showlab.github.io/ForceHarness)]  
+  Gives API-only frozen models force sensing without demos or finetuning, on a Franka FR3 with no wrist F/T sensor. Real robot: GPT-6 Astra goes from 2/60 without force to 54/60, GPT-6.1 Sol reaches 47/60. ForceBench: Astra and Sol 87.5% (Fable 75.0%) vs 35.31% for the best trained policy; HiddenPhys: Astra 87/140 → 135/140, matching the hand-written expert at 136/140.  
+  <sub>**Model:** GPT-6 Astra, GPT-6.1 Sol, Claude Fable 5.2 · **Below it:** analytic (IK / waypoints / scripted) · **Interface:** One tool call per turn picking a self-terminating force primitive (move_until_contact, push, insert, screw, …) run by admittance control on the stock impedance controller; a physics translation layer returns mass, friction, contact height with uncertainty · **Eval:** sim+real · **Judged by:** human operator (real); ForceBench public evaluator; HiddenPhys code check on final state · **Trials:** real: 6 tasks × 10 episodes per condition; ForceBench 8 tasks × 10; HiddenPhys 7 tasks × 20 seeds · **Speed/cost:** 'Model queries add seconds between primitives'; cuts Astra's cost per episode by 45% (HiddenPhys)</sub>  
+  ⚠️ <sub>Authors: 'Model queries add seconds between primitives and preclude reactive coordination, a fixed menu limits new motion laws, and our ablations run only in simulation.' Primitive menu, physics estimators and per-task instructions are hand-written; ForceBench tools were tuned on 8 of 10 seeds; HiddenPhys gives object poses as noisy text (privileged state). Code to be released on publication.</sub>  
+  <sub>↪ also in: [Frontier Model as Direct Policy](#direct)</sub>
 
 <a id="reins"></a>
 - **[Reins: Frontier Multimodal Models Driving Real Robot Arms on Long-Horizon Tasks, Zero-Shot](https://arxiv.org/abs/2611.16632)**
@@ -327,6 +365,15 @@
   Zero-shot 73.9% average on 14 real-robot tasks, 31.4 pp above the strongest baseline (π0.5 and two Code-as-Policies variants); targeted human feedback raises it to 90.7%.  
   <sub>**Model:** Gemini 3.1 Pro (all agents) · **Below it:** analytic (IK / waypoints / scripted) · **Interface:** Four VLM agents build task-axis skills: keypoints/axes, controller compositions, scene parameters · **Eval:** real · **Judged by:** authors · **Trials:** 14 real tasks</sub>  
 
+<a id="push-t-agentic"></a>
+- **[Revisiting the "Push-T" Robot Manipulation Task with Agentic Robotics](https://arxiv.org/abs/2608.18227)**
+  UC Berkeley · *Paper* · 2026-08-18 · `📝 preprint`  
+  [[Paper](https://arxiv.org/abs/2608.18227)]  
+  A demonstration-free code-as-policy for Push-T, built by Claude Code with Fable 5. The state controller reaches 100.0% success (vision controller 97.2%) vs 62.5% for the LeRobot Diffusion Policy checkpoint over 200 seeds, at 120.1 vs 223.7 mean steps. A self-generated curriculum extends it to Push-A–Z (99.4% overall) and to simulated Franka (vision 89.8%) and UR5e (vision 98.5%).  
+  <sub>**Model:** Claude Code with Fable 5 · **Below it:** analytic (IK / waypoints / scripted) · **Interface:** Coding agent writes, runs and revises a state-machine / MPC controller and vision pipeline offline in simulation; the generated code is the runtime policy (no LLM in the 10 Hz loop) · **Eval:** sim · **Judged by:** gym_pusht coverage threshold (simulator checker) · **Trials:** Push-T: 200 seeds; Push-A–Z: 25 episodes per letter (650) · **Speed/cost:** about 9.5 million output tokens, approximately $1,500–$2,000 API cost, approximately 221 hours in auto mode</sub>  
+  ⚠️ <sub>Authors: the agent may exploit simulator-specific state or contact behaviour unavailable on real robots; 'Claude is computationally expensive and sensitive to the prompt.' State controllers use privileged ground-truth state. Simulation only; development took ~221 h under human interaction.</sub>  
+  <sub>↪ also in: [Getting Better Without Weight Updates](#self-improving)</sub>
+
 <a id="cap-x"></a>
 - **[CaP-X: A Framework for Benchmarking and Improving Coding Agents for Robot Manipulation](https://arxiv.org/abs/2603.22435)**
   UC Berkeley · NVIDIA · Stanford · CMU · *Paper* · 2026-03-23 · `💻 code / results` · 🏷️ ICML 2026 (per catalogs)  
@@ -354,9 +401,12 @@
 
 **Cross-listed here:**
 
+- ↪ **[EmbodyAgent](#embodyagent)**: EmbodyAgent: Post-Training Embodied VLM Agents via Distillation, SFT, and RL <sub>(listed under [Making It Fast & Cheap](#fast))</sub>
+- ↪ **[RoboTeam](#roboteam)**: RoboTeam: Benchmarking Vision-Based Multi-Agent Control of Many Robot Arms in Real Time <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
 - ↪ **[JustRUA](#justrua)**: JustRUA: A Controlled Study of GPT-6 Robot-Use Agents <sub>(listed under [Analyses, Critiques & Reproducibility](#critiques))</sub>
 - ↪ **[uni-robot-agent](#democratizing-rua)**: Democratizing Robot-Use Agents: A Unified Harness with Open Models <sub>(listed under [Making It Fast & Cheap](#fast))</sub>
 - ↪ **[Astranomy](#astranomy)**: Astranomy: An Empirical Study of GPT-6 Astra as a Native Robot Policy <sub>(listed under [Frontier Model as Direct Policy](#direct))</sub>
+- ↪ **[LADDER](#ladder)**: LADDER: A Long-Horizon Robot Manipulation Benchmark <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
 - ↪ **[GPT-Policy](#gpt-policy)**: In-Context Robot Learning with VLM Agents <sub>(listed under [Getting Better Without Weight Updates](#self-improving))</sub>
 - ↪ **[EMERGE-Policy](#emerge-policy)**: EMERGE-Policy: A Robot Mind Emerges Beyond a Single Policy <sub>(listed under [Frontier Model over a Learned System 1 / System 0](#orchestrated))</sub>
 - ↪ **[ASPIRE](#aspire)**: ASPIRE: Agentic /Skills Discovery for Robotics <sub>(listed under [Getting Better Without Weight Updates](#self-improving))</sub>
@@ -368,7 +418,16 @@
 
 *The general model supervises, steers, or edits the output of a learned low-level controller (a VLA, a world-action model, or a whole-body tracker). This is where the 'is System 1 still needed?' question is decided.*
 
-<details open><summary><b>7 entries</b> + 4 cross-listed</summary>
+<details open><summary><b>8 entries</b> + 5 cross-listed</summary>
+
+<a id="reasoning-on-call"></a>
+- **[Reasoning on Call: Efficient Agentic Robot Control for Long-Horizon Robot Manipulation](https://arxiv.org/abs/2611.26341)**
+  Wuhan University / Zhongguancun Academy / Samsung · *Paper* · 2026-11-19 · `📝 preprint`  
+  [[Paper](https://arxiv.org/abs/2611.26341)]  
+  Event-triggered frontier-agent intervention over a world-action-model policy. On RMBench, 99.6% average success vs 75.6% for GPT-as-Policy and 71.9% for Direct Control, using 65.3% fewer tokens than GPT-as-Policy; 98.1% vs 83.0% for MemoryWAM, the strongest policy-only baseline. Real robot: 73.3% vs 30.0% for the policy alone.  
+  <sub>**Model:** GPT-6.1 Sol (xhigh), FastWAM (low-level) · **Below it:** frozen learned policy · **Interface:** A trained task-state monitor triggers the agent only on events; the agent approves a prefix of the FastWAM action chunk, makes local EEF/gripper corrections, takes over directly, or revises the next subtask · **Eval:** sim+real · **Trials:** RMBench 9 tasks (30 trials/task vs agents, 100 vs policies); real SO-ARM101: 3 tasks × 10 trials · **Speed/cost:** monitor 2.77 Hz overall; 288.3 tokens/episode vs 830.3 (GPT-as-Policy) and 1845.1 (Direct Control) on RMBench</sub>  
+  ⚠️ <sub>Authors: failures are mostly difficult grasps that agent intervention can't rescue, 'highlighting agent capability as a remaining bottleneck'. Agent baselines use GPT-6 Astra while RoC uses GPT-6.1 Sol. The agent model on the real robot is not stated.</sub>  
+  <sub>↪ also in: [Making It Fast & Cheap](#fast)</sub>
 
 <a id="interactvla"></a>
 - **[InteractVLA: Turning VLAs into Interactive Tools for Agentic Robotic Manipulation](https://arxiv.org/abs/2611.22584)**
@@ -433,6 +492,7 @@
 
 - ↪ **[H2E](#h2e)**: What Can a VLA Learn from the Agent That Calls It? Task-Level Experience Distillation for Embodied Navigation <sub>(listed under [Making It Fast & Cheap](#fast))</sub>
 - ↪ **[Astranomy](#astranomy)**: Astranomy: An Empirical Study of GPT-6 Astra as a Native Robot Policy <sub>(listed under [Frontier Model as Direct Policy](#direct))</sub>
+- ↪ **[LADDER](#ladder)**: LADDER: A Long-Horizon Robot Manipulation Benchmark <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
 - ↪ **[Claude on robotics](#anthropic-robotics)**: How Claude performs on robotics tasks <sub>(listed under [Frontier Model as Direct Policy](#direct))</sub>
 - ↪ **[Butter-Bench](#butter-bench)**: Butter-Bench: Evaluating LLM Controlled Robots for Practical Intelligence <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
 
@@ -443,7 +503,16 @@
 
 *Memory, practice, skill libraries, and in-context learning: the general model improves across episodes while its weights stay frozen (or it trains a separate policy for you).*
 
-<details open><summary><b>4 entries</b> + 7 cross-listed</summary>
+<details open><summary><b>7 entries</b> + 8 cross-listed</summary>
+
+<a id="lexp"></a>
+- **[Learning from Physical Experience:Context-Space Adaptation for Robotic Manipulation](https://arxiv.org/abs/2610.41320)**
+  CUHK / xdof.ai · *Paper* · 2026-10-30 · `📝 preprint`  
+  [[Paper](https://arxiv.org/abs/2610.41320)] [[Project](https://hatty-z.github.io/LearnFromExperience/)]  
+  GPT-6 Astra as a direct bimanual policy that learns from physical experience in context. Across 12 real tasks LEXP reaches 23/36 (63.9%) vs 19/36 (52.8%) with memory alone and 2/36 (5.6%) for vanilla Astra. With memory only, Opus 5.5 gets 11/36 and Sol 5.6 0/36.  
+  <sub>**Model:** GPT-6 Astra, Opus 5.5, Sol 5.6 · **Below it:** none · **Interface:** Actor emits absolute Cartesian pose / gripper tool calls per YAM arm with an intention note; a planner and an experience module write lessons back into its context; weights fixed · **Eval:** real · **Judged by:** human annotation against predefined completion criteria, independent of the actor's own declaration · **Trials:** 12 real tasks × 3 trials per condition (36), bimanual YAM</sub>  
+  ⚠️ <sub>Authors: 'Bimanual coordination remains challenging, with no successful sweeping or towel-folding trials under any condition'; memory benefit is actor-dependent and varies across tasks. Three trials per task and condition. No latency or cost reported.</sub>  
+  <sub>↪ also in: [Frontier Model as Direct Policy](#direct)</sub>
 
 <a id="sear"></a>
 - **[SEAR: Self-Evolving Agentic Robotics](https://arxiv.org/abs/2610.18792)**
@@ -453,6 +522,24 @@
   <sub>**Model:** 7 frontier LMs · **Below it:** trained by the agent · **Interface:** Three modes on the same tools: code-as-policy, agent-as-policy (live in the loop), and auto-research (fine-tunes a VLA) · **Eval:** sim+real · **Judged by:** benchmark with controls · **Trials:** 330 sim + 5 physical tasks; >4 years of agent runtime</sub>  
   ⚠️ <sub>Real-robot gap between agent-designed practice and novel human-designed scenes.</sub>  
   <sub>↪ also in: [Benchmarks & Evaluation Reports](#benchmarks), [Analyses, Critiques & Reproducibility](#critiques)</sub>
+
+<a id="retrace"></a>
+- **[ReTrace: Cross-Stage Failure Attribution for Self-Improving Robotic Manipulation](https://arxiv.org/abs/2610.15814)**
+  Fudan University · *Paper* · 2026-10-11 · `📝 preprint`  
+  [[Paper](https://arxiv.org/abs/2610.15814)]  
+  Self-improvement from autonomous physical interaction with no demos or weight updates; skills learned by Astra-high transfer to other models and effort levels. GPT-6 Astra-low improves from 0% to 80% on plug insertion and 0% to 100% on ball pouring; GPT-6 Sol-xhigh from 0% to 10% and 0% to 90%.  
+  <sub>**Model:** GPT-6 Astra (high, learner), GPT-6 Astra-low, GPT-6 Sol-xhigh · **Below it:** none · **Interface:** Executor predicts action chunks for a Franka; an Attributor on the same model traces failures to earlier decisions and consolidates validated corrections into a text skill · **Eval:** real · **Trials:** 4 real tasks on Franka Research 3, 10 trials per task per configuration</sub>  
+  ⚠️ <sub>Authors: plug insertion remains difficult for Sol-xhigh even with the skill, so benefits vary across executing models. Who judges success, latency and cost are not stated.</sub>  
+  <sub>↪ also in: [Frontier Model as Direct Policy](#direct)</sub>
+
+<a id="physevo"></a>
+- **[PhysEvo: Astra Can Act, Let It](https://arxiv.org/abs/2610.08995)**
+  UCAS / CASIA · *Paper* · 2026-10-06 · `📝 preprint`  
+  [[Paper](https://arxiv.org/abs/2610.08995)]  
+  Physical recursive self-improvement around one frozen model, with no weight updates or trained action policy. On 42 RoboDojo tasks: 68.14/100 score and 62.00% success on held-out layouts, vs 47.17% for RoboDawn's one-shot Astra agent. On 8 tasks challenging for direct Astra: 55.00% vs 1.25%. Real AgileX PiPER: 90.60/100 and 84.00% success across 25 trials on five tasks.  
+  <sub>**Model:** Astra (frozen; task agent and meta-agent) · **Below it:** none · **Interface:** Task agent issues joint-level control_arms calls (12 joint targets + 2 grippers) or observation/geometry tools; a meta-agent on the same model revises tools, skills and diagnostic code between episodes · **Eval:** sim+real · **Judged by:** RoboDojo native evaluator (sim); authors' rubric (real) · **Trials:** 42 RoboDojo tasks × 5 held-out layouts; real: 5 tasks × 5 trials on AgileX PiPER</sub>  
+  ⚠️ <sub>Each task keeps its own deployment version and task-specific skills; real-world runs continue skill revision between attempts. Baselines are taken from leaderboards and reports, not rerun. No latency or cost reported.</sub>  
+  <sub>↪ also in: [Frontier Model as Direct Policy](#direct)</sub>
 
 <a id="gpt-policy"></a>
 - **[In-Context Robot Learning with VLM Agents](https://arxiv.org/abs/2609.19138)**
@@ -487,6 +574,7 @@
 - ↪ **[HarnessPAI](#harnesspai)**: HarnessPAI: An Evolving Harness for Physical AI <sub>(listed under [Frontier Model over a Learned System 1 / System 0](#orchestrated))</sub>
 - ↪ **[RACaP](#racap)**: RACaP: Agentic Reasoning, Acting, and Coding as Policies for Evolvable Robot Learning <sub>(listed under [Making It Fast & Cheap](#fast))</sub>
 - ↪ **[AGP](#agent-as-policy)**: Agent as Policy for Robotic Manipulation <sub>(listed under [Agentic & Code-Writing Policies](#agentic))</sub>
+- ↪ **[Push-T, revisited](#push-t-agentic)**: Revisiting the "Push-T" Robot Manipulation Task with Agentic Robotics <sub>(listed under [Agentic & Code-Writing Policies](#agentic))</sub>
 
 </details>
 
@@ -495,7 +583,16 @@
 
 *Latency and dollar cost are the main open problem. Distillation into small models, open-weight harnesses, asynchronous planning/execution. Thin on purpose: this is the research gap.*
 
-<details open><summary><b>6 entries</b> + 5 cross-listed</summary>
+<details open><summary><b>7 entries</b> + 7 cross-listed</summary>
+
+<a id="embodyagent"></a>
+- **[EmbodyAgent: Post-Training Embodied VLM Agents via Distillation, SFT, and RL](https://arxiv.org/abs/2611.26196)**
+  Tsinghua University · *Paper* · 2026-11-19 · `📝 preprint`  
+  [[Paper](https://arxiv.org/abs/2611.26196)]  
+  Distills a black-box frontier code-writing agent into an open 9B VLM via SFT, then online RL. Held-out success rises from 0/100 (base 9B VLM) to 14/100 after SFT and 84/100 after RL; median model calls per test episode drop from 36 to 11.  
+  <sub>**Model:** Astra Medium (black-box teacher), Qwen3.5-9B (student) · **Below it:** none · **Interface:** Think-then-code through one execute_python tool exposing raw images/proprioception and 7-D end-effector control; no primitives, no action decoder · **Eval:** sim · **Judged by:** LIBERO BDDL success predicate · **Trials:** 100 held-out test states (10 LIBERO Spatial tasks) · **Speed/cost:** student median 136 s per episode incl. simulation; teacher 1,887 s of frontier-API inference per episode</sub>  
+  ⚠️ <sub>One simulated suite (ten LIBERO Spatial tasks), single run per stage, no real robot. The reported checkpoint is 'the best score observed' while monitoring the same test states, with RL still in progress.</sub>  
+  <sub>↪ also in: [Agentic & Code-Writing Policies](#agentic)</sub>
 
 <a id="pear-rurl"></a>
 - **[Training Reasoning Models in Simulation to Natively Use Real Robots](https://arxiv.org/abs/2611.18562)**
@@ -547,6 +644,8 @@
 
 **Cross-listed here:**
 
+- ↪ **[RoC](#reasoning-on-call)**: Reasoning on Call: Efficient Agentic Robot Control for Long-Horizon Robot Manipulation <sub>(listed under [Frontier Model over a Learned System 1 / System 0](#orchestrated))</sub>
+- ↪ **[RoboTeam](#roboteam)**: RoboTeam: Benchmarking Vision-Based Multi-Agent Control of Many Robot Arms in Real Time <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
 - ↪ **[DASH](#dash)**: Decoupled Asynchronous System for Humanoids (DASH): Latency-Agnostic Scaling of Vision-Language-Action Models for Humanoid Manipulation <sub>(listed under [The Incumbent: Dual-System VLAs](#dual-system))</sub>
 - ↪ **[Show-Harness](#show-harness)**: Show-Harness: Just a VLM Agent Can Play Robots <sub>(listed under [Frontier Model as Direct Policy](#direct))</sub>
 - ↪ **[τ0-VLA](#tau0-vla)**: τ0-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation <sub>(listed under [The Incumbent: Dual-System VLAs](#dual-system))</sub>
@@ -689,7 +788,16 @@
 
 *Shared yardsticks where frontier models and learned policies are scored on the same tasks.*
 
-<details open><summary><b>7 entries</b> + 7 cross-listed</summary>
+<details open><summary><b>9 entries</b> + 8 cross-listed</summary>
+
+<a id="roboteam"></a>
+- **[RoboTeam: Benchmarking Vision-Based Multi-Agent Control of Many Robot Arms in Real Time](https://arxiv.org/abs/2611.22138)**
+  HKUST / Microsoft · *Benchmark* · 2026-11-17 · `📝 preprint`  
+  [[Paper](https://arxiv.org/abs/2611.22138)]  
+  Agents control 4 to 16 arms in real time from camera images only, with no ground-truth positions. With the adaptive system, gpt-6.1-sol and opus-5.5 complete 28 and 27 of 36 tasks and four other models at most 3, but a third of steps fail at least once and must be retried. Hierarchical/decentralized systems are faster but use up to 1.9× the tokens; 'no model or system is yet fast, cheap, and reliable at once'.  
+  <sub>**Eval:** sim · **Judged by:** simulator checker on final state · **Trials:** 36 tasks (4 types × 3 team sizes × 3 levels), 4–16 arms, one run per condition · **Speed/cost:** median task takes gpt-6.1-sol 3.5 hours; 218 million input tokens per median task (gpt-6.1-sol)</sub>  
+  ⚠️ <sub>Authors: simulation only; 36 tasks are variants of four task types; each condition ran once, 'so differences such as 28 versus 29 tasks are not reliable'. Benchmark and records to be released.</sub>  
+  <sub>↪ also in: [Agentic & Code-Writing Policies](#agentic), [Making It Fast & Cheap](#fast)</sub>
 
 <a id="aa-robotics"></a>
 - **[AA-Robotics (research preview)](https://artificialanalysis.ai/articles/aa-robotics)**
@@ -698,6 +806,15 @@
   Independent real-arm leaderboard. Scores out of 100: Astra 69.4, Sol 64.6, Argon 55.3, Opus 5.5 48.8, Fable 5.1 46.3.  
   <sub>**Eval:** real · **Judged by:** human grader, partial credit · **Trials:** 8 tabletop tasks; trials per task not stated · **Speed/cost:** ≈30 min per task vs ≈20 s for a human; cheapest model ≈10× a human's hourly wage</sub>  
   ⚠️ <sub>No VLA baseline. The authors say frontier models are not yet suited to production robotics on their own.</sub>  
+
+<a id="ladder"></a>
+- **[LADDER: A Long-Horizon Robot Manipulation Benchmark](https://arxiv.org/abs/2610.18053)**
+  INSAIT / NVIDIA · *Benchmark* · 2026-10-13 · `📝 preprint`  
+  [[Paper](https://arxiv.org/abs/2610.18053)] [[Project](https://ladder.insait.ai)]  
+  Scales horizon from 1 to 10 subgoals in the same scene. The low-level policy alone hits 85.4% on single-subgoal tasks but 11.0% overall. GPT-Policy on GPT-6 Astra is best on every suite (62.0% overall), then PSP-Agent (40.1%), versus at most 29.6% for learned-policy orchestration.  
+  <sub>**Eval:** sim+real · **Judged by:** programmatic per-subgoal state checks (sim) · **Trials:** 145 tasks, 3 suites, 2,024 simulated episodes per system; real: 12 episodes per task and system · **Speed/cost:** per episode: GPT-Policy $4.02 vs $0.007–$0.17 for the others</sub>  
+  ⚠️ <sub>Authors: 'the simulation pauses while a system computes'; tool-selection systems get ground-truth depth and camera calibration in sim; 'High-level VLM inference is slow'. GPT-Policy was not run on the real robots. Tabletop pick-and-place only.</sub>  
+  <sub>↪ also in: [Frontier Model over a Learned System 1 / System 0](#orchestrated), [Agentic & Code-Writing Policies](#agentic)</sub>
 
 <a id="robocurve-astra"></a>
 - **[GPT-6 Astra vs Claude Fable 5 / 5.1 on bimanual YAM arms](https://github.com/robocurve/inspect-robots)**
@@ -748,6 +865,7 @@
 
 **Cross-listed here:**
 
+- ↪ **[AgentRoboCritic](#agentrobocritic)**: AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control <sub>(listed under [Analyses, Critiques & Reproducibility](#critiques))</sub>
 - ↪ **[LEASH / RoboRisk](#leash-roborisk)**: LEASH: Stay Safe in Agentic Robotics <sub>(listed under [Analyses, Critiques & Reproducibility](#critiques))</sub>
 - ↪ **[Frontier models on LIBERO-10](#libero10-frontier)**: From Reasoning to Action: Benchmarking Frontier AI Models on LIBERO-10 Robot Manipulation Tasks <sub>(listed under [Frontier Model as Direct Policy](#direct))</sub>
 - ↪ **[Bitter Lesson → Robotics](#bitter-lesson-robotics)**: The Bitter Lesson Comes to Robotics <sub>(listed under [Frontier Model as Direct Policy](#direct))</sub>
@@ -763,7 +881,16 @@
 
 *Negative results, retests, benchmark-integrity problems, and the limits authors admit about their own systems.*
 
-<details open><summary><b>3 entries</b> + 7 cross-listed</summary>
+<details open><summary><b>4 entries</b> + 7 cross-listed</summary>
+
+<a id="agentrobocritic"></a>
+- **[AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control](https://arxiv.org/abs/2611.26613)**
+  CMU / UIUC / Bosch · *Paper* · 2026-11-19 · `📝 preprint`  
+  [[Paper](https://arxiv.org/abs/2611.26613)] [[Project](https://adu2021.github.io/blog/AgentRoboCritic/)]  
+  Action-level analysis of GPT-6 Astra on direct robot control across 12 manipulation benchmarks. '49.8% of all successful episodes contain at least one local failure'; '38.9% of the analyzed failures are recovered within 10 actions and 57.7% by the end of the episode'. Grasp and Alignment are the bottlenecks, while Choice errors are 0.2% of failed actions. A fine-tuned Muse-Glimmer-30B critic's failure-mode accuracy rises from 32.58% to 74.24%.  
+  <sub>**Eval:** sim+real · **Judged by:** each benchmark's official grader (episodes); GPT-6 Astra as critic (actions), checked on a 400-action human-annotated set · **Trials:** 12 benchmarks; 12,163 failed actions analysed; 12,844-action annotated dataset · **Speed/cost:** median decision 31.9 s for GPT-6 Astra vs 0.11 s for π0.5 (74 matched tasks)</sub>  
+  ⚠️ <sub>Authors: agents 'struggle to resolve millimeter-scale mating tolerances and angular alignment from vision alone'; only about one in three Alignment and Effect failures are recovered. Same model serves as policy and critic (self-preference tested in an appendix). 5 of 12 benchmarks reuse released traces rather than new rollouts.</sub>  
+  <sub>↪ also in: [Frontier Model as Direct Policy](#direct), [Benchmarks & Evaluation Reports](#benchmarks)</sub>
 
 <a id="openrua-retest"></a>
 - **[OpenRUA team retest of RoboDojo leaderboard entries (Huxiu / AI Dancer report)](https://m.huxiu.com/article/4905567.html)**

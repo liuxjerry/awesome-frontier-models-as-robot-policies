@@ -72,6 +72,11 @@
       "decision": "rejected",
       "note": "LLM agent memory, not embodied"
     },
+    "arxiv:2608.18227": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry push-t-agentic"
+    },
     "arxiv:2608.25593": {
       "date": "2026-11-21",
       "decision": "rejected",
@@ -107,6 +112,11 @@
       "decision": "rejected",
       "note": "coding agent speeds up WAM inference, not the policy"
     },
+    "arxiv:2610.08995": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry physevo"
+    },
     "arxiv:2610.12185": {
       "date": "2026-11-21",
       "decision": "rejected",
@@ -117,15 +127,30 @@
       "decision": "rejected",
       "note": "trained embodied MLLM agent, no frontier-model policy"
     },
+    "arxiv:2610.15814": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry retrace"
+    },
     "arxiv:2610.15969": {
       "date": "2026-11-21",
       "decision": "rejected",
       "note": "LLM-written partners for MARL games, not a robot"
     },
+    "arxiv:2610.18053": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry ladder"
+    },
     "arxiv:2610.23334": {
       "date": "2026-11-21",
       "decision": "rejected",
       "note": "trained VLM+WAM system, no frontier-model angle"
+    },
+    "arxiv:2610.26846": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry astra-visuotactile"
     },
     "arxiv:2610.27417": {
       "date": "2026-11-21",
@@ -137,6 +162,11 @@
       "decision": "rejected",
       "note": "borderline: GPU-kernel agent teams; one RoboDojo number only"
     },
+    "arxiv:2610.41320": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry lexp"
+    },
     "arxiv:2611.03103": {
       "date": "2026-11-21",
       "decision": "rejected",
@@ -147,10 +177,40 @@
       "decision": "rejected",
       "note": "robot VLA, no frontier-model angle"
     },
+    "arxiv:2611.16867": {
+      "date": "2026-11-21",
+      "decision": "rejected",
+      "note": "borderline: agent designs controller offline; locomotion/control plants, no manipulation"
+    },
+    "arxiv:2611.21099": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry forceharness"
+    },
+    "arxiv:2611.22138": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry roboteam"
+    },
     "arxiv:2611.25005": {
       "date": "2026-11-21",
       "decision": "rejected",
       "note": "borderline: simulated human-scene interaction, not a robot"
+    },
+    "arxiv:2611.26196": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry embodyagent"
+    },
+    "arxiv:2611.26341": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry reasoning-on-call"
+    },
+    "arxiv:2611.26613": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry agentrobocritic"
     },
     "update:2502.19417:v2": {
       "date": "2026-11-21",
