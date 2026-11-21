@@ -35,10 +35,11 @@ git pull --rebase
 ### 2. Collect
 
 ```bash
-python3 scripts/collect.py --days 3
+python3 scripts/collect.py
 ```
 
-(Star counts are refreshed by the GitHub Action, not here.)
+(The look-back window runs from the last `daily:` commit, at least 3 days. Star counts are refreshed by the
+GitHub Action, not here.)
 
 This writes `candidates.json` with:
 
@@ -48,8 +49,9 @@ This writes `candidates.json` with:
 
 ### 3. Scan the web for anything not on arXiv
 
-Search the last 3 days for robot-control announcements from frontier-model labs and robotics companies,
-including blog posts, technical reports, model cards and launch posts. Check at least these:
+Search everything published since the last successful run
+(`git log -1 --grep='^daily:' --format=%cs`; at least the last 3 days, so a skipped or failed day isn't lost)
+for robot-control announcements from frontier-model labs and robotics companies, including blog posts, technical reports, model cards and launch posts. Check at least these:
 
 - **Frontier labs:** OpenAI, Anthropic, Google DeepMind (Gemini Robotics), xAI, Meta FAIR, Microsoft Research,
   Apple ML Research, NVIDIA (GR00T, Isaac, research blog), Alibaba Qwen, ByteDance Seed, DeepSeek, Moonshot.

@@ -42,6 +42,8 @@ def esc(s: str | None) -> str:
 
 def primary_url(e: dict) -> str:
     links = e.get("links", {})
+    if e.get("kind") in ("blog", "news") and links.get("post"):
+        return links["post"]  # an announcement's own page, not the repo it mentions
     for k, _ in LINK_ORDER:
         if links.get(k):
             return links[k]

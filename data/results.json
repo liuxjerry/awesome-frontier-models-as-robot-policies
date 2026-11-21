@@ -247,6 +247,15 @@
           "source": "aa-robotics"
         },
         {
+          "system": "Antigravity + Robotics plugin",
+          "model": "Gemini 4 Hydrogen",
+          "kind": "frontier: agentic",
+          "value": "58",
+          "setting": "not stated",
+          "measured_by": "Google (launch post; not yet on AA's own page)",
+          "source": "gemini-4-hydrogen"
+        },
+        {
           "system": "Antigravity",
           "model": "Gemini 4 Argon",
           "kind": "frontier: agentic",

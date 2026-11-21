@@ -226,6 +226,11 @@
       "date": "2026-11-21",
       "decision": "noted",
       "note": "venue recorded (IROS 2026)"
+    },
+    "url:https://developers.googleblog.com/gemini-hydrogen-for-robotics/": {
+      "date": "2026-11-21",
+      "decision": "added",
+      "note": "-> entry gemini-4-hydrogen (added by hand, outside first scan window)"
     }
   }
 }

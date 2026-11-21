@@ -2024,5 +2024,32 @@
     "summary": "Scales horizon from 1 to 10 subgoals in the same scene. The low-level policy alone hits 85.4% on single-subgoal tasks but 11.0% overall. GPT-Policy on GPT-6 Astra is best on every suite (62.0% overall), then PSP-Agent (40.1%), versus at most 29.6% for learned-policy orchestration.",
     "caveats": "Authors: 'the simulation pauses while a system computes'; tool-selection systems get ground-truth depth and camera calibration in sim; 'High-level VLM inference is slow'. GPT-Policy was not run on the real robots. Tabletop pick-and-place only.",
     "added": "2026-11-21"
+  },
+  {
+    "id": "gemini-4-hydrogen",
+    "name": "Gemini 4 Hydrogen",
+    "title": "Gemini 4 Hydrogen: a faster model for general purpose robotics",
+    "org": "Google DeepMind",
+    "authors": "Alex Gruenstein, Gabe Cohen, and the Gemini Robotics Team (blog)",
+    "date": "2026-11-17",
+    "kind": "blog",
+    "status": "post-only",
+    "section": "agentic",
+    "also": ["direct"],
+    "links": {
+      "post": "https://developers.googleblog.com/gemini-hydrogen-for-robotics/",
+      "code": "https://github.com/google-deepmind/robotics-antigravity-plugin"
+    },
+    "models": ["Gemini 4 Hydrogen (gemini-4-hydrogen)"],
+    "mode": "agentic-code",
+    "system1": "n/a",
+    "interface": "Plain-language goal + camera view; the model plans, writes and runs control code (Google Antigravity Robotics plugin, MuJoCo, Gemini API); can also drive arms directly from images. Low-level controller not described.",
+    "eval": "real",
+    "judged_by": null,
+    "trials": null,
+    "speed": {"latency": "'faster' (qualitative only)", "cost": "'lower cost per token' than Argon (no figure)"},
+    "summary": "A general-purpose fast Gemini 4 model that replaces Gemini Robotics ER 2 for embodied reasoning and ships a Robotics plugin for Google Antigravity (I2RT YAM, SO-ARM101, FR3 Duo, YAM Pro). On Artificial Analysis Robotics 0.1, 'Hydrogen scores 58', similar to Argon at a lower cost per token; a new arm is 'calibrated and ready for tasks in about 10 minutes'.",
+    "caveats": "Vendor blog; no success rates, trial counts or latency figures. The AA score is Google-reported. Antigravity requires a paid Google AI Pro or Ultra subscription.",
+    "added": "2026-11-21"
   }
 ]

@@ -55,6 +55,17 @@ def save(name, obj):
     (DATA / name).write_text(text + "\n", encoding="utf-8")
 
 
+def default_days() -> int:
+    """Days since the last successful daily run (+1), at least 3, so a skipped day is never lost."""
+    import subprocess
+    try:
+        last = subprocess.run(["git", "-C", str(ROOT), "log", "-1", "--grep=^daily:", "--format=%cs"],
+                              capture_output=True, text=True, timeout=10).stdout.strip()
+        return max(3, (dt.date.today() - dt.date.fromisoformat(last)).days + 1)
+    except Exception:  # noqa: BLE001  no git, no daily commit yet
+        return 3
+
+
 def get(url, accept_json=False, tries=3):
     headers = {"User-Agent": UA}
     if url.startswith("https://api.github.com/") and os.environ.get("GITHUB_TOKEN"):
@@ -148,7 +159,7 @@ def refresh_stars(related):
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--days", type=int, default=3)
+    ap.add_argument("--days", type=int, default=None, help="look-back window (default: since last daily run, min 3)")
     ap.add_argument("--out", default=str(ROOT / "candidates.json"))
     ap.add_argument("--refresh-stars", action="store_true")
     ap.add_argument("--stars-only", action="store_true", help="refresh related.json stars and exit (GitHub Action)")
@@ -183,6 +194,7 @@ def main() -> int:
         c = cand.setdefault(aid, {"id": aid, "sources": {}})
         c["sources"].setdefault(source, []).extend(detail if isinstance(detail, list) else [detail])
 
+    args.days = args.days or default_days()
     cutoff = (dt.date.today() - dt.timedelta(days=args.days)).isoformat()
     ok = 0
     for q in arxiv_watch.QUERIES:
