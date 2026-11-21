@@ -338,7 +338,7 @@
 
 <a id="faea"></a>
 - **[Demonstration-Free Robotic Control via LLM Agents](https://arxiv.org/abs/2601.20334)**
-  — · *Paper* · 2026-01-28 · `📝 preprint`  
+  — · *Paper* · 2026-01-28 · `📄 peer-reviewed` · 🏷️ IROS 2026  
   [[Paper](https://arxiv.org/abs/2601.20334)]  
   Frontier Agent as Embodied Agent: 84.9% LIBERO, 85.7% ManiSkill3, 96% MetaWorld, approaching VLAs trained on fewer than 100 demos per task, with zero demonstrations. One round of human feedback raises LIBERO to 88.2%.  
   <sub>**Model:** Claude Agent SDK (unmodified) · **Below it:** analytic (IK / waypoints / scripted) · **Interface:** Software-engineering agent loop applied unchanged to manipulation · **Eval:** sim · **Judged by:** benchmark checkers</sub>  
@@ -540,7 +540,7 @@
 
 <a id="efficient-vla-survey"></a>
 - **[A Survey on Efficient Vision-Language-Action Models](https://arxiv.org/abs/2510.24795)**
-  — · *Survey* · 2025-10-27 · `📝 preprint`  
+  — · *Survey* · 2025-10-27 · `📄 peer-reviewed` · 🏷️ IEEE TPAMI  
   [[Paper](https://arxiv.org/abs/2510.24795)]  
   Catalogs asynchronous decoupling (Fast ECoT, SmolVLA) and other speed techniques. These are the toolbox for closing the frontier-model latency gap.  
   <sub>↪ also in: [Surveys, Essays & Perspectives](#perspectives)</sub>
@@ -665,7 +665,7 @@
 
 <a id="hi-robot"></a>
 - **[Hi Robot: Open-Ended Instruction Following with Hierarchical Vision-Language-Action Models](https://arxiv.org/abs/2502.19417)**
-  Physical Intelligence · *Paper* · 2025-02-26 · `📝 preprint`  
+  Physical Intelligence · *Paper* · 2025-02-26 · `📄 peer-reviewed` · 🏷️ ICML 2025  
   [[Paper](https://arxiv.org/abs/2502.19417)] [[Post](https://www.pi.website/research/hirobot)]  
   Hierarchical VLA with a language interface between the reasoning and action levels.  
   <sub>**Below it:** jointly trained · **Interface:** High-level VLM emits language commands to a low-level VLA · **Eval:** real</sub>  
