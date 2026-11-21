@@ -16,6 +16,11 @@ in the loop. A human maintainer can follow them too. Schema and editorial rules 
   as stated, leave it out.
 - **Never delete or rewrite an existing entry's summary.** You may update `status`, `venue`, `links` and
   `caveats`, and append a sentence to `summary` when a new version adds results.
+- **A blocked source is not a reason to stop.** If arXiv, Semantic Scholar or GitHub is unreachable,
+  `collect.py` says so under `source_status` and carries on with whatever is reachable. Do the same: run the web
+  scan, triage what you have (open a paper by its arXiv URL with web fetch if its metadata is missing), and push.
+  `validate.py --arxiv` downgrades an unreachable arXiv API to a warning, and the GitHub Action re-runs the
+  arXiv title check on every push. Name the unreachable sources in the final report.
 - **Limits per run:** up to 60 candidates triaged and up to 12 entries added. Anything left over stays unseen
   and comes back tomorrow.
 
@@ -30,8 +35,10 @@ git pull --rebase
 ### 2. Collect
 
 ```bash
-python3 scripts/collect.py --days 3 --refresh-stars
+python3 scripts/collect.py --days 3
 ```
+
+(Star counts are refreshed by the GitHub Action, not here.)
 
 This writes `candidates.json` with:
 
@@ -132,7 +139,7 @@ git commit -m "daily: +N entries, M updates, K screened (YYYY-MM-DD)"
 git push
 ```
 
-- **Validation errors:** fix them and re-run. If an entry still can't be made valid, remove it and mark it
+- **Validation errors** (lines starting with `ERROR`; `WARN` lines don't block): fix them and re-run. If an entry still can't be made valid, remove it and mark it
   `rejected` with note `borderline: failed validation`. Never push data that fails validation.
 - **Rejected push:** run `git pull --rebase`, rebuild the README, push again.
 - **End of run:** finish with a short report: what was added, what was updated, how many were screened, and

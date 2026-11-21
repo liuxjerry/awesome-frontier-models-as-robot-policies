@@ -41,7 +41,7 @@ BOOST = ["frontier", "agent", "harness", "zero-shot", "system 1", "system 0", "g
 
 
 def search(q: str, max_results: int = 50):
-    url = ("http://export.arxiv.org/api/query?" + urllib.parse.urlencode(
+    url = ("https://export.arxiv.org/api/query?" + urllib.parse.urlencode(
         {"search_query": q, "sortBy": "submittedDate", "sortOrder": "descending", "max_results": max_results}))
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     root = ET.fromstring(urllib.request.urlopen(req, timeout=90).read())

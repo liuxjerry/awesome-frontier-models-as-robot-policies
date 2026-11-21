@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import re
 import sys
 import time
@@ -55,9 +56,12 @@ def save(name, obj):
 
 
 def get(url, accept_json=False, tries=3):
+    headers = {"User-Agent": UA}
+    if url.startswith("https://api.github.com/") and os.environ.get("GITHUB_TOKEN"):
+        headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
     for i in range(tries):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            req = urllib.request.Request(url, headers=headers)
             raw = urllib.request.urlopen(req, timeout=60).read()
             return json.loads(raw) if accept_json else raw.decode("utf-8", "replace")
         except urllib.error.HTTPError as ex:
@@ -72,7 +76,7 @@ def arxiv_meta(ids):
     out = {}
     for i in range(0, len(ids), 50):
         chunk = ids[i:i + 50]
-        url = "http://export.arxiv.org/api/query?" + urllib.parse.urlencode(
+        url = "https://export.arxiv.org/api/query?" + urllib.parse.urlencode(
             {"id_list": ",".join(chunk), "max_results": len(chunk)})
         root = ET.fromstring(get(url))
         for e in root.findall("a:entry", NS):
@@ -125,12 +129,19 @@ def citations(entries):
 
 
 def refresh_stars(related):
+    """Update stars / last push. Leaves the file untouched unless every repo was read."""
+    fresh = {}
     for r in related["lists"]:
         try:
             d = get(f'https://api.github.com/repos/{r["name"]}', accept_json=True)
-            r["stars"], r["pushed"] = d["stargazers_count"], d["pushed_at"][:10]
+            fresh[r["name"]] = (d["stargazers_count"], d["pushed_at"][:10])
         except Exception as ex:  # noqa: BLE001
             print(f"  stars {r['name']}: {ex}", file=sys.stderr)
+    if len(fresh) < len(related["lists"]):
+        print("  stars: not all repos readable; related.json left unchanged", file=sys.stderr)
+        return
+    for r in related["lists"]:
+        r["stars"], r["pushed"] = fresh[r["name"]]
     related["_snapshot"] = f"Stars and last push read from the GitHub API on {dt.date.today().isoformat()}."
     save("related.json", related)
 
@@ -140,6 +151,7 @@ def main() -> int:
     ap.add_argument("--days", type=int, default=3)
     ap.add_argument("--out", default=str(ROOT / "candidates.json"))
     ap.add_argument("--refresh-stars", action="store_true")
+    ap.add_argument("--stars-only", action="store_true", help="refresh related.json stars and exit (GitHub Action)")
     ap.add_argument("--baseline", action="store_true")
     args = ap.parse_args()
 
@@ -157,8 +169,11 @@ def main() -> int:
         print(f"baseline: marked {n} upstream arXiv ids as seen")
         return 0
 
-    if args.refresh_stars:
+    if args.refresh_stars or args.stars_only:
         refresh_stars(related)
+        if args.stars_only:
+            return 0
+    status = {}
 
     cand: dict[str, dict] = {}
 
@@ -169,25 +184,38 @@ def main() -> int:
         c["sources"].setdefault(source, []).extend(detail if isinstance(detail, list) else [detail])
 
     cutoff = (dt.date.today() - dt.timedelta(days=args.days)).isoformat()
+    ok = 0
     for q in arxiv_watch.QUERIES:
         try:
             for p in arxiv_watch.search(q):
                 if p["date"] >= cutoff:
                     add(p["id"], "arxiv-search", q)
+            ok += 1
         except Exception as ex:  # noqa: BLE001
             print(f"  arxiv query failed: {q}: {ex}", file=sys.stderr)
+            if ok == 0 and q == arxiv_watch.QUERIES[1]:
+                break  # first two failed: the host is unreachable, stop hammering it
         time.sleep(3)
-    for aid, who in citations(entries).items():
+    status["arxiv-search"] = f"{ok}/{len(arxiv_watch.QUERIES)} queries ok"
+    cites = citations(entries)
+    status["cites"] = f"{len(cites)} citing papers read" if cites else "unreachable or empty"
+    for aid, who in cites.items():
         add(aid, "cites", who)
-    for aid, lists in upstream_ids(related).items():
+    up = upstream_ids(related)
+    status["related-list"] = f"{len(up)} arXiv ids read" if up else "unreachable"
+    for aid, lists in up.items():
         add(aid, "related-list", lists)
 
-    meta = arxiv_meta(sorted(cand)) if cand else {}
+    try:
+        meta = arxiv_meta(sorted(cand)) if cand else {}
+        status["arxiv-metadata"] = "ok"
+    except Exception as ex:  # noqa: BLE001
+        meta = {}
+        status["arxiv-metadata"] = f"unreachable ({ex}); papers listed by id only, open them to triage"
     papers = []
     for aid, c in cand.items():
-        m = meta.get(aid)
-        if not m:
-            continue
+        m = meta.get(aid) or {"id": aid, "title": "", "date": "", "abstract": "",
+                              "url": f"https://arxiv.org/abs/{aid}"}
         text = (m["title"] + " " + m["abstract"]).lower()
         m.update(c, score=sum(text.count(b) for b in arxiv_watch.BOOST) + 3 * len(c["sources"]))
         papers.append(m)
@@ -195,7 +223,12 @@ def main() -> int:
 
     updates = []
     pre = [e for e in entries if e.get("arxiv") and e.get("status") in ("preprint", "code")]
-    for aid, m in arxiv_meta([e["arxiv"] for e in pre]).items():
+    try:
+        pre_meta = arxiv_meta([e["arxiv"] for e in pre])
+        status["venue-updates"] = "ok"
+    except Exception as ex:  # noqa: BLE001
+        pre_meta, status["venue-updates"] = {}, f"unreachable ({ex})"
+    for aid, m in pre_meta.items():
         e = next(x for x in pre if x["arxiv"] == aid)
         hint = " ".join(filter(None, [m["journal_ref"], m["comment"]]))
         key = f"update:{aid}:{m['version']}"
@@ -203,9 +236,12 @@ def main() -> int:
             updates.append({"entry": e["id"], "arxiv": aid, "version": m["version"], "journal_ref": m["journal_ref"],
                             "comment": m["comment"], "seen_key": key})
 
-    out = {"generated": today, "window_days": args.days, "papers": papers, "entry_updates": updates}
+    out = {"generated": today, "window_days": args.days, "source_status": status,
+           "papers": papers, "entry_updates": updates}
     Path(args.out).write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"{len(papers)} new papers, {len(updates)} possible venue updates -> {args.out}")
+    for k, v in status.items():
+        print(f"  source {k}: {v}")
     for p in papers[:40]:
         print(f"  [{p['score']:>2}] {p['id']} {p['date']} {p['title'][:90]}  <{', '.join(p['sources'])}>")
     return 0
