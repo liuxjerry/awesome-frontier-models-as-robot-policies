@@ -10,7 +10,6 @@ on:
 
 permissions:
   contents: write
-  issues: write
 
 jobs:
   check:
@@ -47,12 +46,3 @@ jobs:
       - name: Link check (non-blocking)
         continue-on-error: true
         run: python3 scripts/validate.py --links
-      - name: arXiv watch -> triage issue
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python3 scripts/arxiv_watch.py --days 2 > candidates.md
-          if ! grep -q "_No new candidates._" candidates.md; then
-            gh issue create --title "arXiv candidates $(date -u +%F)" --body-file candidates.md --label triage \
-              || gh issue create --title "arXiv candidates $(date -u +%F)" --body-file candidates.md
-          fi

@@ -110,6 +110,7 @@ def build() -> str:
     entries = load("entries.json")
     results = load("results.json")
     related = load("related.json")
+    changelog = load("changelog.json") if (DATA / "changelog.json").exists() else []
     by_id = {e["id"]: e for e in entries}
     sections = tax["sections"]
     sec_titles = {s["id"]: s["title"] for s in sections}
@@ -164,9 +165,31 @@ def build() -> str:
       "Out: robot-specific VLAs with no frontier-model angle, and pure task planners with no closed-loop control.")
     w("")
 
+    # ---------- latest updates ----------
+    if changelog:
+        w('<a id="latest-updates"></a>')
+        w("## 📰 Latest updates")
+        w("")
+        for c in changelog[:7]:
+            parts = []
+            if c.get("added"):
+                parts.append("➕ " + ", ".join(f'[{esc(by_id[i]["name"])}](#{i})' for i in c["added"]))
+            if c.get("updated"):
+                parts.append("✏️ " + ", ".join(f'[{esc(by_id[i]["name"])}](#{i})' for i in c["updated"]))
+            if c.get("note"):
+                parts.append(esc(c["note"]))
+            if c.get("screened"):
+                parts.append(f'<sub>{c["screened"]} candidates screened</sub>')
+            w(f'- **{c["date"]}** · ' + " · ".join(parts))
+        if len(changelog) > 7:
+            w(f"- <sub>Older: [data/changelog.json](data/changelog.json)</sub>")
+        w("")
+
     # ---------- contents ----------
     w("## Contents")
     w("")
+    if changelog:
+        w("- [📰 Latest updates](#latest-updates)")
     w("- [🏁 Milestones](#milestones)")
     w("- [📊 Leaderboards: who measured what](#leaderboards)")
     w("- [🗂️ At a glance: what sits below the frontier model?](#at-a-glance)")
@@ -282,8 +305,12 @@ def build() -> str:
       "[`scripts/build_readme.py`](scripts/build_readme.py). Don't edit the README by hand.")
     w("- **Verified.** [`scripts/validate.py`](scripts/validate.py) checks the schema, checks every arXiv ID against the "
       "arXiv API title (`--arxiv`), and checks that links resolve (`--links`).")
-    w("- **Daily.** A GitHub Action re-validates links and runs [`scripts/arxiv_watch.py`](scripts/arxiv_watch.py), which "
-      "posts new candidate papers to an issue for **human** triage. Nothing is auto-added.")
+    w("- **Daily, automated.** A scheduled Claude Code agent runs [`scripts/collect.py`](scripts/collect.py) (arXiv search, "
+      "papers citing the anchor papers, new additions to the related lists, venue updates) and scans lab blogs and "
+      "announcements, triages every candidate against the scope, edits the data, validates it, and pushes. "
+      "Its instructions are in [MAINTAINING.md](MAINTAINING.md); every decision, including rejections, is recorded in "
+      "[`data/seen.json`](data/seen.json) and [`data/changelog.json`](data/changelog.json). "
+      "A GitHub Action re-validates every push and checks links daily. Spot an error? Open an issue; corrections win.")
     w("- **Editorial rules** (adapted from benchflow-ai/awesome-embodied-agents): numbers are quoted verbatim from the source; "
       "every result row says who measured it; sim vs real, trial counts and the success judge are recorded; "
       "authors' own stated limitations go in the caveats.")

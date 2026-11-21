@@ -41,7 +41,8 @@ success criterion.
   "speed": {"latency": "…", "cost": "…"},
   "summary": "1–3 sentences. Numbers quoted verbatim from the source.",
   "caveats": "Limits the authors state, plus known critiques.",
-  "milestone": "Optional: one line on why this is a turning point."
+  "milestone": "Optional: one line on why this is a turning point.",
+  "added": "YYYY-MM-DD"               // the day the entry joined the list
 }
 ```
 
@@ -55,6 +56,8 @@ python3 scripts/build_readme.py
 ```
 
 4. Open a PR with the regenerated README.
+
+The list is also maintained daily by a scheduled agent that follows [MAINTAINING.md](MAINTAINING.md).
 
 ## Editorial rules
 

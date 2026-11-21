@@ -54,6 +54,8 @@ def check_schema(entries, tax, results):
         if e.get("id") in seen:
             errors.append(f"{where}: duplicate id")
         seen.add(e.get("id"))
+        if e.get("added") and not re.match(r"^\d{4}-\d{2}-\d{2}$", e["added"]):
+            errors.append(f"{where}: added must be YYYY-MM-DD")
         if e.get("date") and not DATE_RE.match(e["date"]):
             errors.append(f"{where}: date must be YYYY, YYYY-MM or YYYY-MM-DD")
         for field in ("kind", "status", "mode", "system1"):
@@ -154,6 +156,14 @@ def main() -> int:
     args = ap.parse_args()
     entries, tax, results = load("entries.json"), load("taxonomy.json"), load("results.json")
     errors, warnings = check_schema(entries, tax, results)
+    ids = {e["id"] for e in entries}
+    if (DATA / "changelog.json").exists():
+        for c in load("changelog.json"):
+            if not re.match(r"^\d{4}-\d{2}-\d{2}$", c.get("date", "")):
+                errors.append(f"changelog: bad date {c.get('date')!r}")
+            for i in c.get("added", []) + c.get("updated", []):
+                if i not in ids:
+                    errors.append(f"changelog {c.get('date')}: unknown entry id '{i}'")
     if args.arxiv:
         errors += check_arxiv(entries)
     if args.links:
