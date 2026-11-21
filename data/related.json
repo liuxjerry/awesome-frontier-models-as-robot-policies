@@ -4,7 +4,7 @@
     {
       "name": "kairunwen/Awesome-Robot-Use-Agent",
       "url": "https://github.com/kairunwen/Awesome-Robot-Use-Agent",
-      "stars": 205,
+      "stars": 206,
       "pushed": "2026-11-17",
       "angle": "The largest robot-use-agent list: papers, projects, social demos, benchmarks, searchable site."
     },
@@ -25,7 +25,7 @@
     {
       "name": "showlab/Awesome-Multimodal-Embodied-Agent",
       "url": "https://github.com/showlab/Awesome-Multimodal-Embodied-Agent",
-      "stars": 293,
+      "stars": 294,
       "pushed": "2026-11-19",
       "angle": "Paper list behind Show Lab's computer-use → robot-use survey."
     },
@@ -81,7 +81,7 @@
     {
       "name": "SajjadPSavoji/awesome-weight-space-programming",
       "url": "https://github.com/SajjadPSavoji/awesome-weight-space-programming",
-      "stars": 8,
+      "stars": 9,
       "pushed": "2026-11-21",
       "angle": "Not robotics-specific; its data-driven, daily-rebuilt format inspired this list."
     }
