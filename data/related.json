@@ -1,17 +1,17 @@
 {
-  "_snapshot": "Stars and last push read from the GitHub API on 2026-11-21.",
+  "_snapshot": "Stars and last push read from the GitHub API on 2026-11-22.",
   "lists": [
     {
       "name": "kairunwen/Awesome-Robot-Use-Agent",
       "url": "https://github.com/kairunwen/Awesome-Robot-Use-Agent",
-      "stars": 206,
+      "stars": 209,
       "pushed": "2026-11-17",
       "angle": "The largest robot-use-agent list: papers, projects, social demos, benchmarks, searchable site."
     },
     {
       "name": "visitworld123/Awesome-Robot-Use-Agent",
       "url": "https://github.com/visitworld123/Awesome-Robot-Use-Agent",
-      "stars": 108,
+      "stars": 109,
       "pushed": "2026-11-17",
       "angle": "Robot-use agents, a dual-system section, self-evolving agents, runtimes."
     },
@@ -25,7 +25,7 @@
     {
       "name": "showlab/Awesome-Multimodal-Embodied-Agent",
       "url": "https://github.com/showlab/Awesome-Multimodal-Embodied-Agent",
-      "stars": 294,
+      "stars": 295,
       "pushed": "2026-11-19",
       "angle": "Paper list behind Show Lab's computer-use → robot-use survey."
     },
@@ -53,7 +53,7 @@
     {
       "name": "chonghanqin/Awesome-Agentic-Robots",
       "url": "https://github.com/chonghanqin/Awesome-Agentic-Robots",
-      "stars": 196,
+      "stars": 202,
       "pushed": "2026-11-20",
       "angle": "Companion list to the 'Towards Agentic Robots' survey."
     },
@@ -75,14 +75,14 @@
       "name": "zchoi/Awesome-Embodied-Robotics-and-Agent",
       "url": "https://github.com/zchoi/Awesome-Embodied-Robotics-and-Agent",
       "stars": 1922,
-      "pushed": "2026-11-14",
+      "pushed": "2026-11-22",
       "angle": "Broad embodied AI with LLMs."
     },
     {
       "name": "SajjadPSavoji/awesome-weight-space-programming",
       "url": "https://github.com/SajjadPSavoji/awesome-weight-space-programming",
       "stars": 9,
-      "pushed": "2026-11-21",
+      "pushed": "2026-11-22",
       "angle": "Not robotics-specific; its data-driven, daily-rebuilt format inspired this list."
     }
   ]
