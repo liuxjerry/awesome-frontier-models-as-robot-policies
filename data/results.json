@@ -166,6 +166,51 @@
           "setting": "official 50 eps/task",
           "measured_by": "Zhang et al.",
           "source": "robodojo-astra"
+        },
+        {
+          "system": "Claude Fable 5.2",
+          "model": "Claude Fable 5.2 (Max effort)",
+          "kind": "frontier: model launch",
+          "value": "64.9% avg SR",
+          "setting": "Anthropic's internal run, same harness for all models (undisclosed); highest available effort",
+          "measured_by": "Anthropic",
+          "source": "claude-fable-5-2"
+        },
+        {
+          "system": "Claude Opus 5.5",
+          "model": "Claude Opus 5.5 (Max effort)",
+          "kind": "frontier: model launch",
+          "value": "39.4% avg SR",
+          "setting": "Anthropic's internal run, same harness for all models (undisclosed); highest available effort",
+          "measured_by": "Anthropic",
+          "source": "claude-fable-5-2"
+        },
+        {
+          "system": "Gemini 4 Argon",
+          "model": "Gemini 4 Argon (High effort)",
+          "kind": "frontier: model launch",
+          "value": "34.2% avg SR",
+          "setting": "Anthropic's internal run, same harness for all models (undisclosed); highest available effort",
+          "measured_by": "Anthropic",
+          "source": "claude-fable-5-2"
+        },
+        {
+          "system": "GPT-6 Astra",
+          "model": "GPT-6 Astra (Max effort)",
+          "kind": "frontier: model launch",
+          "value": "29.8% avg SR",
+          "setting": "Anthropic's internal run, same harness for all models (undisclosed); highest available effort",
+          "measured_by": "Anthropic",
+          "source": "claude-fable-5-2"
+        },
+        {
+          "system": "UniCraft (frozen skills)",
+          "model": "GPT-6 Astra (high effort, Codex harness)",
+          "kind": "frontier: self-improving code",
+          "value": "54.8% SR (115/210)",
+          "setting": "zero-shot transfer of skills learned on other benchmarks; seed and layout 0, 42 tasks × 5 rollouts",
+          "measured_by": "Wang et al. (UniCraft)",
+          "source": "unicraft"
         }
       ],
       "note": "The Astra direct-policy entry ranked above all 40 public policies at the time. See Critiques for leaderboard entries that did not survive retesting."
@@ -219,6 +264,24 @@
           "setting": "new task in familiar scene (π0.5: 0.75%)",
           "measured_by": "Tang et al.",
           "source": "pear-rurl"
+        },
+        {
+          "system": "UniCraft",
+          "model": "GPT-6 Astra (high effort, Codex harness)",
+          "kind": "frontier: self-improving code",
+          "value": "86.00%",
+          "setting": "pooled unseen scenarios and tasks after 3 learning epochs (X-VLA 96.00 in the same table)",
+          "measured_by": "Wang et al. (UniCraft)",
+          "source": "unicraft"
+        },
+        {
+          "system": "ScaleVLA",
+          "model": "DeepSeek-V4.1-Flash 552B (frozen) + action DiT",
+          "kind": "VLA with frontier backbone",
+          "value": "45.1%",
+          "setting": "mean of three perturbation settings, 500 episodes per setting; smaller backbones at most 31.3%",
+          "measured_by": "Yu et al. (ScaleVLA)",
+          "source": "scalevla"
         }
       ],
       "note": "Papers use different LIBERO-PRO conditions and subsets. Treat as indicative, not a single leaderboard."

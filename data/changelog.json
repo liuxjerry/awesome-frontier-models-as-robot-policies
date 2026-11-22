@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-11-22",
+    "added": [
+      "claude-fable-5-2",
+      "mind2act-world",
+      "unicraft",
+      "so101-bench",
+      "real2gym",
+      "bicicle",
+      "insight-steerable-vla",
+      "novaplan",
+      "step-stl",
+      "aquacap",
+      "scalevla",
+      "coenv-coex"
+    ],
+    "updated": [],
+    "screened": 75,
+    "note": "Anthropic reports Claude Fable 5.2 at 64.9% on RoboDojo Sim in its own runs, more than double GPT-6 Astra (29.8%)."
+  },
+  {
     "date": "2026-11-21",
     "added": [
       "agentrobocritic",
