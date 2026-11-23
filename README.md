@@ -6,7 +6,9 @@
 >
 > A curated, data-driven list of papers, reports, benchmarks and critiques on frontier LLMs/VLMs controlling robots directly, through code, or on top of learned low-level controllers. Every entry records **what sits below the frontier model**, **how success was judged**, and **how fast and expensive it is**.
 
-### The question in one picture
+<p align="center"><img src="assets/question-in-one-picture.jpg" width="100%" alt="The question in one picture. Left, classic dual-system VLA: System 2, an onboard VLM at about 1 to 10 Hz, passes a latent or subtask to System 1, a learned policy at 50 to 200 Hz, which drives System 0, joint and torque control. Right, frontier model as policy (2026): a cloud frontier model at about 0.05 to 0.5 Hz emits code, end-effector waypoints or skill calls to System 1, which is either a learned VLA or WAM, or nothing, above System 0: IK, tracker and reflexes."></p>
+
+<details><summary>Text version of the figure</summary>
 
 ```text
          classic dual-system VLA                      frontier model as policy (2026)       
@@ -18,6 +20,8 @@
  | System 0   joint / torque control    |      | System 0   IK / tracker / reflexes        |
  +--------------------------------------+      +-------------------------------------------+
 ```
+
+</details>
 
 **Scope.** In: a general-purpose model that was *not* trained for robotics acts as, or directly steers, the policy. Also in, as context: the dual-system VLAs being challenged, the benchmarks both sides are scored on, and critiques. Out: robot-specific VLAs with no frontier-model angle, and pure task planners with no closed-loop control.
 

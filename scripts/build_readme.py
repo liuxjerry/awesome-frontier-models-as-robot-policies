@@ -146,13 +146,22 @@ def build() -> str:
       "directly, through code, or on top of learned low-level controllers. Every entry records **what sits below the "
       "frontier model**, **how success was judged**, and **how fast and expensive it is**.")
     w("")
-    w("### The question in one picture")
+    # The figure (assets/) is the visual; the ASCII version stays below it, collapsed, as the text alternative
+    # for screen readers, search engines and plain-text viewers.
+    w('<p align="center"><img src="assets/question-in-one-picture.jpg" width="100%" alt="The question in one '
+      'picture. Left, classic dual-system VLA: System 2, an onboard VLM at about 1 to 10 Hz, passes a latent or '
+      'subtask to System 1, a learned policy at 50 to 200 Hz, which drives System 0, joint and torque control. '
+      'Right, frontier model as policy (2026): a cloud frontier model at about 0.05 to 0.5 Hz emits code, end-effector '
+      'waypoints or skill calls to System 1, which is either a learned VLA or WAM, or nothing, above System 0: IK, '
+      'tracker and reflexes."></p>')
     w("")
     left = ["System 2   VLM, ~1-10 Hz, onboard", "   | latent / subtask",
             "System 1   learned policy, 50-200 Hz", "   |", "System 0   joint / torque control"]
     right = ["Frontier model (cloud), ~0.05-0.5 Hz", "   | code / EEF waypoints / skill calls",
              "System 1?  learned VLA/WAM  -or-  nothing", "   |", "System 0   IK / tracker / reflexes"]
     lw, rw = max(map(len, left)) + 2, max(map(len, right)) + 2
+    w("<details><summary>Text version of the figure</summary>")
+    w("")
     w("```text")
     w(" " + "classic dual-system VLA".center(lw + 2) + "      " + "frontier model as policy (2026)".center(rw + 2))
     w(" +" + "-" * lw + "+      +" + "-" * rw + "+")
@@ -161,6 +170,8 @@ def build() -> str:
         w(f" | {a.ljust(lw - 1)}|{arrow}| {b.ljust(rw - 1)}|")
     w(" +" + "-" * lw + "+      +" + "-" * rw + "+")
     w("```")
+    w("")
+    w("</details>")
     w("")
     w("**Scope.** In: a general-purpose model that was *not* trained for robotics acts as, or directly steers, the policy. "
       "Also in, as context: the dual-system VLAs being challenged, the benchmarks both sides are scored on, and critiques. "
