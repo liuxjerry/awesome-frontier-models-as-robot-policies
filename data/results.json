@@ -77,6 +77,24 @@
           "setting": "5 seeds/task",
           "measured_by": "NVIDIA (Astranomy)",
           "source": "astranomy"
+        },
+        {
+          "system": "AMP1",
+          "model": "frontier agent",
+          "kind": "frontier: agentic",
+          "value": "86.0%",
+          "setting": "2579 / 3000, 25 eps/task; leaderboard Score 93.5",
+          "measured_by": "RoboLab leaderboard",
+          "source": "amp1"
+        },
+        {
+          "system": "π0.5",
+          "model": "VLA",
+          "kind": "learned System 1",
+          "value": "28.0%",
+          "setting": "336 / 1200, 10 eps/task; leaderboard Score 43.4",
+          "measured_by": "RoboLab leaderboard",
+          "source": "robolab"
         }
       ],
       "note": "π0.5 appears twice: 49.2% (leaderboard, cited by AMP1) vs 28.0% (Astranomy's own run). That 21-point gap on one benchmark is why every row says who measured it."

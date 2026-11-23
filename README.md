@@ -93,6 +93,8 @@
 | FLUX 3 Action | WAM | learned System 1 | **42.9%** | leaderboard number cited by AMP1 | RoboLab leaderboard (via AMP1) | [AMP1](#amp1) |
 | Cosmos3-Nano-Policy | WAM (DROID-finetuned) | learned System 1 | **36.8%** | 5 seeds/task | NVIDIA (Astranomy) | [Astranomy](#astranomy) |
 | π0.5 | VLA | learned System 1 | **28.0%** | 5 seeds/task | NVIDIA (Astranomy) | [Astranomy](#astranomy) |
+| AMP1 | frontier agent | frontier: agentic | **86.0%** | 2579 / 3000, 25 eps/task; leaderboard Score 93.5 | RoboLab leaderboard | [AMP1](#amp1) |
+| π0.5 | VLA | learned System 1 | **28.0%** | 336 / 1200, 10 eps/task; leaderboard Score 43.4 | RoboLab leaderboard | [RoboLab](#robolab) |
 
 > π0.5 appears twice: 49.2% (leaderboard, cited by AMP1) vs 28.0% (Astranomy's own run). That 21-point gap on one benchmark is why every row says who measured it.
 
