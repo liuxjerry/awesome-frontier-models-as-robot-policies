@@ -57,8 +57,23 @@ for robot-control announcements from frontier-model labs and robotics companies,
   Apple ML Research, NVIDIA (GR00T, Isaac, research blog), Alibaba Qwen, ByteDance Seed, DeepSeek, Moonshot.
 - **Robotics companies:** Physical Intelligence, Figure, 1X, Tesla Optimus, Boston Dynamics, Agility, Apptronik,
   Skild AI, Generalist AI, Dyna Robotics, Unitree, AgiBot, Galbot, Hugging Face LeRobot.
+- **Robot-use-agent startups:** Waddle Labs (waddlelabs.ai/writings), Dream Labs, and any new company that
+  appears in the leaderboards below or in the general searches.
+- **Evaluator leaderboards, every run:** compare each with the list's leaderboard tables in `data/results.json`.
+  A new row, or a changed score, is a candidate even when nothing else was published.
+  - Robocurve (robocurve.org): RoboDojo-RC Tier 1 → `robodojo-rc-tier1`.
+  - Artificial Analysis Robotics (artificialanalysis.ai/articles/aa-robotics) → `aa-robotics`.
+  - RoboLab and RoboDojo leaderboard pages, where they exist.
+
+  Leaderboard rows go in with `measured_by` set to the evaluator, and the setting must record any difference
+  in caps (calls, steps, time) between systems.
+- **Announcements made only on X / social media:** X posts can't be fetched. Search the system's name and find
+  the evaluator page, company page or news report that carries its claims. Cite the most primary of those.
+  Use `status: "post-only"` if a vendor or evaluator page confirms the claims, otherwise `"secondary"`.
+  Quote only numbers you could read on a page you opened.
 - **General searches**, e.g. `"frontier model" robot policy`, `"robot-use agent"`, `GPT robot control`,
-  `Claude robot`, `Gemini Robotics`, `agentic manipulation`, `VLA benchmark`, plus last week's news on
+  `Claude robot`, `Gemini Robotics`, `agentic manipulation`, `VLA benchmark`, `robot leaderboard`,
+  `robot agent startup launch`, plus last week's news on
   robot foundation models.
 
 For each relevant hit that isn't already in `data/entries.json` or `data/seen.json`, open the primary source:

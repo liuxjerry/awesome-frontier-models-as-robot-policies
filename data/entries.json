@@ -2350,5 +2350,60 @@
     "summary": "On five real multi-arm tasks with up to three heterogeneous robots, 'CoEx reaches 70% average success, against 50% for the same system without the code agent'; a π0.5 policy fine-tuned on agent-generated rollouts is also reported.",
     "caveats": "Authors: 'Real-world execution is open-loop replay, so residual pose offsets remain a main source of failure'; programs query privileged simulator state; rigid objects, fixed bases, static scenes; evaluation is modest in scale.",
     "added": "2026-11-22"
+  },
+  {
+    "id": "robodojo-rc-tier1",
+    "name": "RoboDojo-RC Tier 1",
+    "title": "RoboDojo-RC Tier 1: real-world leaderboard of frontier models, agents and VLAs (Robocurve)",
+    "org": "Robocurve",
+    "authors": "Sravanthi Machcha, Achu Menon, Sabrina Zou, Tzu Kit Chan, Jay Chooi",
+    "date": "2026-09-23",
+    "kind": "benchmark",
+    "status": "post-only",
+    "section": "benchmarks",
+    "also": ["direct"],
+    "links": {
+      "post": "https://robocurve.org/opus-5-5-robodojo-rc-tier-1/",
+      "data": "https://robocurve.org/",
+      "code": "https://github.com/robocurve/inspect-robots"
+    },
+    "models": ["GPT-6.2 Astra", "Claude Fable 5.2", "Gemini 4 Carbon", "Gemini 4 Argon", "Claude Opus 5.5", "GPT-6.1 Sol", "Waddle-1", "Dream-1", "MolmoAct2", "GR00T N1.7"],
+    "mode": "benchmark",
+    "system1": "analytic",
+    "interface": "Inspect Robots agent policy: absolute end-effector poses through tools at 10 Hz; top + two wrist cameras and robot state; 40 model calls for LLMs, 3,600 control steps for VLAs",
+    "eval": "real",
+    "judged_by": "human grader with a per-task progress rubric (not blinded)",
+    "trials": "6 tasks × 20 trials = 120 attempts per configuration",
+    "speed": {"latency": "0.8–32.1 min per attempt across systems", "cost": "$0.05–$10.51 per attempt"},
+    "summary": "Six adapted RoboDojo real-world tasks on bimanual I2RT YAM arms, with frontier LLMs, a full agent system and learned VLAs/WAMs scored on one rig. Leaderboard: Waddle-1 81.4%, GPT-6.2 Astra (high) 65.7%, Dream-1 59.5%, Fable 5.2 (high) 57.5%, Gemini 4 Carbon (high) 54.5% … MolmoAct2 19.5%, GR00T N1.7 9.5%. Also reports cost and wall-clock time per attempt.",
+    "caveats": "Graders knew which model was running ('grading is open to unconscious bias'); tasks are 'the six easiest tasks with the highest scores' on GPT-6 Astra; objects reset by hand; not comparable with original RoboDojo. Call caps differ by system type.",
+    "added": "2026-11-23"
+  },
+  {
+    "id": "waddle-1",
+    "name": "Waddle-1",
+    "title": "Waddle-1: a robot-use agent that directs local lower-level policies",
+    "org": "Waddle Labs",
+    "authors": "Hanming Ye, Yiding Song",
+    "date": "2026-11-20",
+    "kind": "project",
+    "status": "post-only",
+    "section": "orchestrated",
+    "also": ["agentic"],
+    "links": {
+      "project": "https://waddlelabs.ai/research/introducing-waddle",
+      "data": "https://robocurve.org/"
+    },
+    "models": ["a set of cloud LLMs (not named)"],
+    "mode": "orchestrates-learned-policy",
+    "system1": "frozen-learned",
+    "interface": "Cloud LLMs decompose the goal, write control code and call lower-level policies that run locally on the robot; skills go into a shared library",
+    "eval": "real",
+    "judged_by": "Robocurve human grader (not blinded)",
+    "trials": "120 attempts (RoboDojo-RC Tier 1)",
+    "speed": {"latency": "7.4 min per attempt (Robocurve)", "cost": "$2.46 per attempt at a planned $20/hr"},
+    "summary": "Announced on X as Waddle Labs' first robot-use agent, controlling bimanual robots zero-shot on unseen tasks. Robocurve measures it at 81.4% on RoboDojo-RC Tier 1, the top score, ahead of GPT-6.2 Astra (65.7%) and the Dream-1 world action model (59.5%). A System 2 over System 1 design: 'agents that combine the capability of reasoning models and the efficiency of reactive policies'.",
+    "caveats": "Robocurve: a 'full system' with 'one chat per task, a 10-minute limit and no call cap', while single LLMs get 40 model calls, so not like-for-like. LLMs and the lower-level policy type are not disclosed; no paper. Preview API by request.",
+    "added": "2026-11-23"
   }
 ]

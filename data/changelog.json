@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-23",
+    "added": [
+      "waddle-1",
+      "robodojo-rc-tier1"
+    ],
+    "updated": [],
+    "screened": 2,
+    "note": "Waddle-1, a robot-use agent directing local lower-level policies, tops Robocurve's RoboDojo-RC Tier 1 at 81.4% vs 65.7% for GPT-6.2 Astra (not like-for-like: no call cap)."
+  },
+  {
     "date": "2026-11-22",
     "added": [
       "claude-fable-5-2",

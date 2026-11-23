@@ -542,6 +542,11 @@
       "decision": "rejected",
       "note": "navigation model trained for robotics"
     },
+    "url:https://robocurve.org/": {
+      "date": "2026-11-23",
+      "decision": "added",
+      "note": "-> entries robodojo-rc-tier1, waddle-1 (added by hand)"
+    },
     "url:https://roboticsandautomationnews.com/2026/11/05/agibot-unveils-go-3-preview-and-takes-top-spot-on-three-embodied-ai-benchmarks/106711/": {
       "date": "2026-11-22",
       "decision": "rejected",
@@ -556,6 +561,11 @@
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "no robotics content"
+    },
+    "url:https://waddlelabs.ai/research/introducing-waddle": {
+      "date": "2026-11-23",
+      "decision": "added",
+      "note": "-> entry waddle-1"
     },
     "url:https://www.anthropic.com/claude-fable-and-mythos-5-2": {
       "date": "2026-11-22",

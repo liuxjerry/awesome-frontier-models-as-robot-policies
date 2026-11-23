@@ -349,6 +349,158 @@
       "note": "Independent third party, but no VLA baseline."
     },
     {
+      "id": "robodojo-rc-tier1",
+      "title": "RoboDojo-RC Tier 1 (real bimanual YAM, 6 tasks × 20 trials, human-graded)",
+      "metric": "mean progress score",
+      "rows": [
+        {
+          "system": "Waddle-1",
+          "model": "undisclosed cloud LLMs + local policies",
+          "kind": "frontier over System 1",
+          "value": "81.4%",
+          "setting": "full system, no call cap, 10-min limit · $2.46 · 7.4 min",
+          "measured_by": "Robocurve",
+          "source": "waddle-1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "GPT-6.2 Astra (high, ultrafast)",
+          "kind": "frontier: direct",
+          "value": "65.7%",
+          "setting": "40 calls · $10.51 · 2.7 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Dream-1 (Dream Labs)",
+          "model": "world action model (hosted API)",
+          "kind": "learned System 1",
+          "value": "59.5%",
+          "setting": "3,600 steps · $0.15 · 1.5 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "Claude Fable 5.2 (high, fast)",
+          "kind": "frontier: direct",
+          "value": "57.5%",
+          "setting": "40 calls · $5.93 · 4.5 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "Gemini 4 Carbon (high)",
+          "kind": "frontier: direct",
+          "value": "54.5%",
+          "setting": "40 calls · $2.16 · 32.1 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "Gemini 4 Argon (high, priority)",
+          "kind": "frontier: direct",
+          "value": "48.2%",
+          "setting": "40 calls · $2.34 · 20.5 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "GPT-6 Astra (high, fast)",
+          "kind": "frontier: direct",
+          "value": "42.5%",
+          "setting": "40 calls · $3.48 · 4.0 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "GPT-6.1 Sol (high, fast)",
+          "kind": "frontier: direct",
+          "value": "41.7%",
+          "setting": "40 calls · $2.15 · 4.0 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "Claude Opus 5.5 (high, fast)",
+          "kind": "frontier: direct",
+          "value": "38.2%",
+          "setting": "40 calls · $2.23 · 3.1 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "GPT-6 Astra (medium)",
+          "kind": "frontier: direct",
+          "value": "36.7%",
+          "setting": "40 calls · $1.14 · 4.2 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "Gemini 3.8 Flash (high)",
+          "kind": "frontier: direct",
+          "value": "36.2%",
+          "setting": "40 calls · $0.66 · 7.2 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "Claude Opus 5.5 (medium)",
+          "kind": "frontier: direct",
+          "value": "36.0%",
+          "setting": "40 calls · $0.90 · 4.5 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "GPT-6 Sol (high, fast)",
+          "kind": "frontier: direct",
+          "value": "22.0%",
+          "setting": "40 calls · $0.95 · 3.7 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "MolmoAct2",
+          "model": "open VLA",
+          "kind": "learned System 1",
+          "value": "19.5%",
+          "setting": "3,600 steps · $0.07 (GPU rental) · 0.8 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Inspect Robots agent",
+          "model": "GPT-5.6 Sol (high, fast)",
+          "kind": "frontier: direct",
+          "value": "14.9%",
+          "setting": "40 calls · $1.77 · 3.6 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "GR00T N1.7",
+          "model": "open VLA",
+          "kind": "learned System 1",
+          "value": "9.5%",
+          "setting": "3,600 steps · $0.05 (GPU rental) · 0.9 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        }
+      ],
+      "note": "Frontier LLMs, a full agent system and learned VLAs/WAMs on one rig, all measured by Robocurve. Setting = call or step cap · cost per attempt · wall-clock per attempt. Graders were not blinded, and Waddle-1 ran with no call cap, so the top row is not like-for-like."
+    },
+    {
       "id": "libero-10-direct",
       "title": "LIBERO-10 (direct EEF control via tool calls)",
       "metric": "success rate",
