@@ -282,6 +282,33 @@
           "setting": "mean of three perturbation settings, 500 episodes per setting; smaller backbones at most 31.3%",
           "measured_by": "Yu et al. (ScaleVLA)",
           "source": "scalevla"
+        },
+        {
+          "system": "SCOPE",
+          "model": "GLM-5.3-Flash",
+          "kind": "frontier: self-improving code",
+          "value": "80.66%",
+          "setting": "6 Object/Goal/Spatial Pos & Task settings, mean of 3 runs",
+          "measured_by": "Shu et al. (SCOPE)",
+          "source": "scope-program-edits"
+        },
+        {
+          "system": "SPARK",
+          "model": "Qwen3.8-27B (4-bit, open)",
+          "kind": "open model: agentic",
+          "value": "75.1%",
+          "setting": "6 Object/Goal/Spatial Pos & Task settings, 50 eps/task, no practice; benchmark success check read to trigger retries (67.5% without)",
+          "measured_by": "Grant et al. (SPARK)",
+          "source": "spark-bt"
+        },
+        {
+          "system": "Recursia (frozen stack)",
+          "model": "coding agent (not specified for sim)",
+          "kind": "frontier: self-improving code",
+          "value": "28.4% Pos · 53.4% Task",
+          "setting": "LIBERO-Pro Long only, 10 tasks × 50 seeds per axis, zero-shot transfer",
+          "measured_by": "Chen et al. (Recursia)",
+          "source": "recursia"
         }
       ],
       "note": "Papers use different LIBERO-PRO conditions and subsets. Treat as indicative, not a single leaderboard."
@@ -647,6 +674,24 @@
           "setting": "SO-ARM101, 3 tasks × 10; FastWAM alone 30.0%",
           "measured_by": "Cen et al.",
           "source": "reasoning-on-call"
+        },
+        {
+          "system": "SCOPE (frozen programs)",
+          "model": "GLM-5.3-Flash",
+          "kind": "frontier: self-improving code",
+          "value": "40 / 60",
+          "setting": "Quanta X2, 3 tasks × 20 held-out placements; ASPIRE 24 / 60",
+          "measured_by": "Shu et al. (SCOPE)",
+          "source": "scope-program-edits"
+        },
+        {
+          "system": "HuGo",
+          "model": "gpt-5.4 over frozen whole-body policy",
+          "kind": "frontier over System 1",
+          "value": "93.3% PBT · 66.7% LBX",
+          "setting": "Unitree G1, best policy per task, zero-shot sim-to-real, 15 trials each",
+          "measured_by": "Choi et al. (HuGo)",
+          "source": "hugo"
         }
       ],
       "note": null
