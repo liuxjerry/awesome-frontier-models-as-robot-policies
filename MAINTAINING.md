@@ -59,18 +59,26 @@ for robot-control announcements from frontier-model labs and robotics companies,
   Skild AI, Generalist AI, Dyna Robotics, Unitree, AgiBot, Galbot, Hugging Face LeRobot.
 - **Robot-use-agent startups:** Waddle Labs (waddlelabs.ai/writings), Dream Labs, and any new company that
   appears in the leaderboards below or in the general searches.
-- **Evaluator leaderboards, every run:** compare each with the list's leaderboard tables in `data/results.json`.
-  A new row, or a changed score, is a candidate even when nothing else was published.
+- **Evaluator leaderboards, every run, no exceptions.** This is how the list catches startups and evaluators,
+  which often announce only on X (Waddle-1 was missed that way). Open each page directly, even when the general
+  searches turned up nothing:
   - Robocurve (robocurve.org): RoboDojo-RC Tier 1 → `robodojo-rc-tier1`.
   - Artificial Analysis Robotics (artificialanalysis.ai/articles/aa-robotics) → `aa-robotics`.
   - RoboLab and RoboDojo leaderboard pages, where they exist.
 
-  Leaderboard rows go in with `measured_by` set to the evaluator, and the setting must record any difference
-  in caps (calls, steps, time) between systems.
-- **Announcements made only on X / social media:** X posts can't be fetched. Search the system's name and find
-  the evaluator page, company page or news report that carries its claims. Cite the most primary of those.
-  Use `status: "post-only"` if a vendor or evaluator page confirms the claims, otherwise `"secondary"`.
-  Quote only numbers you could read on a page you opened.
+  For each page:
+  1. Compare every row with the matching table in `data/results.json`. A row that's missing, or whose
+     score, cost or time changed, is a candidate.
+  2. Copy the evaluator's numbers exactly, set `measured_by` to the evaluator, and record any difference in
+     caps (calls, steps, time) between systems in `setting`.
+  3. A system that's new to the list (a startup's agent, a new model family) also gets its own entry. Find its
+     company page or write-up and cite it alongside the leaderboard. Use `status: "post-only"` when the
+     evaluator's or vendor's page confirms the claims, otherwise `"secondary"`. Add the company to the
+     startup list above in the run report so a human can make that permanent.
+  4. Update the benchmark's table `note` when the top of the board changes.
+- **Do not search X / Twitter.** X pages can't be opened, and its search index misses small accounts and runs
+  weeks behind. A better source is pending. Announcements made only on X reach the list through the
+  evaluator leaderboards and company pages above.
 - **General searches**, e.g. `"frontier model" robot policy`, `"robot-use agent"`, `GPT robot control`,
   `Claude robot`, `Gemini Robotics`, `agentic manipulation`, `VLA benchmark`, `robot leaderboard`,
   `robot agent startup launch`, plus last week's news on
