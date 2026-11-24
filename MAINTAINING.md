@@ -15,7 +15,8 @@ in the loop. A human maintainer can follow them too. Schema and editorial rules 
   If the source doesn't say something, leave the field `null` or out. When unsure whether a number is reported
   as stated, leave it out.
 - **Never delete or rewrite an existing entry's summary.** You may update `status`, `venue`, `links` and
-  `caveats`, and append a sentence to `summary` when a new version adds results.
+  `caveats`, and append a sentence to `summary` when a new version adds results. `milestone` may be added,
+  revised or removed on any entry, but only through the milestone review (step 6).
 - **A blocked source is not a reason to stop.** If arXiv, Semantic Scholar or GitHub is unreachable,
   `collect.py` says so under `source_status` and carries on with whatever is reachable. Do the same: run the web
   scan, triage what you have (open a paper by its arXiv URL with web fetch if its metadata is missing), and push.
@@ -138,24 +139,77 @@ Keep the reason to one short phrase. A borderline case goes in as `rejected` wit
   AA-Robotics, LIBERO-10, real-world), add a row with an exact `value`, `setting` and `measured_by`. Don't create
   a new benchmark table for a single paper. Row order doesn't matter in tables marked `"sort": "desc"`; the README
   builder ranks them.
-- `milestone`: only for a clear first, e.g. the first frontier model to beat the best VLA on a shared benchmark. Most
-  days, none.
+- Leave `milestone` out here; step 6 decides it.
 - For `entry_updates`: when the comment or journal-ref really says the paper was accepted, set
   `status: "peer-reviewed"` and `venue`, then mark the update `noted`.
 
-### 6. Changelog
+### 6. Milestone review (every run)
+
+The 🏁 Milestones table is the list's timeline of turning points on its question: *can a frontier model be the
+robot policy, and what is left for System 1?* Review it every run, even on days with nothing new.
+
+**What to review:**
+
+1. Every entry added or updated in this run, and every leaderboard row that changed in step 3.
+2. Every existing milestone that today's items touch: the same benchmark, the same model or harness, or the same
+   claim of a "first". Read those milestones as they stand and ask whether each is still true.
+
+**A new milestone must pass all four tests:**
+
+1. **Turning point.** It changes the answer to the list's question, or what the field has to measure. A new
+   record isn't enough on its own. It qualifies when it crosses a line. For example:
+   - The first frontier model to beat the best VLA/WAM on a shared benchmark, or to do so in the real world.
+   - The first evidence that something other than the model explains a jump: harness, tools, practice, memory or
+     compute budget.
+   - The first time System 1 turns out unnecessary, or necessary, for a class of tasks.
+   - A benchmark saturated or retired.
+   - A retest that overturns an earlier headline.
+2. **Like-for-like evidence.** One of:
+   - Two numbers on the same benchmark from the same evaluator.
+   - The authors' own controlled ablation.
+   - A benchmark run by a third party.
+
+   The numbers come from a source opened in this run. A vendor claim with no comparison does not qualify.
+3. **Not already covered.** Read the whole Milestones table first. If an earlier entry already made the point,
+   no new milestone. If the new item makes an existing "first" false (an earlier work did it first, or a retest
+   overturns it), that is a revision, below.
+4. **Checkable in one sentence.** You can write it as what changed plus the evidence, with numbers.
+
+**Writing it:** one sentence, at most about 35 words: what changed, then the evidence that shows it. No hype
+words (breakthrough, revolutionary, game-changing). Model on:
+
+> The top real-world RoboDojo-RC score (97%) came from swapping the harness, not the model: the same GPT-6.2
+> Astra had scored 65.7% under the benchmark's own harness.
+
+**Revising an existing milestone:**
+
+- When a "first" is no longer true, rewrite it so it is true, e.g. "Among the first …" or "First in the real
+  world …", or move the milestone to the earlier work.
+- Remove a milestone only when its evidence was retracted or overturned. Say why in the caveats of the entry that
+  lost it.
+- Never change a milestone just to reword it.
+
+**Limits:** at most 2 milestone changes per run, counting additions, revisions and removals. Most days, none.
+Record every change in the changelog (step 7). Name revisions and removals in the final report so a human sees
+them.
+
+### 7. Changelog
 
 If anything was added or updated, put today's record at the **top** of `data/changelog.json`:
 
 ```json
 {"date": "YYYY-MM-DD", "added": ["entry-id", "..."], "updated": ["entry-id"], "screened": 37,
+ "milestones": [{"id": "entry-id", "change": "added", "why": "first like-for-like harness-vs-model result"}],
  "note": "One plain sentence on the most important new item, or empty."}
 ```
 
-`screened` = number of candidates triaged this run. If nothing was added or updated, skip the changelog.
+- `screened` = number of candidates triaged this run.
+- `milestones` lists every milestone change; `change` is `added`, `revised` or `removed`. Leave the field out on
+  days with none.
+- If nothing was added or updated and no milestone changed, skip the changelog.
 `seen.json` and star counts still get committed.
 
-### 7. Validate, build, publish
+### 8. Validate, build, publish
 
 ```bash
 python3 scripts/validate.py --arxiv
@@ -168,5 +222,5 @@ git push
 - **Validation errors** (lines starting with `ERROR`; `WARN` lines don't block): fix them and re-run. If an entry still can't be made valid, remove it and mark it
   `rejected` with note `borderline: failed validation`. Never push data that fails validation.
 - **Rejected push:** run `git pull --rebase`, rebuild the README, push again.
-- **End of run:** finish with a short report: what was added, what was updated, how many were screened, and
-  anything that needs a human.
+- **End of run:** finish with a short report: what was added, what was updated, how many were screened, any
+  milestone changes (with the reason for each), and anything that needs a human.

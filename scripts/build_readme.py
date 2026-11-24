@@ -200,6 +200,9 @@ def build() -> str:
                 parts.append("➕ " + ", ".join(f'[{esc(by_id[i]["name"])}](#{i})' for i in c["added"]))
             if c.get("updated"):
                 parts.append("✏️ " + ", ".join(f'[{esc(by_id[i]["name"])}](#{i})' for i in c["updated"]))
+            if c.get("milestones"):
+                parts.append("🏁 " + ", ".join(f'[{esc(by_id[m["id"]]["name"])}](#{m["id"]}) ({m["change"]})'
+                                              for m in c["milestones"]))
             if c.get("note"):
                 parts.append(esc(c["note"]))
             if c.get("screened"):

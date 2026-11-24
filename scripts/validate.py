@@ -170,6 +170,11 @@ def main() -> int:
             for i in c.get("added", []) + c.get("updated", []):
                 if i not in ids:
                     errors.append(f"changelog {c.get('date')}: unknown entry id '{i}'")
+            for m in c.get("milestones", []):
+                if m.get("id") not in ids:
+                    errors.append(f"changelog {c.get('date')}: milestone for unknown entry '{m.get('id')}'")
+                if m.get("change") not in ("added", "revised", "removed") or not m.get("why"):
+                    errors.append(f"changelog {c.get('date')}: milestone change needs change=added|revised|removed and a why")
     if args.arxiv:
         errors += check_arxiv(entries)
     if args.links:
