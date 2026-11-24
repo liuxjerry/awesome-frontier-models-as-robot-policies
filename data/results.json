@@ -8,6 +8,15 @@
       "rows": [
         {
           "system": "AMP1",
+          "model": "frontier agent",
+          "kind": "frontier: agentic",
+          "value": "86.0%",
+          "setting": "2579 / 3000, 25 eps/task; leaderboard Score 93.5",
+          "measured_by": "RoboLab leaderboard",
+          "source": "amp1"
+        },
+        {
+          "system": "AMP1",
           "model": "frontier agent (best config)",
           "kind": "frontier: agentic",
           "value": "85.6%",
@@ -77,15 +86,6 @@
           "setting": "5 seeds/task",
           "measured_by": "NVIDIA (Astranomy)",
           "source": "astranomy"
-        },
-        {
-          "system": "AMP1",
-          "model": "frontier agent",
-          "kind": "frontier: agentic",
-          "value": "86.0%",
-          "setting": "2579 / 3000, 25 eps/task; leaderboard Score 93.5",
-          "measured_by": "RoboLab leaderboard",
-          "source": "amp1"
         },
         {
           "system": "π0.5",
