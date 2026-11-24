@@ -5,6 +5,7 @@
       "id": "robolab-120",
       "title": "RoboLab-120 (simulation, zero-shot, DROID-style arm)",
       "metric": "success rate",
+      "sort": "desc",
       "rows": [
         {
           "system": "AMP1",
@@ -103,6 +104,7 @@
       "id": "robodojo-sim",
       "title": "RoboDojo (simulation, 42 tasks)",
       "metric": "success rate / RoboDojo Score",
+      "sort": "desc",
       "rows": [
         {
           "system": "AMP1+ (after practice)",

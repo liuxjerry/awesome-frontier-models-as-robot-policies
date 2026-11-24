@@ -136,7 +136,8 @@ Keep the reason to one short phrase. A borderline case goes in as `rejected` wit
   - Use `also` for cross-listing.
 - If the work reports a number on a benchmark already in `data/results.json` (RoboLab-120, RoboDojo, LIBERO-PRO,
   AA-Robotics, LIBERO-10, real-world), add a row with an exact `value`, `setting` and `measured_by`. Don't create
-  a new benchmark table for a single paper.
+  a new benchmark table for a single paper. Row order doesn't matter in tables marked `"sort": "desc"`; the README
+  builder ranks them.
 - `milestone`: only for a clear first, e.g. the first frontier model to beat the best VLA on a shared benchmark. Most
   days, none.
 - For `entry_updates`: when the comment or journal-ref really says the paper was accepted, set

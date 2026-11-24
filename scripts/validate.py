@@ -84,6 +84,8 @@ def check_schema(entries, tax, results):
             warnings.append(f"{where}: secondary source should say where the primary is")
     ids = {e["id"] for e in entries}
     for b in results["benchmarks"]:
+        if b.get("sort") not in (None, "desc"):
+            errors.append(f"results/{b['id']}: sort must be \"desc\" or absent")
         for r in b["rows"]:
             if r["source"] not in ids:
                 errors.append(f"results/{b['id']}: unknown source '{r['source']}'")

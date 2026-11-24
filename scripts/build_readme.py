@@ -40,6 +40,17 @@ def esc(s: str | None) -> str:
     return (s or "").replace("|", "\\|").replace("\n", " ")
 
 
+def row_sort_key(r: dict):
+    """Rank rows of a `"sort": "desc"` benchmark: rows with a success rate (a number followed by %) first, highest
+    first; then rows with only another number (e.g. 'Score 50.3'), highest first. Different scales never interleave."""
+    v = r.get("value") or ""
+    pct = re.search(r"(\d+(?:\.\d+)?)\s*%", v)
+    if pct:
+        return (0, -float(pct.group(1)))
+    num = re.search(r"\d+(?:\.\d+)?", v)
+    return (1, -float(num.group())) if num else (2, 0.0)
+
+
 def primary_url(e: dict) -> str:
     links = e.get("links", {})
     if e.get("kind") in ("blog", "news") and links.get("post"):
@@ -233,7 +244,8 @@ def build() -> str:
         w("")
         w(f'| System | Model | Type | {b["metric"].capitalize()} | Setting | Measured by | Source |')
         w("|---|---|---|---|---|---|---|")
-        for r in b["rows"]:
+        rows = sorted(b["rows"], key=row_sort_key) if b.get("sort") == "desc" else b["rows"]  # stable on ties
+        for r in rows:
             src = by_id[r["source"]]
             w(f'| {esc(r["system"])} | {esc(r["model"])} | {esc(r["kind"])} | **{esc(r["value"])}** | '
               f'{esc(r["setting"])} | {esc(r["measured_by"])} | [{esc(src["name"])}](#{src["id"]}) |')
