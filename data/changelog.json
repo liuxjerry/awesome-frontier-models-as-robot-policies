@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-24",
+    "added": [
+      "codex-vs-inspect-robots"
+    ],
+    "updated": [
+      "robodojo-rc-tier1"
+    ],
+    "screened": 1,
+    "note": "Same model, new harness: GPT-6.2 Astra scores 97% on RoboDojo-RC Tier 1 through Codex vs 65.7% through Inspect Robots; Robocurve is retiring RoboDojo."
+  },
+  {
     "date": "2026-11-23",
     "added": [
       "waddle-1",

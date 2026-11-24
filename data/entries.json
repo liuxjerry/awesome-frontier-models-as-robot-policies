@@ -2376,7 +2376,7 @@
     "trials": "6 tasks × 20 trials = 120 attempts per configuration",
     "speed": {"latency": "0.8–32.1 min per attempt across systems", "cost": "$0.05–$10.51 per attempt"},
     "summary": "Six adapted RoboDojo real-world tasks on bimanual I2RT YAM arms, with frontier LLMs, a full agent system and learned VLAs/WAMs scored on one rig. Leaderboard: Waddle-1 81.4%, GPT-6.2 Astra (high) 65.7%, Dream-1 59.5%, Fable 5.2 (high) 57.5%, Gemini 4 Carbon (high) 54.5% … MolmoAct2 19.5%, GR00T N1.7 9.5%. Also reports cost and wall-clock time per attempt.",
-    "caveats": "Graders knew which model was running ('grading is open to unconscious bias'); tasks are 'the six easiest tasks with the highest scores' on GPT-6 Astra; objects reset by hand; not comparable with original RoboDojo. Call caps differ by system type.",
+    "caveats": "Graders knew which model was running ('grading is open to unconscious bias'); tasks are 'the six easiest tasks with the highest scores' on GPT-6 Astra; objects reset by hand; not comparable with original RoboDojo. Call caps differ by system type. Robocurve announced on 2026-11-24 that it is retiring RoboDojo from future evaluations; harness matters as much as model (see Astra on Codex: 97% vs 65.7%).",
     "added": "2026-11-23"
   },
   {
@@ -2570,5 +2570,33 @@
     "summary": "A small general VLM orchestrates an explicit operational graph with closed-loop verification and recovery. It reaches 0.83 task success in cluttered scenes (RoboEXP 0.39, no-graph variant 0.40) and 0.94 on the VLA benchmark vs 0.71 for the strongest baseline. On LIBERO-Pro it scores 0.77/0.85 on Object Pos/Task, against π0.5's 0.17/0.01.",
     "caveats": "Authors: failures are dominated by grasping (0.16 of all trials, from single-view depth noise) and embodiment kinematics. π0.5 beats it on LIBERO-Pro Goal Pos (0.38 vs 0.33).",
     "added": "2026-11-23"
+  },
+  {
+    "id": "codex-vs-inspect-robots",
+    "name": "Astra on Codex (Robocurve)",
+    "title": "Why is Astra better on Codex for robotics?",
+    "org": "Robocurve",
+    "authors": "Drew Nguyen",
+    "date": "2026-11-22",
+    "kind": "blog",
+    "status": "post-only",
+    "section": "benchmarks",
+    "also": ["agentic", "critiques"],
+    "links": {
+      "post": "https://robocurve.org/blog/codex-vs-inspect-robots/",
+      "data": "https://x.com/robocurve/status/2125028977194786857"
+    },
+    "models": ["GPT-6.2 Astra (Codex vs Inspect Robots)", "Gemini 4 Neon (Antigravity, cap-pen comparison)"],
+    "mode": "benchmark",
+    "system1": "analytic",
+    "interface": "Same model, two harnesses: Inspect Robots' fixed move_to (straight Cartesian line, fixed speed, 10 Hz, one move per turn) vs tools Codex writes itself (go / grip; speed argument, 40 Hz, several moves per turn)",
+    "eval": "real",
+    "judged_by": "Robocurve",
+    "trials": "120 real attempts (Tier 1); harness ablation on Stand Up Bottles with 10–20 trials per arm",
+    "speed": {"latency": "Stand Up Bottles median 3.8 min (Codex) vs 16.6 min (Inspect Robots, 200 calls)", "cost": "$9.46 per Tier 1 attempt on Codex vs $0.15 for Dream-1 ('63x cheaper'); Ultrafast pricing"},
+    "summary": "GPT-6.2 Astra scores 97% on RoboDojo-RC Tier 1 through Codex vs 66% through Robocurve's own Inspect Robots harness, 'the highest among anything we've tested'. On the hardest task, capping a pen, Codex succeeds in 60% of 20 trials, 'double Gemini 4 Neon on Antigravity'; no robot model capped it once. Ablation on Stand Up Bottles: Inspect Robots at 40 calls 0.48, at 200 calls 0.745 ($164.34/trial), and with Codex's tools ported in plus multi-action turns (IR+) 1.00, matching Codex. The authors' leading explanation: the model writing its own tools, most likely because it can issue several moves per turn.",
+    "caveats": "Authors: why Codex works better is 'somewhat mysterious' and the key component is 'an open question'; Codex's tool behaviour is described 'to our understanding'; the move_to replication was checked only in perfect simulation. The experiments raised the call cap from 40 to 200, and the leaderboard's 65.7% row used the 40-call release. Robocurve is retiring RoboDojo from future evaluations.",
+    "milestone": "The top real-world RoboDojo-RC score (97%) came from swapping the harness, not the model: the same GPT-6.2 Astra had scored 65.7% under the benchmark's own harness.",
+    "added": "2026-11-24"
   }
 ]

@@ -847,6 +847,11 @@
       "decision": "added",
       "note": "-> entries robodojo-rc-tier1, waddle-1 (added by hand)"
     },
+    "url:https://robocurve.org/blog/codex-vs-inspect-robots/": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry codex-vs-inspect-robots (added by hand)"
+    },
     "url:https://roboticsandautomationnews.com/2026/11/05/agibot-unveils-go-3-preview-and-takes-top-spot-on-three-embodied-ai-benchmarks/106711/": {
       "date": "2026-11-22",
       "decision": "rejected",
@@ -886,6 +891,11 @@
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "secondary coverage of already-seen paper"
+    },
+    "url:https://x.com/robocurve/status/2125028977194786857": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry codex-vs-inspect-robots (added by hand)"
     }
   }
 }

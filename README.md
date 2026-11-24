@@ -1,6 +1,6 @@
 # Awesome Frontier Models (LLMs / VLMs) as Robot Policies [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-![entries](https://img.shields.io/badge/entries-104-blue?style=flat-square) ![newest](https://img.shields.io/badge/newest%20entry-2026--11--20-green?style=flat-square) ![license](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)
+![entries](https://img.shields.io/badge/entries-105-blue?style=flat-square) ![newest](https://img.shields.io/badge/newest%20entry-2026--11--22-green?style=flat-square) ![license](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)
 
 > **Can a general-purpose frontier model (GPT, Claude, Gemini, Qwen…) *be* the robot policy, and if so, what is left for the learned System 1?**
 >
@@ -28,6 +28,7 @@
 <a id="latest-updates"></a>
 ## 📰 Latest updates
 
+- **2026-11-24** · ➕ [Astra on Codex (Robocurve)](#codex-vs-inspect-robots) · ✏️ [RoboDojo-RC Tier 1](#robodojo-rc-tier1) · Same model, new harness: GPT-6.2 Astra scores 97% on RoboDojo-RC Tier 1 through Codex vs 65.7% through Inspect Robots; Robocurve is retiring RoboDojo. · <sub>1 candidates screened</sub>
 - **2026-11-23** · ➕ [Waddle-1](#waddle-1), [RoboDojo-RC Tier 1](#robodojo-rc-tier1), [HuGo](#hugo), [DiMuRe](#dimure), [SPARK](#spark-bt), [Recursia](#recursia), [SCOPE](#scope-program-edits), [UniManip](#unimanip) · Waddle-1, a robot-use agent directing local lower-level policies, tops Robocurve's RoboDojo-RC Tier 1 at 81.4% vs 65.7% for GPT-6.2 Astra (not like-for-like: no call cap). From the arXiv scan: HuGo has gpt-5.4 write closed-loop policy code over a frozen whole-body controller on a Unitree G1 (93.3% zero-shot on hardware for its best push-button policy). · <sub>62 candidates screened</sub>
 - **2026-11-22** · ➕ [Claude Fable 5.2 (RoboDojo Sim)](#claude-fable-5-2), [Mind2Act World](#mind2act-world), [UniCraft](#unicraft), [SO-101 Bench](#so101-bench), [Real2Gym](#real2gym), [BiCICLe](#bicicle), [InSight](#insight-steerable-vla), [NovaPlan](#novaplan), [STeP](#step-stl), [AquaCap](#aquacap), [ScaleVLA](#scalevla), [CoEnv / CoEx](#coenv-coex) · Anthropic reports Claude Fable 5.2 at 64.9% on RoboDojo Sim in its own runs, more than double GPT-6 Astra (29.8%). · <sub>75 candidates screened</sub>
 - **2026-11-21** · ➕ [AgentRoboCritic](#agentrobocritic), [ForceHarness](#forceharness), [RoboTeam](#roboteam), [PhysEvo](#physevo), [Push-T, revisited](#push-t-agentic), [EmbodyAgent](#embodyagent), [Astra as visuo-tactile policy](#astra-visuotactile), [RoC](#reasoning-on-call), [LEXP](#lexp), [ReTrace](#retrace), [LADDER](#ladder), [Gemini 4 Hydrogen](#gemini-4-hydrogen) · ✏️ [Hi Robot](#hi-robot), [Efficient VLA survey](#efficient-vla-survey), [FAEA](#faea) · ForceHarness lets frozen frontier models use force without a wrist sensor, lifting GPT-6 Astra from 2/60 to 54/60 on six real contact tasks. · <sub>43 candidates screened</sub>
@@ -45,7 +46,7 @@
 - [📈 Getting Better Without Weight Updates](#self-improving) (12)
 - [⚡ Making It Fast & Cheap](#fast) (7)
 - [🧠 The Incumbent: Dual-System VLAs](#dual-system) (17)
-- [📊 Benchmarks & Evaluation Reports](#benchmarks) (13)
+- [📊 Benchmarks & Evaluation Reports](#benchmarks) (14)
 - [🔍 Analyses, Critiques & Reproducibility](#critiques) (4)
 - [🗺️ Surveys, Essays & Perspectives](#perspectives) (9)
 - [🏛️ Foundations (pre-2025)](#foundations) (5)
@@ -75,6 +76,7 @@
 | 2026-11-13 | [PEAR / RURL](#pear-rurl) | Robot use as an ordinary foundation-model post-training skill, with no general-capability regression. |
 | 2026-11-14 | [RoboDojo leaderboard retest](#openrua-retest) | Benchmark-integrity wake-up call for LLM-as-policy leaderboards. |
 | 2026-11-17 | [InteractVLA](#interactvla) | A richer System 2 → System 1 contract: geometric steering instead of language commands. |
+| 2026-11-22 | [Astra on Codex (Robocurve)](#codex-vs-inspect-robots) | The top real-world RoboDojo-RC score (97%) came from swapping the harness, not the model: the same GPT-6.2 Astra had scored 65.7% under the benchmark's own harness. |
 
 <a id="leaderboards"></a>
 ## 📊 Leaderboards: who measured what
@@ -153,6 +155,7 @@
 
 | System | Model | Type | Mean progress score | Setting | Measured by | Source |
 |---|---|---|---|---|---|---|
+| Codex | GPT-6.2 Astra (ultrafast) | frontier: agentic | **97%** | Codex harness (self-written tools, several moves per turn) · $9.46 · time not stated | Robocurve | [Astra on Codex (Robocurve)](#codex-vs-inspect-robots) |
 | Waddle-1 | undisclosed cloud LLMs + local policies | frontier over System 1 | **81.4%** | full system, no call cap, 10-min limit · $2.46 · 7.4 min | Robocurve | [Waddle-1](#waddle-1) |
 | Inspect Robots agent | GPT-6.2 Astra (high, ultrafast) | frontier: direct | **65.7%** | 40 calls · $10.51 · 2.7 min | Robocurve | [RoboDojo-RC Tier 1](#robodojo-rc-tier1) |
 | Dream-1 (Dream Labs) | world action model (hosted API) | learned System 1 | **59.5%** | 3,600 steps · $0.15 · 1.5 min | Robocurve | [RoboDojo-RC Tier 1](#robodojo-rc-tier1) |
@@ -170,7 +173,7 @@
 | Inspect Robots agent | GPT-5.6 Sol (high, fast) | frontier: direct | **14.9%** | 40 calls · $1.77 · 3.6 min | Robocurve | [RoboDojo-RC Tier 1](#robodojo-rc-tier1) |
 | GR00T N1.7 | open VLA | learned System 1 | **9.5%** | 3,600 steps · $0.05 (GPU rental) · 0.9 min | Robocurve | [RoboDojo-RC Tier 1](#robodojo-rc-tier1) |
 
-> Frontier LLMs, a full agent system and learned VLAs/WAMs on one rig, all measured by Robocurve. Setting = call or step cap · cost per attempt · wall-clock per attempt. Graders were not blinded, and Waddle-1 ran with no call cap, so the top row is not like-for-like.
+> Frontier LLMs, a full agent system and learned VLAs/WAMs on one rig, all measured by Robocurve. Setting = call or step cap · cost per attempt · wall-clock per attempt. Graders were not blinded, and Waddle-1 ran with no call cap, so the top row is not like-for-like. Harness matters: the same GPT-6.2 Astra scores 97% through Codex vs 65.7% through Robocurve's 40-call Inspect Robots harness. Robocurve is retiring RoboDojo from future evaluations.
 
 ### LIBERO-10 (direct EEF control via tool calls)
 
@@ -377,7 +380,7 @@
 
 *The model acts through a harness: it writes and runs code against sensing/perception/motion APIs, observes the outcome, and repairs. Learned System 1 is absent; motion is analytic (IK, waypoints, ROS).*
 
-<details open><summary><b>18 entries</b> + 17 cross-listed</summary>
+<details open><summary><b>18 entries</b> + 18 cross-listed</summary>
 
 <a id="gemini-4-hydrogen"></a>
 - **[Gemini 4 Hydrogen: a faster model for general purpose robotics](https://developers.googleblog.com/gemini-hydrogen-for-robotics/)**
@@ -533,6 +536,7 @@
 
 **Cross-listed here:**
 
+- ↪ **[Astra on Codex (Robocurve)](#codex-vs-inspect-robots)**: Why is Astra better on Codex for robotics? <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
 - ↪ **[Waddle-1](#waddle-1)**: Waddle-1: a robot-use agent that directs local lower-level policies <sub>(listed under [Frontier Model over a Learned System 1 / System 0](#orchestrated))</sub>
 - ↪ **[EmbodyAgent](#embodyagent)**: EmbodyAgent: Post-Training Embodied VLM Agents via Distillation, SFT, and RL <sub>(listed under [Making It Fast & Cheap](#fast))</sub>
 - ↪ **[UniCraft](#unicraft)**: Alignment Drives Reuse: Learning Generalizable Robot-Use Agents from Heterogeneous Experience <sub>(listed under [Getting Better Without Weight Updates](#self-improving))</sub>
@@ -1016,7 +1020,16 @@
 
 *Shared yardsticks where frontier models and learned policies are scored on the same tasks.*
 
-<details open><summary><b>13 entries</b> + 9 cross-listed</summary>
+<details open><summary><b>14 entries</b> + 9 cross-listed</summary>
+
+<a id="codex-vs-inspect-robots"></a>
+- **[Why is Astra better on Codex for robotics?](https://robocurve.org/blog/codex-vs-inspect-robots/)**
+  Robocurve · *Blog* · 2026-11-22 · `💬 post only`  
+  [[Post](https://robocurve.org/blog/codex-vs-inspect-robots/)] [[Data](https://x.com/robocurve/status/2125028977194786857)]  
+  GPT-6.2 Astra scores 97% on RoboDojo-RC Tier 1 through Codex vs 66% through Robocurve's own Inspect Robots harness, 'the highest among anything we've tested'. On the hardest task, capping a pen, Codex succeeds in 60% of 20 trials, 'double Gemini 4 Neon on Antigravity'; no robot model capped it once. Ablation on Stand Up Bottles: Inspect Robots at 40 calls 0.48, at 200 calls 0.745 ($164.34/trial), and with Codex's tools ported in plus multi-action turns (IR+) 1.00, matching Codex. The authors' leading explanation: the model writing its own tools, most likely because it can issue several moves per turn.  
+  <sub>**Eval:** real · **Judged by:** Robocurve · **Trials:** 120 real attempts (Tier 1); harness ablation on Stand Up Bottles with 10–20 trials per arm · **Speed/cost:** Stand Up Bottles median 3.8 min (Codex) vs 16.6 min (Inspect Robots, 200 calls); $9.46 per Tier 1 attempt on Codex vs $0.15 for Dream-1 ('63x cheaper'); Ultrafast pricing</sub>  
+  ⚠️ <sub>Authors: why Codex works better is 'somewhat mysterious' and the key component is 'an open question'; Codex's tool behaviour is described 'to our understanding'; the move_to replication was checked only in perfect simulation. The experiments raised the call cap from 40 to 200, and the leaderboard's 65.7% row used the 40-call release. Robocurve is retiring RoboDojo from future evaluations.</sub>  
+  <sub>↪ also in: [Agentic & Code-Writing Policies](#agentic), [Analyses, Critiques & Reproducibility](#critiques)</sub>
 
 <a id="mind2act-world"></a>
 - **[Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation](https://arxiv.org/abs/2611.26444)**
@@ -1077,7 +1090,7 @@
   [[Code](https://github.com/robocurve/inspect-robots)] [[Post](https://robocurve.org/opus-5-5-robodojo-rc-tier-1/)] [[Data](https://robocurve.org/)] ![stars](https://img.shields.io/github/stars/robocurve/inspect-robots?style=flat-square&label=%E2%98%85)  
   Six adapted RoboDojo real-world tasks on bimanual I2RT YAM arms, with frontier LLMs, a full agent system and learned VLAs/WAMs scored on one rig. Leaderboard: Waddle-1 81.4%, GPT-6.2 Astra (high) 65.7%, Dream-1 59.5%, Fable 5.2 (high) 57.5%, Gemini 4 Carbon (high) 54.5% … MolmoAct2 19.5%, GR00T N1.7 9.5%. Also reports cost and wall-clock time per attempt.  
   <sub>**Eval:** real · **Judged by:** human grader with a per-task progress rubric (not blinded) · **Trials:** 6 tasks × 20 trials = 120 attempts per configuration · **Speed/cost:** 0.8–32.1 min per attempt across systems; $0.05–$10.51 per attempt</sub>  
-  ⚠️ <sub>Graders knew which model was running ('grading is open to unconscious bias'); tasks are 'the six easiest tasks with the highest scores' on GPT-6 Astra; objects reset by hand; not comparable with original RoboDojo. Call caps differ by system type.</sub>  
+  ⚠️ <sub>Graders knew which model was running ('grading is open to unconscious bias'); tasks are 'the six easiest tasks with the highest scores' on GPT-6 Astra; objects reset by hand; not comparable with original RoboDojo. Call caps differ by system type. Robocurve announced on 2026-11-24 that it is retiring RoboDojo from future evaluations; harness matters as much as model (see Astra on Codex: 97% vs 65.7%).</sub>  
   <sub>↪ also in: [Frontier Model as Direct Policy](#direct)</sub>
 
 <a id="robocurve-astra"></a>
@@ -1146,7 +1159,7 @@
 
 *Negative results, retests, benchmark-integrity problems, and the limits authors admit about their own systems.*
 
-<details open><summary><b>4 entries</b> + 8 cross-listed</summary>
+<details open><summary><b>4 entries</b> + 9 cross-listed</summary>
 
 <a id="agentrobocritic"></a>
 - **[AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control](https://arxiv.org/abs/2611.26613)**
@@ -1183,6 +1196,7 @@
 
 **Cross-listed here:**
 
+- ↪ **[Astra on Codex (Robocurve)](#codex-vs-inspect-robots)**: Why is Astra better on Codex for robotics? <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
 - ↪ **[Mind2Act World](#mind2act-world)**: Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
 - ↪ **[AMP1](#amp1)**: On Agentic Manipulation Policies <sub>(listed under [Agentic & Code-Writing Policies](#agentic))</sub>
 - ↪ **[SEAR](#sear)**: SEAR: Self-Evolving Agentic Robotics <sub>(listed under [Getting Better Without Weight Updates](#self-improving))</sub>

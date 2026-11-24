@@ -401,6 +401,15 @@
       "metric": "mean progress score",
       "rows": [
         {
+          "system": "Codex",
+          "model": "GPT-6.2 Astra (ultrafast)",
+          "kind": "frontier: agentic",
+          "value": "97%",
+          "setting": "Codex harness (self-written tools, several moves per turn) · $9.46 · time not stated",
+          "measured_by": "Robocurve",
+          "source": "codex-vs-inspect-robots"
+        },
+        {
           "system": "Waddle-1",
           "model": "undisclosed cloud LLMs + local policies",
           "kind": "frontier over System 1",
@@ -545,7 +554,7 @@
           "source": "robodojo-rc-tier1"
         }
       ],
-      "note": "Frontier LLMs, a full agent system and learned VLAs/WAMs on one rig, all measured by Robocurve. Setting = call or step cap · cost per attempt · wall-clock per attempt. Graders were not blinded, and Waddle-1 ran with no call cap, so the top row is not like-for-like."
+      "note": "Frontier LLMs, a full agent system and learned VLAs/WAMs on one rig, all measured by Robocurve. Setting = call or step cap · cost per attempt · wall-clock per attempt. Graders were not blinded, and Waddle-1 ran with no call cap, so the top row is not like-for-like. Harness matters: the same GPT-6.2 Astra scores 97% through Codex vs 65.7% through Robocurve's 40-call Inspect Robots harness. Robocurve is retiring RoboDojo from future evaluations."
     },
     {
       "id": "libero-10-direct",
