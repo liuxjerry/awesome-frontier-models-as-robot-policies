@@ -2,13 +2,25 @@
   {
     "date": "2026-11-24",
     "added": [
-      "codex-vs-inspect-robots"
+      "codex-vs-inspect-robots",
+      "embo-harness",
+      "contact-harness",
+      "trip-tripwire",
+      "acap",
+      "navrsi",
+      "embodied-harness",
+      "evoter",
+      "real2worlds2real",
+      "robocoliseum",
+      "rosworld",
+      "gamma-scape",
+      "dualmanip"
     ],
     "updated": [
       "robodojo-rc-tier1"
     ],
-    "screened": 1,
-    "note": "Same model, new harness: GPT-6.2 Astra scores 97% on RoboDojo-RC Tier 1 through Codex vs 65.7% through Inspect Robots; Robocurve is retiring RoboDojo.",
+    "screened": 61,
+    "note": "Same model, new harness: GPT-6.2 Astra scores 97% on RoboDojo-RC Tier 1 through Codex vs 65.7% through Inspect Robots; Robocurve is retiring RoboDojo. From the arXiv scan: Embo-Harness, a controlled harness study, puts a directly-acting GPT-6-Astra at 83.3% on RoboLab-120 (second to AMP1's 86.0%).",
     "milestones": [
       {
         "id": "codex-vs-inspect-robots",

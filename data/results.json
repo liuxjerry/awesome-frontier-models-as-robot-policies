@@ -96,6 +96,24 @@
           "setting": "336 / 1200, 10 eps/task; leaderboard Score 43.4",
           "measured_by": "RoboLab leaderboard",
           "source": "robolab"
+        },
+        {
+          "system": "Embo-Harness",
+          "model": "GPT-6-Astra (xhigh) + VLA refinement",
+          "kind": "frontier: direct",
+          "value": "83.3%",
+          "setting": "full RoboLab-120, zero-shot; Score 89.2; episodes per task not stated",
+          "measured_by": "Wu et al. (Embo-Harness)",
+          "source": "embo-harness"
+        },
+        {
+          "system": "SenseNova-RoboRSI",
+          "model": "GPT-6-Astra (per Embo-Harness)",
+          "kind": "frontier: self-improving",
+          "value": "57.1%",
+          "setting": "685 / 1200, 10 eps/task; leaderboard Score 69.9",
+          "measured_by": "RoboLab leaderboard",
+          "source": "embo-harness"
         }
       ],
       "note": "π0.5 appears twice: 49.2% (leaderboard, cited by AMP1) vs 28.0% (Astranomy's own run). That 21-point gap on one benchmark is why every row says who measured it."
@@ -329,6 +347,15 @@
           "setting": "LIBERO-Pro Long only, 10 tasks × 50 seeds per axis, zero-shot transfer",
           "measured_by": "Chen et al. (Recursia)",
           "source": "recursia"
+        },
+        {
+          "system": "Real2Worlds2Real (136-skill library)",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: self-improving code",
+          "value": "82.2%",
+          "setting": "LIBERO-Pro Long only, 20 tasks (10 position, 10 task perturbation) × 50 held-out initial states; 52.9% with no skills; mean over all candidate programs 69.1%",
+          "measured_by": "Gu et al. (Real2Worlds2Real)",
+          "source": "real2worlds2real"
         }
       ],
       "note": "Papers use different LIBERO-PRO conditions and subsets. Treat as indicative, not a single leaderboard."
@@ -721,6 +748,60 @@
           "setting": "Unitree G1, best policy per task, zero-shot sim-to-real, 15 trials each",
           "measured_by": "Choi et al. (HuGo)",
           "source": "hugo"
+        },
+        {
+          "system": "Embo-Harness",
+          "model": "GPT-6-Astra",
+          "kind": "frontier: direct",
+          "value": "15/20",
+          "setting": "Franka FR3, 4 tasks x 5 zero-shot trials (block stacking 5/5, fruit packing 5/5, dish washing 2/5, flower arranging 3/5); paper's baseline harness 7/20",
+          "measured_by": "Wu et al. (Embo-Harness)",
+          "source": "embo-harness"
+        },
+        {
+          "system": "Contact Harness",
+          "model": "GPT-6 Astra (high)",
+          "kind": "frontier: direct",
+          "value": "136/150 (90.7%)",
+          "setting": "Rokae arm, connector insertion, 15 connector types x 10 trials, full insertion to mechanical limit, zero-shot",
+          "measured_by": "Shan et al. (Contact Harness)",
+          "source": "contact-harness"
+        },
+        {
+          "system": "TRIP + π0.5",
+          "model": "GPT-6.1-sol (medium) + Qwen3.5-9B tripwire VLM",
+          "kind": "frontier over System 1",
+          "value": "25/40",
+          "setting": "xArm 7, mug + towel hanging, 10 setups each, 'block' and 'move target' human disturbances; turn-based agentic harness 5/40, π0.5 alone 1/40; contact = failure",
+          "measured_by": "Chen et al. (TRIP)",
+          "source": "trip-tripwire"
+        },
+        {
+          "system": "Embodied-Harness",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: direct + self-improving harness",
+          "value": "96.7% avg",
+          "setting": "Piper arm, 3 tasks × 10 episodes; π0.5 40.0% on same tasks",
+          "measured_by": "Fan et al. (Embodied-Harness)",
+          "source": "embodied-harness"
+        },
+        {
+          "system": "EvoTER (real-world evolved)",
+          "model": "gpt-6.1-sol over frozen π0.5-based policy + Tether",
+          "kind": "frontier over System 1",
+          "value": "4/5 · 5/5 · 5/5",
+          "setting": "Franka, table setting · drawer storage · two-cup hanging, 5 trials each; direct transfer of sim library 1/5 each",
+          "measured_by": "Zhou et al. (EvoTER)",
+          "source": "evoter"
+        },
+        {
+          "system": "DualManip",
+          "model": "GPT-5.6 Terra + shape-adaptive correspondence net",
+          "kind": "frontier over System 1",
+          "value": "53.3%",
+          "setting": "KUKA iiwa, 3 general tasks under continuous scene change, 15 trials each (CLEA agentic VLM replanning 0.0%, ReKep 28.9%)",
+          "measured_by": "Li et al.",
+          "source": "dualmanip"
         }
       ],
       "note": null

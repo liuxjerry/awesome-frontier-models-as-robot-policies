@@ -457,6 +457,11 @@
       "decision": "rejected",
       "note": "broad UAV embodied-intelligence survey, not frontier-as-policy"
     },
+    "arxiv:2609.19974": {
+      "date": "2026-11-24",
+      "decision": "rejected",
+      "note": "borderline: Qwen3.5 only verifies masks/completion for an authors-trained WAM; over daily add limit"
+    },
     "arxiv:2609.20791": {
       "date": "2026-11-22",
       "decision": "rejected",
@@ -516,6 +521,11 @@
       "date": "2026-11-23",
       "decision": "added",
       "note": "-> entry hugo"
+    },
+    "arxiv:2609.31112": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry dualmanip"
     },
     "arxiv:2609.34309": {
       "date": "2026-11-21",
@@ -1002,20 +1012,75 @@
       "decision": "rejected",
       "note": "VLA/WAM dynamics benchmark, no frontier-model angle"
     },
+    "arxiv:2611.27042": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry robocoliseum"
+    },
     "arxiv:2611.27079": {
       "date": "2026-11-24",
       "decision": "rejected",
       "note": "weight-space programming in particle physics, not embodied"
+    },
+    "arxiv:2611.27182": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry trip-tripwire"
+    },
+    "arxiv:2611.27306": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry gamma-scape"
     },
     "arxiv:2611.27425": {
       "date": "2026-11-24",
       "decision": "rejected",
       "note": "VLM backdoors, not embodied"
     },
+    "arxiv:2611.27467": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry rosworld"
+    },
+    "arxiv:2611.27499": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry navrsi"
+    },
+    "arxiv:2611.27689": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry embodied-harness"
+    },
+    "arxiv:2611.27797": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry evoter"
+    },
+    "arxiv:2611.29377": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry contact-harness"
+    },
     "arxiv:2611.29501": {
       "date": "2026-11-24",
       "decision": "rejected",
       "note": "multi-agent WAM, coding agent only builds data/eval pipeline"
+    },
+    "arxiv:2611.31098": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry real2worlds2real"
+    },
+    "arxiv:2611.31201": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry embo-harness"
+    },
+    "arxiv:2611.31205": {
+      "date": "2026-11-24",
+      "decision": "added",
+      "note": "-> entry acap"
     },
     "update:2502.19417:v2": {
       "date": "2026-11-21",
@@ -1074,8 +1139,8 @@
     },
     "url:https://research.nvidia.com/labs/srl/projects/robolab/leaderboard.html#SenseNova-RoboRSI": {
       "date": "2026-11-24",
-      "decision": "rejected",
-      "note": "borderline: Agentic LM row 57.1% (685/1200); no primary source found tying SenseNova to RoboRSI (arXiv 2610.12424, GPT-5.6 Sol)"
+      "decision": "noted",
+      "note": "row added via Embo-Harness (GPT-6-Astra, SenseNova team); no standalone entry"
     },
     "url:https://robocurve.org/": {
       "date": "2026-11-23",
