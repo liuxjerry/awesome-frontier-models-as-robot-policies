@@ -1485,22 +1485,22 @@
 
 ## Related lists
 
-<sub>Stars and last push read from the GitHub API on 2026-11-24.</sub>
+<sub>Stars and last push read from the GitHub API on 2026-11-25.</sub>
 
 | List | ★ | Last push | Angle |
 |---|---|---|---|
-| [kairunwen/Awesome-Robot-Use-Agent](https://github.com/kairunwen/Awesome-Robot-Use-Agent) | 216 | 2026-11-24 | The largest robot-use-agent list: papers, projects, social demos, benchmarks, searchable site. |
+| [kairunwen/Awesome-Robot-Use-Agent](https://github.com/kairunwen/Awesome-Robot-Use-Agent) | 223 | 2026-11-24 | The largest robot-use-agent list: papers, projects, social demos, benchmarks, searchable site. |
 | [visitworld123/Awesome-Robot-Use-Agent](https://github.com/visitworld123/Awesome-Robot-Use-Agent) | 109 | 2026-11-17 | Robot-use agents, a dual-system section, self-evolving agents, runtimes. |
-| [zjwzcx/Awesome-Astra-Embodied-AI](https://github.com/zjwzcx/Awesome-Astra-Embodied-AI) | 1252 | 2026-10-28 | GPT-6 Astra only; mostly case-by-case demos (X / RedNote). |
+| [zjwzcx/Awesome-Astra-Embodied-AI](https://github.com/zjwzcx/Awesome-Astra-Embodied-AI) | 1253 | 2026-10-28 | GPT-6 Astra only; mostly case-by-case demos (X / RedNote). |
 | [showlab/Awesome-Multimodal-Embodied-Agent](https://github.com/showlab/Awesome-Multimodal-Embodied-Agent) | 296 | 2026-11-19 | Paper list behind Show Lab's computer-use → robot-use survey. |
 | [benchflow-ai/awesome-embodied-agents](https://github.com/benchflow-ai/awesome-embodied-agents) | 6 | 2026-10-25 | Strong editorial rules (verbatim numbers, who judged success, trial counts). This list borrows them. |
 | [w-xb/awesome-agentic-robotics](https://github.com/w-xb/awesome-agentic-robotics) | 33 | 2026-11-07 | Memory, planning, world models, verification, failure recovery. |
 | [tantansir/llm-for-robot-control](https://github.com/tantansir/llm-for-robot-control) | 1 | 2026-10-07 | Survey catalog of ~220 systems organized by action interface. |
 | [chonghanqin/Awesome-Agentic-Robots](https://github.com/chonghanqin/Awesome-Agentic-Robots) | 207 | 2026-11-24 | Companion list to the 'Towards Agentic Robots' survey. |
 | [lysandre001/awesome-code-as-policy-Robot-learning](https://github.com/lysandre001/awesome-code-as-policy-Robot-learning) | 18 | 2026-06-24 | Short code-as-policy list (17 entries). |
-| [GT-RIPL/Awesome-LLM-Robotics](https://github.com/GT-RIPL/Awesome-LLM-Robotics) | 4503 | 2026-10-29 | The classic broad LLM-for-robotics list. |
+| [GT-RIPL/Awesome-LLM-Robotics](https://github.com/GT-RIPL/Awesome-LLM-Robotics) | 4505 | 2026-10-29 | The classic broad LLM-for-robotics list. |
 | [zchoi/Awesome-Embodied-Robotics-and-Agent](https://github.com/zchoi/Awesome-Embodied-Robotics-and-Agent) | 1926 | 2026-11-23 | Broad embodied AI with LLMs. |
-| [SajjadPSavoji/awesome-weight-space-programming](https://github.com/SajjadPSavoji/awesome-weight-space-programming) | 9 | 2026-11-24 | Not robotics-specific; its data-driven, daily-rebuilt format inspired this list. |
+| [SajjadPSavoji/awesome-weight-space-programming](https://github.com/SajjadPSavoji/awesome-weight-space-programming) | 8 | 2026-11-25 | Not robotics-specific; its data-driven, daily-rebuilt format inspired this list. |
 
 ## Contributing
 

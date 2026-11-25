@@ -1,10 +1,10 @@
 {
-  "_snapshot": "Stars and last push read from the GitHub API on 2026-11-24.",
+  "_snapshot": "Stars and last push read from the GitHub API on 2026-11-25.",
   "lists": [
     {
       "name": "kairunwen/Awesome-Robot-Use-Agent",
       "url": "https://github.com/kairunwen/Awesome-Robot-Use-Agent",
-      "stars": 216,
+      "stars": 223,
       "pushed": "2026-11-24",
       "angle": "The largest robot-use-agent list: papers, projects, social demos, benchmarks, searchable site."
     },
@@ -18,7 +18,7 @@
     {
       "name": "zjwzcx/Awesome-Astra-Embodied-AI",
       "url": "https://github.com/zjwzcx/Awesome-Astra-Embodied-AI",
-      "stars": 1252,
+      "stars": 1253,
       "pushed": "2026-10-28",
       "angle": "GPT-6 Astra only; mostly case-by-case demos (X / RedNote)."
     },
@@ -67,7 +67,7 @@
     {
       "name": "GT-RIPL/Awesome-LLM-Robotics",
       "url": "https://github.com/GT-RIPL/Awesome-LLM-Robotics",
-      "stars": 4503,
+      "stars": 4505,
       "pushed": "2026-10-29",
       "angle": "The classic broad LLM-for-robotics list."
     },
@@ -81,8 +81,8 @@
     {
       "name": "SajjadPSavoji/awesome-weight-space-programming",
       "url": "https://github.com/SajjadPSavoji/awesome-weight-space-programming",
-      "stars": 9,
-      "pushed": "2026-11-24",
+      "stars": 8,
+      "pushed": "2026-11-25",
       "angle": "Not robotics-specific; its data-driven, daily-rebuilt format inspired this list."
     }
   ]
