@@ -431,10 +431,28 @@
           "system": "Codex",
           "model": "GPT-6.2 Astra (ultrafast)",
           "kind": "frontier: agentic",
-          "value": "97%",
-          "setting": "Codex harness (self-written tools, several moves per turn) · $9.46 · time not stated",
+          "value": "97.3%",
+          "setting": "Codex harness (self-written tools, several moves per turn), no call cap, 20-min limit · $9.46 (estimate) · 5.6 min",
           "measured_by": "Robocurve",
           "source": "codex-vs-inspect-robots"
+        },
+        {
+          "system": "Antigravity",
+          "model": "Gemini 4 Neon (high)",
+          "kind": "frontier: agentic",
+          "value": "89.7%",
+          "setting": "coding agent, no call cap, 60-min limit · $5.46 (estimate) · 37.5 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
+        },
+        {
+          "system": "Claude Code",
+          "model": "Claude Fable 5.2 (high, fast)",
+          "kind": "frontier: agentic",
+          "value": "89.0%",
+          "setting": "coding agent, no call cap, 20-min limit · $12.08 (recorded) · 9.7 min",
+          "measured_by": "Robocurve",
+          "source": "robodojo-rc-tier1"
         },
         {
           "system": "Waddle-1",
@@ -581,7 +599,7 @@
           "source": "robodojo-rc-tier1"
         }
       ],
-      "note": "Frontier LLMs, a full agent system and learned VLAs/WAMs on one rig, all measured by Robocurve. Setting = call or step cap · cost per attempt · wall-clock per attempt. Graders were not blinded, and Waddle-1 ran with no call cap, so the top row is not like-for-like. Harness matters: the same GPT-6.2 Astra scores 97% through Codex vs 65.7% through Robocurve's 40-call Inspect Robots harness. Robocurve is retiring RoboDojo from future evaluations."
+      "note": "Frontier LLMs, coding agents, a full agent system and learned VLAs/WAMs on one rig, all measured by Robocurve. Setting = call or step cap · cost per attempt · wall-clock per attempt. Graders were not blinded. Caps are not like-for-like: plain LLMs get 40 calls, while coding agents (Codex, Claude Code, Antigravity) and Waddle-1 run with no call cap under 20-, 60- and 10-minute limits. Harness matters: the same GPT-6.2 Astra scores 97.3% through Codex vs 65.7% through Robocurve's 40-call Inspect Robots harness; all three coding agents (89.0–97.3%) top Waddle-1 (81.4%). Robocurve is retiring RoboDojo from future evaluations."
     },
     {
       "id": "libero-10-direct",

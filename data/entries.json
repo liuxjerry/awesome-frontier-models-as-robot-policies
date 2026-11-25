@@ -2375,7 +2375,7 @@
     "judged_by": "human grader with a per-task progress rubric (not blinded)",
     "trials": "6 tasks × 20 trials = 120 attempts per configuration",
     "speed": {"latency": "0.8–32.1 min per attempt across systems", "cost": "$0.05–$10.51 per attempt"},
-    "summary": "Six adapted RoboDojo real-world tasks on bimanual I2RT YAM arms, with frontier LLMs, a full agent system and learned VLAs/WAMs scored on one rig. Leaderboard: Waddle-1 81.4%, GPT-6.2 Astra (high) 65.7%, Dream-1 59.5%, Fable 5.2 (high) 57.5%, Gemini 4 Carbon (high) 54.5% … MolmoAct2 19.5%, GR00T N1.7 9.5%. Also reports cost and wall-clock time per attempt.",
+    "summary": "Six adapted RoboDojo real-world tasks on bimanual I2RT YAM arms, with frontier LLMs, a full agent system and learned VLAs/WAMs scored on one rig. Leaderboard: Waddle-1 81.4%, GPT-6.2 Astra (high) 65.7%, Dream-1 59.5%, Fable 5.2 (high) 57.5%, Gemini 4 Carbon (high) 54.5% … MolmoAct2 19.5%, GR00T N1.7 9.5%. Also reports cost and wall-clock time per attempt. Later rows (leaderboard as of 2026-11-25): coding agents with no call cap score GPT-6.2 Astra on Codex 97.3%, Gemini 4 Neon on Antigravity 89.7% and Fable 5.2 on Claude Code 89.0%.",
     "caveats": "Graders knew which model was running ('grading is open to unconscious bias'); tasks are 'the six easiest tasks with the highest scores' on GPT-6 Astra; objects reset by hand; not comparable with original RoboDojo. Call caps differ by system type. Robocurve announced on 2026-11-24 that it is retiring RoboDojo from future evaluations; harness matters as much as model (see Astra on Codex: 97% vs 65.7%).",
     "added": "2026-11-23"
   },

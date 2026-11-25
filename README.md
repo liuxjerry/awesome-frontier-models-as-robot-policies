@@ -158,7 +158,9 @@
 
 | System | Model | Type | Mean progress score | Setting | Measured by | Source |
 |---|---|---|---|---|---|---|
-| Codex | GPT-6.2 Astra (ultrafast) | frontier: agentic | **97%** | Codex harness (self-written tools, several moves per turn) · $9.46 · time not stated | Robocurve | [Astra on Codex (Robocurve)](#codex-vs-inspect-robots) |
+| Codex | GPT-6.2 Astra (ultrafast) | frontier: agentic | **97.3%** | Codex harness (self-written tools, several moves per turn), no call cap, 20-min limit · $9.46 (estimate) · 5.6 min | Robocurve | [Astra on Codex (Robocurve)](#codex-vs-inspect-robots) |
+| Antigravity | Gemini 4 Neon (high) | frontier: agentic | **89.7%** | coding agent, no call cap, 60-min limit · $5.46 (estimate) · 37.5 min | Robocurve | [RoboDojo-RC Tier 1](#robodojo-rc-tier1) |
+| Claude Code | Claude Fable 5.2 (high, fast) | frontier: agentic | **89.0%** | coding agent, no call cap, 20-min limit · $12.08 (recorded) · 9.7 min | Robocurve | [RoboDojo-RC Tier 1](#robodojo-rc-tier1) |
 | Waddle-1 | undisclosed cloud LLMs + local policies | frontier over System 1 | **81.4%** | full system, no call cap, 10-min limit · $2.46 · 7.4 min | Robocurve | [Waddle-1](#waddle-1) |
 | Inspect Robots agent | GPT-6.2 Astra (high, ultrafast) | frontier: direct | **65.7%** | 40 calls · $10.51 · 2.7 min | Robocurve | [RoboDojo-RC Tier 1](#robodojo-rc-tier1) |
 | Dream-1 (Dream Labs) | world action model (hosted API) | learned System 1 | **59.5%** | 3,600 steps · $0.15 · 1.5 min | Robocurve | [RoboDojo-RC Tier 1](#robodojo-rc-tier1) |
@@ -176,7 +178,7 @@
 | Inspect Robots agent | GPT-5.6 Sol (high, fast) | frontier: direct | **14.9%** | 40 calls · $1.77 · 3.6 min | Robocurve | [RoboDojo-RC Tier 1](#robodojo-rc-tier1) |
 | GR00T N1.7 | open VLA | learned System 1 | **9.5%** | 3,600 steps · $0.05 (GPU rental) · 0.9 min | Robocurve | [RoboDojo-RC Tier 1](#robodojo-rc-tier1) |
 
-> Frontier LLMs, a full agent system and learned VLAs/WAMs on one rig, all measured by Robocurve. Setting = call or step cap · cost per attempt · wall-clock per attempt. Graders were not blinded, and Waddle-1 ran with no call cap, so the top row is not like-for-like. Harness matters: the same GPT-6.2 Astra scores 97% through Codex vs 65.7% through Robocurve's 40-call Inspect Robots harness. Robocurve is retiring RoboDojo from future evaluations.
+> Frontier LLMs, coding agents, a full agent system and learned VLAs/WAMs on one rig, all measured by Robocurve. Setting = call or step cap · cost per attempt · wall-clock per attempt. Graders were not blinded. Caps are not like-for-like: plain LLMs get 40 calls, while coding agents (Codex, Claude Code, Antigravity) and Waddle-1 run with no call cap under 20-, 60- and 10-minute limits. Harness matters: the same GPT-6.2 Astra scores 97.3% through Codex vs 65.7% through Robocurve's 40-call Inspect Robots harness; all three coding agents (89.0–97.3%) top Waddle-1 (81.4%). Robocurve is retiring RoboDojo from future evaluations.
 
 ### LIBERO-10 (direct EEF control via tool calls)
 
@@ -1226,7 +1228,7 @@
 - **[RoboDojo-RC Tier 1: real-world leaderboard of frontier models, agents and VLAs (Robocurve)](https://github.com/robocurve/inspect-robots)**
   Robocurve · *Benchmark* · 2026-09-23 · `💬 post only`  
   [[Code](https://github.com/robocurve/inspect-robots)] [[Post](https://robocurve.org/opus-5-5-robodojo-rc-tier-1/)] [[Data](https://robocurve.org/)] ![stars](https://img.shields.io/github/stars/robocurve/inspect-robots?style=flat-square&label=%E2%98%85)  
-  Six adapted RoboDojo real-world tasks on bimanual I2RT YAM arms, with frontier LLMs, a full agent system and learned VLAs/WAMs scored on one rig. Leaderboard: Waddle-1 81.4%, GPT-6.2 Astra (high) 65.7%, Dream-1 59.5%, Fable 5.2 (high) 57.5%, Gemini 4 Carbon (high) 54.5% … MolmoAct2 19.5%, GR00T N1.7 9.5%. Also reports cost and wall-clock time per attempt.  
+  Six adapted RoboDojo real-world tasks on bimanual I2RT YAM arms, with frontier LLMs, a full agent system and learned VLAs/WAMs scored on one rig. Leaderboard: Waddle-1 81.4%, GPT-6.2 Astra (high) 65.7%, Dream-1 59.5%, Fable 5.2 (high) 57.5%, Gemini 4 Carbon (high) 54.5% … MolmoAct2 19.5%, GR00T N1.7 9.5%. Also reports cost and wall-clock time per attempt. Later rows (leaderboard as of 2026-11-25): coding agents with no call cap score GPT-6.2 Astra on Codex 97.3%, Gemini 4 Neon on Antigravity 89.7% and Fable 5.2 on Claude Code 89.0%.  
   <sub>**Eval:** real · **Judged by:** human grader with a per-task progress rubric (not blinded) · **Trials:** 6 tasks × 20 trials = 120 attempts per configuration · **Speed/cost:** 0.8–32.1 min per attempt across systems; $0.05–$10.51 per attempt</sub>  
   ⚠️ <sub>Graders knew which model was running ('grading is open to unconscious bias'); tasks are 'the six easiest tasks with the highest scores' on GPT-6 Astra; objects reset by hand; not comparable with original RoboDojo. Call caps differ by system type. Robocurve announced on 2026-11-24 that it is retiring RoboDojo from future evaluations; harness matters as much as model (see Astra on Codex: 97% vs 65.7%).</sub>  
   <sub>↪ also in: [Frontier Model as Direct Policy](#direct)</sub>
