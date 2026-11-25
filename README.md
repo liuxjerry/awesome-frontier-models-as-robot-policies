@@ -350,10 +350,10 @@
 <a id="bitter-lesson-robotics"></a>
 - **[The Bitter Lesson Comes to Robotics](https://arxiv.org/abs/2610.25287)**
   — · *Paper* · 2026-10-18 · `📝 preprint` · 🏷️ CoRL 2026 Action Gap workshop  
-  [[Paper](https://arxiv.org/abs/2610.25287)]  
+  [[Paper](https://arxiv.org/abs/2610.25287)] [[Post](https://lesswrong.com/posts/ndS9Xn8Qx5PppHJ3Q/the-ability-of-frontier-models-to-control-robots-is-rapidly)]  
   First broad comparison of frontier LMs on a common real-hardware manipulation suite. Models can directly control real arms but are not yet precise or efficient enough to finish within a practical action budget. Performance doubling time of 53.9 days over July–October 2026.  
   <sub>**Model:** 9 frontier multimodal LMs at multiple effort / service tiers · **Below it:** analytic (IK / waypoints / scripted) · **Interface:** Direct end-effector pose commands · **Eval:** real · **Trials:** 6 RoboDojo tasks on physical hardware · **Speed/cost:** best execution rate improved 4.4× (Jul–Oct 2026); lowest execution cost fell 6.2× (Jul–Oct 2026)</sub>  
-  ⚠️ <sub>Short window (4 months) and 6 tasks: a weak basis for extrapolation.</sub>  
+  ⚠️ <sub>Short window (4 months) and 6 tasks: a weak basis for extrapolation. The LessWrong companion post says each trial is graded by GPT-6 Astra (H) from the three camera feeds, i.e. an LLM judge that is also one of the evaluated models; trials have a 40-action budget, and the authors call the doubling-time CI (36.1–59.5 days) 'relatively wide'.</sub>  
   <sub>↪ also in: [Benchmarks & Evaluation Reports](#benchmarks)</sub>
 
 <a id="astranomy"></a>

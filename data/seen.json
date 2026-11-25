@@ -1372,6 +1372,11 @@
       "decision": "rejected",
       "note": "news only, no task definition"
     },
+    "url:https://lesswrong.com/posts/ndS9Xn8Qx5PppHJ3Q/the-ability-of-frontier-models-to-control-robots-is-rapidly": {
+      "date": "2026-11-25",
+      "decision": "noted",
+      "note": "companion post of bitter-lesson-robotics; link + grader caveat added"
+    },
     "url:https://mistral.ai/news/robostral-navigate/": {
       "date": "2026-11-22",
       "decision": "rejected",
