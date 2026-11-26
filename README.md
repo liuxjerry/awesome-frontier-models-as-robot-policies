@@ -1,6 +1,6 @@
 # Awesome Frontier Models (LLMs / VLMs) as Robot Policies [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-![entries](https://img.shields.io/badge/entries-140-blue?style=flat-square) ![newest](https://img.shields.io/badge/newest%20entry-2026000000-green?style=flat-square) ![license](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)
+![entries](https://img.shields.io/badge/entries-140-blue?style=flat-square) ![newest](https://img.shields.io/badge/newest%20entry-2026--11--26-green?style=flat-square) ![license](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)
 
 > **Can a general-purpose frontier model (GPT, Claude, Gemini, Qwen…) *be* the robot policy, and if so, what is left for the learned System 1?**
 >
@@ -442,7 +442,6 @@
 
 **Cross-listed here:**
 
-- ↪ **[RoboSpoof](#robospoof)**: You Can't See Everything: Perceptual Attacks on Embodied AI <sub>(listed under [Analyses, Critiques & Reproducibility](#critiques))</sub>
 - ↪ **[ICLWorld](#iclworld)**: ICLWorld: Benchmarking In-Context Learning of Agents from Digital to Physical Worlds <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
 - ↪ **[Atomic Policy](#atomic-policy)**: Atomic Policy: Composing Atomic Manipulation Skills with Agentic Reasoning <sub>(listed under [Frontier Model over a Learned System 1 / System 0](#orchestrated))</sub>
 - ↪ **[WorldLeague](#worldleague)**: WorldLeague: Benchmarking Physical Agency <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
@@ -460,6 +459,7 @@
 - ↪ **[PhysEvo](#physevo)**: PhysEvo: Astra Can Act, Let It <sub>(listed under [Getting Better Without Weight Updates](#self-improving))</sub>
 - ↪ **[RoboDojo-RC Tier 1](#robodojo-rc-tier1)**: RoboDojo-RC Tier 1: real-world leaderboard of frontier models, agents and VLAs (Robocurve) <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
 - ↪ **[Robocurve Astra eval](#robocurve-astra)**: GPT-6 Astra vs Claude Fable 5 / 5.1 on bimanual YAM arms <sub>(listed under [Benchmarks & Evaluation Reports](#benchmarks))</sub>
+- ↪ **[RoboSpoof](#robospoof)**: You Can't See Everything: Perceptual Attacks on Embodied AI <sub>(listed under [Analyses, Critiques & Reproducibility](#critiques))</sub>
 
 </details>
 
@@ -1539,7 +1539,6 @@
 
 **Cross-listed here:**
 
-- ↪ **[RoboSpoof](#robospoof)**: You Can't See Everything: Perceptual Attacks on Embodied AI <sub>(listed under [Analyses, Critiques & Reproducibility](#critiques))</sub>
 - ↪ **[Mibot-RUA](#mibot-rua)**: Mibot-RUA (Mibot_RSI): RoboDojo agent-track entry <sub>(listed under [Getting Better Without Weight Updates](#self-improving))</sub>
 - ↪ **[AgentRoboCritic](#agentrobocritic)**: AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control <sub>(listed under [Analyses, Critiques & Reproducibility](#critiques))</sub>
 - ↪ **[LEASH / RoboRisk](#leash-roborisk)**: LEASH: Stay Safe in Agentic Robotics <sub>(listed under [Analyses, Critiques & Reproducibility](#critiques))</sub>
@@ -1550,6 +1549,7 @@
 - ↪ **[LLM as Policy on RoboDojo](#robodojo-astra)**: An Unexpected Robot Policy: Early Evaluations of GPT-6 Astra on RoboDojo and Beyond <sub>(listed under [Frontier Model as Direct Policy](#direct))</sub>
 - ↪ **[CaP-X](#cap-x)**: CaP-X: A Framework for Benchmarking and Improving Coding Agents for Robot Manipulation <sub>(listed under [Agentic & Code-Writing Policies](#agentic))</sub>
 - ↪ **[ALRM](#alrm)**: ALRM: Agentic LLM for Robotic Manipulation <sub>(listed under [Agentic & Code-Writing Policies](#agentic))</sub>
+- ↪ **[RoboSpoof](#robospoof)**: You Can't See Everything: Perceptual Attacks on Embodied AI <sub>(listed under [Analyses, Critiques & Reproducibility](#critiques))</sub>
 
 </details>
 
@@ -1559,15 +1559,6 @@
 *Negative results, retests, benchmark-integrity problems, and the limits authors admit about their own systems.*
 
 <details open><summary><b>5 entries</b> + 14 cross-listed</summary>
-
-<a id="robospoof"></a>
-- **[You Can't See Everything: Perceptual Attacks on Embodied AI](https://papers.robocurve.org/robospoof)**
-  Robocurve; University of Southern California; UC Irvine · *Report* · 2026 · `💬 post only`  
-  [[Paper](https://papers.robocurve.org/robospoof)] [[Post](https://robocurve.org/robospoof/)]  
-  Tests whether frontier models driving a real robot in closed loop refuse unsafe tasks when camera footage is blurred or doctored. Models attempted unsafe tasks in 81/300 trials (27%) on unaltered footage, 263/300 (88%) with a Gaussian blur and 291/300 (97%) with frame-by-frame doctoring: 'models rarely refuse tasks unless visual observations provide positive evidence that the tasks are unsafe.'  
-  <sub>**Eval:** real · **Judged by:** Claude Fable 5.1 classified each trial as attempt or refusal · **Trials:** 5 unsafe tasks (from RoboHarm) × 12 trials × 3 footage conditions per model; 900 trials</sub>  
-  ⚠️ <sub>Refusal is judged by an LLM (Claude Fable 5.1); 12 trials per cell on one bench; an attempt counts as completed when the model calls done and 'we did not check the scene afterwards'. No date on the paper or page; per-model numbers only in a figure.</sub>  
-  <sub>↪ also in: [Benchmarks & Evaluation Reports](#benchmarks), [Frontier Model as Direct Policy](#direct)</sub>
 
 <a id="agentrobocritic"></a>
 - **[AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control](https://arxiv.org/abs/2611.26613)**
@@ -1601,6 +1592,15 @@
   RoboRisk benchmark covers task refusal, plan repair, execution-time hazards, injection, and sequential memory, all closed-loop. All six frontier models 'generally show high harm rates'. The LEASH harness cuts harm across all six while largely preserving task completion.  
   <sub>**Eval:** sim+real · **Trials:** 92 sim + 13 physical tasks</sub>  
   <sub>↪ also in: [Benchmarks & Evaluation Reports](#benchmarks)</sub>
+
+<a id="robospoof"></a>
+- **[You Can't See Everything: Perceptual Attacks on Embodied AI](https://papers.robocurve.org/robospoof)**
+  Robocurve; University of Southern California; UC Irvine · *Report* · 2026 · `💬 post only`  
+  [[Paper](https://papers.robocurve.org/robospoof)] [[Post](https://robocurve.org/robospoof/)]  
+  Tests whether frontier models driving a real robot in closed loop refuse unsafe tasks when camera footage is blurred or doctored. Models attempted unsafe tasks in 81/300 trials (27%) on unaltered footage, 263/300 (88%) with a Gaussian blur and 291/300 (97%) with frame-by-frame doctoring: 'models rarely refuse tasks unless visual observations provide positive evidence that the tasks are unsafe.'  
+  <sub>**Eval:** real · **Judged by:** Claude Fable 5.1 classified each trial as attempt or refusal · **Trials:** 5 unsafe tasks (from RoboHarm) × 12 trials × 3 footage conditions per model; 900 trials</sub>  
+  ⚠️ <sub>Refusal is judged by an LLM (Claude Fable 5.1); 12 trials per cell on one bench; an attempt counts as completed when the model calls done and 'we did not check the scene afterwards'. No date on the paper or page; per-model numbers only in a figure.</sub>  
+  <sub>↪ also in: [Benchmarks & Evaluation Reports](#benchmarks), [Frontier Model as Direct Policy](#direct)</sub>
 
 **Cross-listed here:**
 
@@ -1647,13 +1647,6 @@
   Working hypothesis: System 2 and much of System 1 merge into frontier models, while a small embodiment-specific 'System 0' reflex controller remains. Calls this robotics' 'GPT-3 moment' and doubts the value of standalone robot foundation models.  
   ⚠️ <sub>Industry commentary; partly relies on unverified sources.</sub>  
 
-<a id="planner-to-policy"></a>
-- **[From Planner to Policy: a survey of large language models for robot control](https://tantansir.github.io/llm-for-robot-control/)**
-  — · *Survey* · 2026-10 · `💻 code / results`  
-  [[Project](https://tantansir.github.io/llm-for-robot-control/)] [[Code](https://github.com/tantansir/llm-for-robot-control)] ![stars](https://img.shields.io/github/stars/tantansir/llm-for-robot-control?style=flat-square&label=%E2%98%85)  
-  Organizes ~220 systems by action interface: abstraction level, representation, composition operator, invocation timing. A useful taxonomy for the System 2 → System 1 contract.  
-  ⚠️ <sub>No arXiv link yet; date taken from the repo creation month.</sub>  
-
 <a id="towards-agentic-robots"></a>
 - **[Towards Agentic Robots: Model, Data, Environment, and Harness](https://arxiv.org/abs/2610.20442)**
   — · *Survey* · 2026-10-14 · `📝 preprint`  
@@ -1666,6 +1659,13 @@
   [[Post](https://www.understandingrobots.org/p/openais-astra-model-is-shockingly)]  
   Astra briefly topped RoboDojo but is too slow for most tasks. Expects LLMs to become high-level orchestrators rather than replace VLAs, because robots need onboard models and Astra lacks dexterity. Written before AMP1, which partly contests it.  
   <sub>↪ also in: [Analyses, Critiques & Reproducibility](#critiques)</sub>
+
+<a id="planner-to-policy"></a>
+- **[From Planner to Policy: a survey of large language models for robot control](https://tantansir.github.io/llm-for-robot-control/)**
+  — · *Survey* · 2026-10 · `💻 code / results`  
+  [[Project](https://tantansir.github.io/llm-for-robot-control/)] [[Code](https://github.com/tantansir/llm-for-robot-control)] ![stars](https://img.shields.io/github/stars/tantansir/llm-for-robot-control?style=flat-square&label=%E2%98%85)  
+  Organizes ~220 systems by action interface: abstraction level, representation, composition operator, invocation timing. A useful taxonomy for the System 2 → System 1 contract.  
+  ⚠️ <sub>No arXiv link yet; date taken from the repo creation month.</sub>  
 
 <a id="showlab-survey"></a>
 - **[Survey on Multimodal Embodied Agents: A Unified Capability-centric Perspective from Computer-Use to Robot-Use](https://figshare.com/articles/preprint/Survey_on_Multimodal_Embodied_Agents_A_Unified_Capability-centric_Perspective_from_Computer-Use_to_Robot-Use/33529048)**

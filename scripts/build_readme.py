@@ -31,8 +31,9 @@ def load(name: str):
 
 
 def date_key(e: dict) -> str:
+    """Sortable YYYY-MM-DD; a partial date ('2026', '2026-10') sorts before any full date in that period."""
     d = e.get("date") or "0000"
-    return d.ljust(10, "0")
+    return d + "-00-00"[len(d) - 4:]
 
 
 def esc(s: str | None) -> str:
