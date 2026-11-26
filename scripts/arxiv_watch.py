@@ -17,8 +17,16 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
+REPO_TZ = ZoneInfo("Asia/Tokyo")  # every date in data/*.json is a Tokyo date
+
+
+def today() -> dt.date:
+    """Today's date in the repo's time zone, whatever the machine's clock zone is."""
+    return dt.datetime.now(REPO_TZ).date()
+
 UA = "awesome-list-arxiv-watch/1.0"
 NS = {"a": "http://www.w3.org/2005/Atom"}
 
@@ -59,7 +67,7 @@ def main() -> int:
     ap.add_argument("--days", type=int, default=7)
     args = ap.parse_args()
     known = {e.get("arxiv") for e in json.loads((ROOT / "data/entries.json").read_text(encoding="utf-8"))}
-    cutoff = (dt.date.today() - dt.timedelta(days=args.days)).isoformat()
+    cutoff = (today() - dt.timedelta(days=args.days)).isoformat()
     found: dict[str, dict] = {}
     for q in QUERIES:
         try:

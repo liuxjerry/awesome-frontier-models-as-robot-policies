@@ -30,6 +30,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import arxiv_watch  # noqa: E402
+from arxiv_watch import REPO_TZ, today  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -59,9 +60,10 @@ def default_days() -> int:
     """Days since the last successful daily run (+1), at least 3, so a skipped day is never lost."""
     import subprocess
     try:
-        last = subprocess.run(["git", "-C", str(ROOT), "log", "-1", "--grep=^daily:", "--format=%cs"],
+        last = subprocess.run(["git", "-C", str(ROOT), "log", "-1", "--grep=^daily:", "--format=%ct"],
                               capture_output=True, text=True, timeout=10).stdout.strip()
-        return max(3, (dt.date.today() - dt.date.fromisoformat(last)).days + 1)
+        last_day = dt.datetime.fromtimestamp(int(last), REPO_TZ).date()
+        return max(3, (today() - last_day).days + 1)
     except Exception:  # noqa: BLE001  no git, no daily commit yet
         return 3
 
@@ -153,7 +155,7 @@ def refresh_stars(related):
         return
     for r in related["lists"]:
         r["stars"], r["pushed"] = fresh[r["name"]]
-    related["_snapshot"] = f"Stars and last push read from the GitHub API on {dt.date.today().isoformat()}."
+    related["_snapshot"] = f"Stars and last push read from the GitHub API on {today().isoformat()}."
     save("related.json", related)
 
 
@@ -170,7 +172,7 @@ def main() -> int:
     seen = load("seen.json")
     listed = {e["arxiv"] for e in entries if e.get("arxiv")}
     skip = listed | set(seen.get("baseline", [])) | {k.split(":", 1)[1] for k in seen["items"] if k.startswith("arxiv:")}
-    today = dt.date.today().isoformat()
+    today_str = today().isoformat()
 
     if args.baseline:
         new = sorted(set(upstream_ids(related)) - skip)
@@ -195,7 +197,7 @@ def main() -> int:
         c["sources"].setdefault(source, []).extend(detail if isinstance(detail, list) else [detail])
 
     args.days = args.days or default_days()
-    cutoff = (dt.date.today() - dt.timedelta(days=args.days)).isoformat()
+    cutoff = (today() - dt.timedelta(days=args.days)).isoformat()
     ok = 0
     for q in arxiv_watch.QUERIES:
         try:
@@ -248,7 +250,7 @@ def main() -> int:
             updates.append({"entry": e["id"], "arxiv": aid, "version": m["version"], "journal_ref": m["journal_ref"],
                             "comment": m["comment"], "seen_key": key})
 
-    out = {"generated": today, "window_days": args.days, "source_status": status,
+    out = {"generated": today_str, "window_days": args.days, "source_status": status,
            "papers": papers, "entry_updates": updates}
     Path(args.out).write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"{len(papers)} new papers, {len(updates)} possible venue updates -> {args.out}")
