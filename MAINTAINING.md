@@ -22,8 +22,9 @@ in the loop. A human maintainer can follow them too. Schema and editorial rules 
   scan, triage what you have (open a paper by its arXiv URL with web fetch if its metadata is missing), and push.
   `validate.py --arxiv` downgrades an unreachable arXiv API to a warning, and the GitHub Action re-runs the
   arXiv title check on every push. Name the unreachable sources in the final report.
-- **Dates are Tokyo dates (Asia/Tokyo), not UTC.** The run starts at 08:01 Tokyo time, when it is still the
-  previous day in UTC. Get today's date with `TZ=Asia/Tokyo date +%F` and use it everywhere a date is written:
+- **Dates are Tokyo dates (Asia/Tokyo), not UTC.** The run starts at 10:31 Tokyo time (01:31 UTC, same
+  date), about 30 minutes after arXiv's 20:00 US Eastern announcement in winter and 90 minutes after it in summer,
+  so that morning's batch is already searchable. Manual runs can start at any hour, so still get today's date with `TZ=Asia/Tokyo date +%F` and use it everywhere a date is written:
   `"added"`, the changelog `date` and the `daily:` commit message. The scripts already use Tokyo dates.
 - **Limits per run:** up to 60 candidates triaged and up to 12 entries added. Anything left over stays unseen
   and comes back tomorrow.
