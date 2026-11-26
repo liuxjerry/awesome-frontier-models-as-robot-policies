@@ -1,11 +1,11 @@
 {
-  "_snapshot": "Stars and last push read from the GitHub API on 2026-11-25.",
+  "_snapshot": "Stars and last push read from the GitHub API on 2026-11-27.",
   "lists": [
     {
       "name": "kairunwen/Awesome-Robot-Use-Agent",
       "url": "https://github.com/kairunwen/Awesome-Robot-Use-Agent",
       "stars": 223,
-      "pushed": "2026-11-24",
+      "pushed": "2026-11-26",
       "angle": "The largest robot-use-agent list: papers, projects, social demos, benchmarks, searchable site."
     },
     {
@@ -18,7 +18,7 @@
     {
       "name": "zjwzcx/Awesome-Astra-Embodied-AI",
       "url": "https://github.com/zjwzcx/Awesome-Astra-Embodied-AI",
-      "stars": 1253,
+      "stars": 1252,
       "pushed": "2026-10-28",
       "angle": "GPT-6 Astra only; mostly case-by-case demos (X / RedNote)."
     },
@@ -32,7 +32,7 @@
     {
       "name": "benchflow-ai/awesome-embodied-agents",
       "url": "https://github.com/benchflow-ai/awesome-embodied-agents",
-      "stars": 6,
+      "stars": 7,
       "pushed": "2026-10-25",
       "angle": "Strong editorial rules (verbatim numbers, who judged success, trial counts). This list borrows them."
     },
@@ -40,7 +40,7 @@
       "name": "w-xb/awesome-agentic-robotics",
       "url": "https://github.com/w-xb/awesome-agentic-robotics",
       "stars": 33,
-      "pushed": "2026-11-07",
+      "pushed": "2026-11-25",
       "angle": "Memory, planning, world models, verification, failure recovery."
     },
     {
@@ -53,8 +53,8 @@
     {
       "name": "chonghanqin/Awesome-Agentic-Robots",
       "url": "https://github.com/chonghanqin/Awesome-Agentic-Robots",
-      "stars": 207,
-      "pushed": "2026-11-24",
+      "stars": 208,
+      "pushed": "2026-11-26",
       "angle": "Companion list to the 'Towards Agentic Robots' survey."
     },
     {
@@ -74,7 +74,7 @@
     {
       "name": "zchoi/Awesome-Embodied-Robotics-and-Agent",
       "url": "https://github.com/zchoi/Awesome-Embodied-Robotics-and-Agent",
-      "stars": 1926,
+      "stars": 1927,
       "pushed": "2026-11-23",
       "angle": "Broad embodied AI with LLMs."
     },
@@ -82,7 +82,7 @@
       "name": "SajjadPSavoji/awesome-weight-space-programming",
       "url": "https://github.com/SajjadPSavoji/awesome-weight-space-programming",
       "stars": 8,
-      "pushed": "2026-11-25",
+      "pushed": "2026-11-26",
       "angle": "Not robotics-specific; its data-driven, daily-rebuilt format inspired this list."
     }
   ]
