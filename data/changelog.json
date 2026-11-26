@@ -13,12 +13,24 @@
       "roboevo2",
       "agent-on-guard",
       "evomisty",
-      "aa-robotics-sim"
+      "aa-robotics-sim",
+      "margin",
+      "roboclock",
+      "reweave",
+      "next-manip",
+      "atomic-policy",
+      "boundary-aware-policy",
+      "skillharness",
+      "jil-wam-calibration",
+      "wsp-robot-repair",
+      "mibot-rua",
+      "robospoof"
     ],
     "updated": [
-      "aa-robotics"
+      "aa-robotics",
+      "robodojo"
     ],
-    "screened": 60,
+    "screened": 88,
     "milestones": [
       {
         "id": "robolivemem",
@@ -26,7 +38,7 @@
         "why": "first like-for-like evidence (same seeds and harness) that paused-simulator benchmarks overstate frontier robot performance: 97% paused vs 50% live"
       }
     ],
-    "note": "RoboLiveMem runs the same robot-memory tasks with the world paused and running: 8 Claude and GPT models drop from 97% to 50% success. Artificial Analysis launched AA-Robotics-Sim (simulated Unitree G1; GPT-6.2 Astra 71.0) and reported GPT-6.2 Astra at 79 on AA-Robotics."
+    "note": "RoboLiveMem runs the same robot-memory tasks with the world paused and running: 8 Claude and GPT models drop from 97% to 50% success. Artificial Analysis launched AA-Robotics-Sim (simulated Unitree G1; GPT-6.2 Astra 71.0) and reported GPT-6.2 Astra at 79 on AA-Robotics. Later run: Roboclock charges model thinking time to the task clock, and GPT-6 Astra falls from 19.0% to 3.0% while the fine-tuned π0.5 keeps 8.3%; Xiaomi Robotics' Mibot-RUA (GPT-6 Astra) now tops the RoboDojo agent track at 79.33% SR, starred for task-specific priors."
   },
   {
     "date": "2026-11-24",

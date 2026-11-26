@@ -1317,6 +1317,11 @@
       "decision": "rejected",
       "note": "weight-space programming, not embodied"
     },
+    "arxiv:2611.26855": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "uncertainty estimation for flow-matching policies, no frontier angle"
+    },
     "arxiv:2611.26969": {
       "date": "2026-11-24",
       "decision": "rejected",
@@ -1397,6 +1402,11 @@
       "decision": "rejected",
       "note": "game-playing harness, not embodied"
     },
+    "arxiv:2611.28411": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "VLM-graded evaluation of generalist VLAs, no frontier-model policy"
+    },
     "arxiv:2611.28781": {
       "date": "2026-11-25",
       "decision": "rejected",
@@ -1462,6 +1472,11 @@
       "decision": "rejected",
       "note": "borderline: v2 is a withdrawal (posted before coauthor review)"
     },
+    "arxiv:2611.30188": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry jil-wam-calibration"
+    },
     "arxiv:2611.30438": {
       "date": "2026-11-25",
       "decision": "rejected",
@@ -1491,6 +1506,11 @@
       "date": "2026-11-26",
       "decision": "added",
       "note": "-> entry robouniverse-10k"
+    },
+    "arxiv:2611.31053": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry reweave"
     },
     "arxiv:2611.31098": {
       "date": "2026-11-24",
@@ -1532,6 +1552,11 @@
       "decision": "rejected",
       "note": "robot VLA/WAM benchmark, no frontier-model angle"
     },
+    "arxiv:2611.31715": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry wsp-robot-repair"
+    },
     "arxiv:2611.31822": {
       "date": "2026-11-26",
       "decision": "rejected",
@@ -1552,6 +1577,11 @@
       "decision": "rejected",
       "note": "robot VLA/WAM, no frontier-model angle"
     },
+    "arxiv:2611.32093": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry margin"
+    },
     "arxiv:2611.32108": {
       "date": "2026-11-26",
       "decision": "rejected",
@@ -1561,6 +1591,36 @@
       "date": "2026-11-26",
       "decision": "rejected",
       "note": "robot state estimation from video, not a policy"
+    },
+    "arxiv:2611.32186": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry skillharness"
+    },
+    "arxiv:2611.32233": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry roboclock"
+    },
+    "arxiv:2611.32238": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry boundary-aware-policy"
+    },
+    "arxiv:2611.32245": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "borderline: deterministic planner over frozen VLA; LLM orchestration deferred to Stage 2, VLMs only as baselines"
+    },
+    "arxiv:2611.32533": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry next-manip"
+    },
+    "arxiv:2611.32534": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "simulation/task generation platform, no frontier-model policy"
     },
     "arxiv:2611.32639": {
       "date": "2026-11-26",
@@ -1572,10 +1632,20 @@
       "decision": "added",
       "note": "-> entry iclworld"
     },
+    "arxiv:2611.32727": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "real2sim scene reconstruction, no frontier-model policy"
+    },
     "arxiv:2611.32803": {
       "date": "2026-11-26",
       "decision": "rejected",
       "note": "borderline: multi-robot team-selection reasoning, not policy control"
+    },
+    "arxiv:2611.32813": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry atomic-policy"
     },
     "arxiv:2611.33013": {
       "date": "2026-11-26",
@@ -1617,6 +1687,11 @@
       "decision": "noted",
       "note": "venue recorded (IROS 2026)"
     },
+    "url:https://aiweekly.co/alerts/robotworld-frontier-vlms-leave-63-of-84-robot-tasks-unsolved": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "secondary; RobotWorld arXiv 2610.10409 already seen"
+    },
     "url:https://artificialanalysis.ai/articles/aa-robotics-sim": {
       "date": "2026-11-26",
       "decision": "added",
@@ -1642,10 +1717,20 @@
       "decision": "rejected",
       "note": "robot WAM, no frontier-model angle"
     },
+    "url:https://cryptobriefing.com/astra-agent-controls-humanoid-robot/": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "secondary coverage of Robocurve Astra eval (already listed)"
+    },
     "url:https://cryptobriefing.com/gpt-6-2-astra-tops-aa-robotics-benchmark": {
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "unverified secondary; AA primary page not updated"
+    },
+    "url:https://cryptobriefing.com/robocurve-ai-robot-arms-safety-tests/": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "secondary coverage of RoboHarm"
     },
     "url:https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/": {
       "date": "2026-11-22",
@@ -1657,10 +1742,30 @@
       "decision": "added",
       "note": "-> entry gemini-4-hydrogen (added by hand, outside first scan window)"
     },
+    "url:https://emergent.sh/news/llm-direct-robot-control-system-released-2026": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "secondary, no org, model or source named"
+    },
     "url:https://fortune.com/2026/11/13/openai-disbands-robotics-team-as-its-general-models-start-running-robots/": {
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "news only, no task definition"
+    },
+    "url:https://github.com/XPolicyLab/XPolicyLab/pull/204": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry mibot-rua (adapter PR names GPT-6-Astra)"
+    },
+    "url:https://github.com/XPolicyLab/XPolicyLab/pull/226": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "borderline: Q0-Preview adapter, model not named; leaderboard 74.2/68.87 starred"
+    },
+    "url:https://itcanthink.substack.com/p/what-do-robotics-leaderboards-tell": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "June essay on VLA leaderboards, no frontier-model angle"
     },
     "url:https://lesswrong.com/posts/ndS9Xn8Qx5PppHJ3Q/the-ability-of-frontier-models-to-control-robots-is-rapidly": {
       "date": "2026-11-25",
@@ -1671,6 +1776,21 @@
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "navigation model trained for robotics"
+    },
+    "url:https://papers.robocurve.org/robospoof": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry robospoof (paper PDF)"
+    },
+    "url:https://people.csail.mit.edu/frankzydou/blog/so101-pen-pickup/index.html": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "single demo, no success criterion or trial count"
+    },
+    "url:https://research.nvidia.com/labs/srl/projects/robolab/leaderboard.html#2026-11-26": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "frontier rows unchanged; Lakeside best learned row added"
     },
     "url:https://research.nvidia.com/labs/srl/projects/robolab/leaderboard.html#SenseNova-RoboRSI": {
       "date": "2026-11-24",
@@ -1692,6 +1812,21 @@
       "decision": "added",
       "note": "-> entry codex-vs-inspect-robots (added by hand)"
     },
+    "url:https://robocurve.org/roboharm/": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "borderline: RoboHarm safety benchmark; arXiv 2610.14043 already in seen baseline, not listed; human may add next to robospoof"
+    },
+    "url:https://robocurve.org/robospoof/": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry robospoof"
+    },
+    "url:https://robodojo-benchmark.com/LeaderBoard#2026-11-26": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> Mibot-RUA row (new agent-track top) + entry mibot-rua"
+    },
     "url:https://roboticsandautomationnews.com/2026/11/05/agibot-unveils-go-3-preview-and-takes-top-spot-on-three-embodied-ai-benchmarks/106711/": {
       "date": "2026-11-22",
       "decision": "rejected",
@@ -1711,6 +1846,11 @@
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "no robotics content"
+    },
+    "url:https://waddlelabs.ai/developers/waddle-stack": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "architecture doc, no models or numbers (context for waddle-1)"
     },
     "url:https://waddlelabs.ai/research/introducing-waddle": {
       "date": "2026-11-23",

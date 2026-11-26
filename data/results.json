@@ -114,6 +114,15 @@
           "setting": "685 / 1200, 10 eps/task; leaderboard Score 69.9",
           "measured_by": "RoboLab leaderboard",
           "source": "embo-harness"
+        },
+        {
+          "system": "Lakeside",
+          "model": "LWM",
+          "kind": "learned System 1",
+          "value": "51.0%",
+          "setting": "1531 / 3000, 25 eps/task; leaderboard Score 65.3; best learned policy on the board",
+          "measured_by": "RoboLab leaderboard",
+          "source": "robolab"
         }
       ],
       "note": "π0.5 appears twice: 49.2% (leaderboard, cited by AMP1) vs 28.0% (Astranomy's own run). That 21-point gap on one benchmark is why every row says who measured it."
@@ -285,9 +294,45 @@
           "setting": "same protocol, AoG's baseline table",
           "measured_by": "Cui et al. (AoG)",
           "source": "agent-on-guard"
+        },
+        {
+          "system": "ReWeave",
+          "model": "GPT-6.1 Sol (xhigh) controller + frozen π0.5",
+          "kind": "frontier: self-improving",
+          "value": "58.25% SR · Score 63.43",
+          "setting": "42 tasks, held-out seeds 1–10, native step limits; harness optimized on seed 0 (≤10 rounds per task); seed harness H0 25.50%",
+          "measured_by": "Xu et al. (ReWeave)",
+          "source": "reweave"
+        },
+        {
+          "system": "Next-Manip",
+          "model": "GPT-6 Astra (medium) + Simate VLA, GPT-6 Luna allocator",
+          "kind": "frontier over System 1",
+          "value": "59.58% SR · Score 67.88",
+          "setting": "12 representative tasks only (3 per Generalization/Precision/Long-Horizon/Memory), 20 trials per task; published standalone Astra 14.83% and Simate 38.56% on the same 12 tasks",
+          "measured_by": "Liu et al. (Next-Manip)",
+          "source": "next-manip"
+        },
+        {
+          "system": "Boundary-Aware Policy Learning",
+          "model": "Claude Opus 5.5 (high) + boundary-trained π0.5",
+          "kind": "frontier over System 1",
+          "value": "69.2%",
+          "setting": "26 Generalization/Memory/Open-vocabulary tasks only, 10 episodes per task; Harness VLA (VPP2) 40.8% under the same subset",
+          "measured_by": "Fang et al. (Boundary-Aware)",
+          "source": "boundary-aware-policy"
+        },
+        {
+          "system": "Mibot-RUA*",
+          "model": "GPT-6 Astra (per adapter PR)",
+          "kind": "frontier: self-improving",
+          "value": "79.33% SR · Score 83.94",
+          "setting": "official leaderboard agent track, Avg. (w/o Open); starred: task-specific briefs, skills, experience and scene priors beyond the official Detail Description",
+          "measured_by": "RoboDojo leaderboard (contributed by Xiaomi Robotics)",
+          "source": "mibot-rua"
         }
       ],
-      "note": "The Astra direct-policy entry ranked above all 40 public policies at the time. See Critiques for leaderboard entries that did not survive retesting."
+      "note": "On the official leaderboard's agent track, Xiaomi Robotics' Mibot-RUA (GPT-6 Astra) leads at Avg. (w/o Open) 83.94 / 79.33% (added 2026-11-26), but RoboDojo stars it, like every other agent entry tested before its 2026-11-14 rules, for injecting task-specific information beyond the official Detail Description. The Astra direct-policy entry ranked above all 40 public policies at the time. See Critiques for leaderboard entries that did not survive retesting."
     },
     {
       "id": "libero-pro",
@@ -428,6 +473,24 @@
           "setting": "all 8 settings, 100 eps each on unseen initial states, after co-evolution; standalone policy 84.1%",
           "measured_by": "Liu et al. (RoboEvo²)",
           "source": "roboevo2"
+        },
+        {
+          "system": "MARGIN",
+          "model": "Claude Opus 5.5",
+          "kind": "frontier: self-improving code",
+          "value": "98.2%",
+          "setting": "all 80 tasks, eight-category mean (six-category 99.1%); ASPIRE incumbents plus margin-refined programs; authors' ASPIRE reproduction 98.175% on 4,000 held-out episodes",
+          "measured_by": "Duan et al. (MARGIN)",
+          "source": "margin"
+        },
+        {
+          "system": "ReWeave",
+          "model": "GPT-6 Astra (low) controller + frozen π0.5; harness optimized by GPT-6.1 Sol",
+          "kind": "frontier: self-improving",
+          "value": "98.75%",
+          "setting": "80 tasks, held-out seeds 1–10; harness optimized on seed 0 (≤10 rounds per task); seed harness H0 89.00%",
+          "measured_by": "Xu et al. (ReWeave)",
+          "source": "reweave"
         }
       ],
       "note": "Papers use different LIBERO-PRO conditions and subsets. Treat as indicative, not a single leaderboard."
@@ -937,6 +1000,51 @@
           "setting": "Unitree G1-D, 4 tasks × 10; standalone policy (120 auto-collected demos) 85.0% vs π0.5 on 200 teleop demos 80.0%",
           "measured_by": "Liu et al. (RoboEvo²)",
           "source": "roboevo2"
+        },
+        {
+          "system": "Next-Manip",
+          "model": "GPT-6 Astra (medium) + fine-tuned π0.5",
+          "kind": "frontier over System 1",
+          "value": "77.50%",
+          "setting": "xArm7, 4 tasks × 20 trials, operator labels; average success rate",
+          "measured_by": "Liu et al. (Next-Manip)",
+          "source": "next-manip"
+        },
+        {
+          "system": "π0.5 (policy only)",
+          "model": "VLA",
+          "kind": "learned System 1",
+          "value": "28.75%",
+          "setting": "same tasks and layouts as Next-Manip",
+          "measured_by": "Liu et al. (Next-Manip)",
+          "source": "next-manip"
+        },
+        {
+          "system": "GPT-6-Astra agent (100% control)",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: direct",
+          "value": "89.3%",
+          "setting": "AgileX Piper, 3 tasks × 50 trials (average success)",
+          "measured_by": "Li et al. (JiL)",
+          "source": "jil-wam-calibration"
+        },
+        {
+          "system": "JiL System 1 & 2",
+          "model": "GPT-6 Astra over Fast-WAM (30% agent calls)",
+          "kind": "frontier over System 1",
+          "value": "82.0%",
+          "setting": "same tasks; 86.0% over LingBot-VA",
+          "measured_by": "Li et al. (JiL)",
+          "source": "jil-wam-calibration"
+        },
+        {
+          "system": "Fast-WAM (base)",
+          "model": "WAM",
+          "kind": "learned System 1",
+          "value": "44.0%",
+          "setting": "same tasks; LingBot-VA base 50.7%",
+          "measured_by": "Li et al. (JiL)",
+          "source": "jil-wam-calibration"
         }
       ],
       "note": null
