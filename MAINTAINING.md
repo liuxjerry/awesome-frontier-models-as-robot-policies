@@ -24,6 +24,11 @@ in the loop. A human maintainer can follow them too. Schema and editorial rules 
   arXiv title check on every push. Name the unreachable sources in the final report.
 - **Limits per run:** up to 60 candidates triaged and up to 12 entries added. Anything left over stays unseen
   and comes back tomorrow.
+- **Finish the whole run in one turn.** A scheduled run ends as soon as your turn ends: background agents,
+  timers and wake-ups never get to report back, and their work is lost. Run any helper agents in the foreground
+  and wait for each result; never use background agents or ScheduleWakeup. Don't end your turn until step 8's
+  `daily:` commit is pushed. If time is short, add fewer entries: leave the rest unrecorded in `seen.json` so
+  they come back tomorrow.
 
 ## Steps
 
