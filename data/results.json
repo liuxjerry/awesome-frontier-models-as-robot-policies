@@ -249,6 +249,42 @@
           "setting": "zero-shot transfer of skills learned on other benchmarks; seed and layout 0, 42 tasks × 5 rollouts",
           "measured_by": "Wang et al. (UniCraft)",
           "source": "unicraft"
+        },
+        {
+          "system": "X-Harness (model pool, Semi-online rescue)",
+          "model": "Claude Opus 5.5 + GPT-6 Astra + Gemini 4 Argon over WALL-OSS-1.0-lite",
+          "kind": "frontier over System 1",
+          "value": "62.2%",
+          "setting": "Pure-RGB RoboDojo, 42 tasks × 20 layouts (seed 0), five-axis macro mean; code evolved on training layouts; WALL-OSS-1.0-lite official 35.0",
+          "measured_by": "Lai et al. (X-Harness)",
+          "source": "x-harness"
+        },
+        {
+          "system": "X-Harness (Offline)",
+          "model": "Claude Opus 5.5 over π0.5",
+          "kind": "frontier over System 1",
+          "value": "28.1%",
+          "setting": "42 tasks, 2D detections only, 8 evolution rounds, 0 test-time VLM calls; π0.5 official 6.9 / rerun 9.6",
+          "measured_by": "Lai et al. (X-Harness)",
+          "source": "x-harness"
+        },
+        {
+          "system": "AoG",
+          "model": "GPT-6 Astra (xhigh) + frozen VPP2 WAM",
+          "kind": "frontier over System 1",
+          "value": "50.57% SR · Score 57.26",
+          "setting": "42 tasks × 50 eps; harness frozen after 5 self-improvement rounds; world keeps running while the agent reasons",
+          "measured_by": "Cui et al. (AoG)",
+          "source": "agent-on-guard"
+        },
+        {
+          "system": "VPP2 (standalone)",
+          "model": "world action model",
+          "kind": "learned System 1",
+          "value": "32.26% SR · Score 39.26",
+          "setting": "same protocol, AoG's baseline table",
+          "measured_by": "Cui et al. (AoG)",
+          "source": "agent-on-guard"
         }
       ],
       "note": "The Astra direct-policy entry ranked above all 40 public policies at the time. See Critiques for leaderboard entries that did not survive retesting."
@@ -356,6 +392,42 @@
           "setting": "LIBERO-Pro Long only, 20 tasks (10 position, 10 task perturbation) × 50 held-out initial states; 52.9% with no skills; mean over all candidate programs 69.1%",
           "measured_by": "Gu et al. (Real2Worlds2Real)",
           "source": "real2worlds2real"
+        },
+        {
+          "system": "X-Harness (Offline)",
+          "model": "Claude Opus 5.5 over π0.5",
+          "kind": "frontier over System 1",
+          "value": "95.4%",
+          "setting": "40 tasks × 4 shifts pooled; code evolved on training initial states; π0.5 rerun 58.6",
+          "measured_by": "Lai et al. (X-Harness)",
+          "source": "x-harness"
+        },
+        {
+          "system": "RegHarness",
+          "model": "DeepSeek-Flash (run time); skills refined by Claude Opus 5.5",
+          "kind": "frontier: self-improving code",
+          "value": "87.8% (158/180)",
+          "setting": "60 Object/Goal/Spatial tasks × initial states 0–2; state 0 used for development; task check read during execution",
+          "measured_by": "Liu et al. (RegHarness)",
+          "source": "regharness"
+        },
+        {
+          "system": "RATs (rerun)",
+          "model": "DeepSeek-Flash",
+          "kind": "frontier: agentic",
+          "value": "39.4% (71/180)",
+          "setting": "same 180 paired trials as RegHarness",
+          "measured_by": "Liu et al. (RegHarness)",
+          "source": "regharness"
+        },
+        {
+          "system": "RoboEvo² (hybrid)",
+          "model": "GPT-6 Astra coding agent + agent-trained π0.5",
+          "kind": "frontier: self-improving",
+          "value": "90.5%",
+          "setting": "all 8 settings, 100 eps each on unseen initial states, after co-evolution; standalone policy 84.1%",
+          "measured_by": "Liu et al. (RoboEvo²)",
+          "source": "roboevo2"
         }
       ],
       "note": "Papers use different LIBERO-PRO conditions and subsets. Treat as indicative, not a single leaderboard."
@@ -418,9 +490,36 @@
           "setting": "high effort",
           "measured_by": "Artificial Analysis",
           "source": "aa-robotics"
+        },
+        {
+          "system": "not stated",
+          "model": "GPT-6.2 Astra",
+          "kind": "frontier: agentic",
+          "value": "79",
+          "setting": "not stated (AA's 2026-11-17 article; not yet on the AA-Robotics page)",
+          "measured_by": "Artificial Analysis",
+          "source": "aa-robotics"
+        },
+        {
+          "system": "not stated",
+          "model": "GPT-6.2 Sol",
+          "kind": "frontier: agentic",
+          "value": "78",
+          "setting": "not stated (AA's 2026-11-17 article; not yet on the AA-Robotics page)",
+          "measured_by": "Artificial Analysis",
+          "source": "aa-robotics"
+        },
+        {
+          "system": "not stated",
+          "model": "Claude Fable 5.2",
+          "kind": "frontier: agentic",
+          "value": "75",
+          "setting": "not stated (AA's 2026-11-17 article; not yet on the AA-Robotics page)",
+          "measured_by": "Artificial Analysis",
+          "source": "aa-robotics"
         }
       ],
-      "note": "Independent third party, but no VLA baseline."
+      "note": "Independent third party, but no VLA baseline. AA's 2026-11-17 article puts GPT-6.2 Astra (79) on top, ahead of GPT-6.2 Sol (78) and Claude Fable 5.2 (75); those three scores give no harness or effort and are not yet on the AA-Robotics page."
     },
     {
       "id": "robodojo-rc-tier1",
@@ -820,6 +919,24 @@
           "setting": "KUKA iiwa, 3 general tasks under continuous scene change, 15 trials each (CLEA agentic VLM replanning 0.0%, ReKep 28.9%)",
           "measured_by": "Li et al.",
           "source": "dualmanip"
+        },
+        {
+          "system": "RegHarness",
+          "model": "DeepSeek-Flash",
+          "kind": "frontier: self-improving code",
+          "value": "28 / 45",
+          "setting": "Kinova Gen3, 3 tasks × 15; RATs 21 / 45; difference not significant",
+          "measured_by": "Liu et al. (RegHarness)",
+          "source": "regharness"
+        },
+        {
+          "system": "RoboEvo² (hybrid)",
+          "model": "GPT-6 Astra harness + agent-trained π0.5",
+          "kind": "frontier: self-improving",
+          "value": "95.0%",
+          "setting": "Unitree G1-D, 4 tasks × 10; standalone policy (120 auto-collected demos) 85.0% vs π0.5 on 200 teleop demos 80.0%",
+          "measured_by": "Liu et al. (RoboEvo²)",
+          "source": "roboevo2"
         }
       ],
       "note": null

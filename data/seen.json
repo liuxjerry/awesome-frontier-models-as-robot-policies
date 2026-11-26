@@ -217,6 +217,16 @@
       "decision": "added",
       "note": "-> entry bicicle"
     },
+    "arxiv:2604.23863": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "safety MPC, no frontier-model angle"
+    },
+    "arxiv:2604.25788": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "physical reasoning benchmark for TAMP/IL baselines, no frontier-model policy"
+    },
     "arxiv:2605.07594": {
       "date": "2026-11-21",
       "decision": "rejected",
@@ -237,6 +247,11 @@
       "decision": "rejected",
       "note": "robot VLA/WAM, no frontier-model angle"
     },
+    "arxiv:2605.11479": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "offline policy evaluation, no frontier-model angle"
+    },
     "arxiv:2605.17070": {
       "date": "2026-11-22",
       "decision": "rejected",
@@ -251,6 +266,11 @@
       "date": "2026-11-21",
       "decision": "rejected",
       "note": "image segmentation agent, not embodied"
+    },
+    "arxiv:2605.20085": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "open-loop trajectory prediction, no frontier-model angle"
     },
     "arxiv:2605.30117": {
       "date": "2026-11-25",
@@ -271,6 +291,11 @@
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "grasp diffusion model, no frontier model"
+    },
+    "arxiv:2606.03784": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
     },
     "arxiv:2606.12366": {
       "date": "2026-11-23",
@@ -402,6 +427,11 @@
       "decision": "rejected",
       "note": "segmentation model"
     },
+    "arxiv:2607.12892": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "progress/value labels for robot learning, no frontier-model angle"
+    },
     "arxiv:2607.18062": {
       "date": "2026-11-22",
       "decision": "rejected",
@@ -427,10 +457,25 @@
       "decision": "rejected",
       "note": "robot VLA/WAM, no frontier-model angle"
     },
+    "arxiv:2607.24079": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "sim-to-real parameter method, no frontier-model angle"
+    },
+    "arxiv:2607.26121": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "trustworthiness framework, not on frontier models as policies"
+    },
     "arxiv:2607.27703": {
       "date": "2026-11-21",
       "decision": "rejected",
       "note": "trained VLM spatial-tool reasoning, not robot control"
+    },
+    "arxiv:2607.29687": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
     },
     "arxiv:2608.00303": {
       "date": "2026-11-21",
@@ -442,6 +487,11 @@
       "decision": "rejected",
       "note": "trained embodied VLM, not frontier-model policy"
     },
+    "arxiv:2608.14284": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "evaluation toolkit, no frontier-model angle"
+    },
     "arxiv:2608.18077": {
       "date": "2026-11-22",
       "decision": "rejected",
@@ -452,6 +502,11 @@
       "decision": "added",
       "note": "-> entry push-t-agentic"
     },
+    "arxiv:2608.18948": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot training-data generation, no frontier-model angle"
+    },
     "arxiv:2608.19490": {
       "date": "2026-11-22",
       "decision": "rejected",
@@ -461,6 +516,11 @@
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "diffusion policy + adaptive control, no frontier model"
+    },
+    "arxiv:2608.23224": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
     },
     "arxiv:2608.25593": {
       "date": "2026-11-21",
@@ -487,10 +547,25 @@
       "decision": "rejected",
       "note": "aerial manipulation benchmark for learned policies"
     },
+    "arxiv:2609.06823": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "perception model, not a robot policy"
+    },
     "arxiv:2609.07398": {
       "date": "2026-11-25",
       "decision": "rejected",
       "note": "robot VLA/WAM, no frontier-model angle"
+    },
+    "arxiv:2609.09148": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
+    },
+    "arxiv:2609.10243": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM benchmark, no frontier-model angle"
     },
     "arxiv:2609.10506": {
       "date": "2026-11-22",
@@ -511,6 +586,11 @@
       "date": "2026-11-21",
       "decision": "rejected",
       "note": "visual generation harness, not embodied"
+    },
+    "arxiv:2609.16074": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "WAM survey, no frontier-model angle"
     },
     "arxiv:2609.18207": {
       "date": "2026-11-22",
@@ -566,6 +646,11 @@
       "date": "2026-11-22",
       "decision": "added",
       "note": "-> entry aquacap"
+    },
+    "arxiv:2609.23580": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
     },
     "arxiv:2609.23695": {
       "date": "2026-11-21",
@@ -634,6 +719,11 @@
     },
     "arxiv:2609.36774": {
       "date": "2026-11-25",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
+    },
+    "arxiv:2609.36872": {
+      "date": "2026-11-26",
       "decision": "rejected",
       "note": "robot VLA/WAM, no frontier-model angle"
     },
@@ -727,6 +817,11 @@
       "decision": "rejected",
       "note": "visuo-tactile VLA benchmark"
     },
+    "arxiv:2610.11418": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
+    },
     "arxiv:2610.12185": {
       "date": "2026-11-21",
       "decision": "rejected",
@@ -776,6 +871,21 @@
       "date": "2026-11-24",
       "decision": "rejected",
       "note": "robot world foundation model"
+    },
+    "arxiv:2610.18836": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "open-loop VLM planning benchmark, no execution"
+    },
+    "arxiv:2610.19517": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
+    },
+    "arxiv:2610.19579": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
     },
     "arxiv:2610.19957": {
       "date": "2026-11-23",
@@ -837,10 +947,30 @@
       "decision": "added",
       "note": "-> entry recursia"
     },
+    "arxiv:2610.24573": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
+    },
     "arxiv:2610.24579": {
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "dynamic LIBERO benchmark for VLAs, no frontier models scored"
+    },
+    "arxiv:2610.24587": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM benchmark, no frontier-model angle"
+    },
+    "arxiv:2610.25459": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM benchmark, no frontier-model angle"
+    },
+    "arxiv:2610.26455": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
     },
     "arxiv:2610.26564": {
       "date": "2026-11-25",
@@ -867,15 +997,30 @@
       "decision": "rejected",
       "note": "no frontier model; rule-based planner over VLAs"
     },
+    "arxiv:2610.28882": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "episode memory for robot learning, no frontier-model policy"
+    },
     "arxiv:2610.29161": {
       "date": "2026-11-24",
       "decision": "rejected",
       "note": "VLA post-training sim framework"
     },
+    "arxiv:2610.30097": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
+    },
     "arxiv:2610.32093": {
       "date": "2026-11-23",
       "decision": "rejected",
       "note": "demo generation for imitation learning"
+    },
+    "arxiv:2610.32222": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "world-model reward model, no frontier-model angle"
     },
     "arxiv:2610.32676": {
       "date": "2026-11-23",
@@ -891,6 +1036,11 @@
       "date": "2026-11-24",
       "decision": "rejected",
       "note": "borderline: lab robotics benchmark of planning + learned manipulation, open-loop planner focus"
+    },
+    "arxiv:2610.35730": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "evaluation tool, no frontier-model angle"
     },
     "arxiv:2610.36420": {
       "date": "2026-11-22",
@@ -916,6 +1066,11 @@
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "PDDL planner over VLAs; GPT-4o only extracts facts"
+    },
+    "arxiv:2610.40207": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot training-data annotation, no frontier-model angle"
     },
     "arxiv:2610.40748": {
       "date": "2026-11-25",
@@ -992,6 +1147,11 @@
       "decision": "rejected",
       "note": "asynchronous learned policies"
     },
+    "arxiv:2611.05838": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "checkpoint selection, no frontier-model angle"
+    },
     "arxiv:2611.06724": {
       "date": "2026-11-22",
       "decision": "rejected",
@@ -1061,6 +1221,11 @@
       "date": "2026-11-23",
       "decision": "rejected",
       "note": "differentiable optimization toolkit, no frontier policy"
+    },
+    "arxiv:2611.20692": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "grasp dataset, no frontier-model angle"
     },
     "arxiv:2611.21099": {
       "date": "2026-11-21",
@@ -1156,6 +1321,11 @@
       "date": "2026-11-24",
       "decision": "rejected",
       "note": "VLA/WAM dynamics benchmark, no frontier-model angle"
+    },
+    "arxiv:2611.26971": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM benchmark, no frontier-model angle"
     },
     "arxiv:2611.26981": {
       "date": "2026-11-25",
@@ -1277,25 +1447,60 @@
       "decision": "rejected",
       "note": "weight-space programming on detectors, not embodied"
     },
+    "arxiv:2611.30047": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry robolivemem"
+    },
+    "arxiv:2611.30101": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry agent-on-guard"
+    },
+    "arxiv:2611.30111": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "borderline: v2 is a withdrawal (posted before coauthor review)"
+    },
     "arxiv:2611.30438": {
       "date": "2026-11-25",
       "decision": "rejected",
       "note": "autonomous driving orchestration, not robot policy"
+    },
+    "arxiv:2611.30550": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry roboharness-zero"
     },
     "arxiv:2611.30898": {
       "date": "2026-11-25",
       "decision": "rejected",
       "note": "robot VLA/WAM, no frontier-model angle"
     },
+    "arxiv:2611.30989": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry worldleague"
+    },
     "arxiv:2611.30997": {
       "date": "2026-11-25",
       "decision": "rejected",
       "note": "borderline: distilled 9B planner, frontier not the policy"
     },
+    "arxiv:2611.31002": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry robouniverse-10k"
+    },
     "arxiv:2611.31098": {
       "date": "2026-11-24",
       "decision": "added",
       "note": "-> entry real2worlds2real"
+    },
+    "arxiv:2611.31115": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry ruibench"
     },
     "arxiv:2611.31117": {
       "date": "2026-11-25",
@@ -1317,10 +1522,85 @@
       "decision": "rejected",
       "note": "weight-space programming on CLIP, not embodied"
     },
+    "arxiv:2611.31341": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry evomisty"
+    },
+    "arxiv:2611.31577": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM benchmark, no frontier-model angle"
+    },
+    "arxiv:2611.31822": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
+    },
+    "arxiv:2611.31974": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "game-playing coding agents, not embodied"
+    },
     "arxiv:2611.32016": {
       "date": "2026-11-25",
       "decision": "rejected",
       "note": "borderline: RL-trained compact open VLM, frontier only as teacher"
+    },
+    "arxiv:2611.32053": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
+    },
+    "arxiv:2611.32108": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
+    },
+    "arxiv:2611.32185": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot state estimation from video, not a policy"
+    },
+    "arxiv:2611.32639": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "robot VLA/WAM, no frontier-model angle"
+    },
+    "arxiv:2611.32649": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry iclworld"
+    },
+    "arxiv:2611.32803": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "borderline: multi-robot team-selection reasoning, not policy control"
+    },
+    "arxiv:2611.33013": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "simulation asset dataset, no frontier-model policy"
+    },
+    "arxiv:2611.33133": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "LLM weight editing, not embodied"
+    },
+    "arxiv:2611.33739": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry regharness"
+    },
+    "arxiv:2611.34675": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry roboevo2"
+    },
+    "arxiv:2611.34778": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry x-harness"
     },
     "update:2502.19417:v2": {
       "date": "2026-11-21",
@@ -1336,6 +1616,16 @@
       "date": "2026-11-21",
       "decision": "noted",
       "note": "venue recorded (IROS 2026)"
+    },
+    "url:https://artificialanalysis.ai/articles/aa-robotics-sim": {
+      "date": "2026-11-26",
+      "decision": "added",
+      "note": "-> entry aa-robotics-sim"
+    },
+    "url:https://artificialanalysis.ai/articles/openai-has-the-2-model-in-the-intelligence-index-with-the-release-of-gpt-6-2-astra-and-gpt-6-2-sol": {
+      "date": "2026-11-26",
+      "decision": "noted",
+      "note": "AA-Robotics rows 79/78/75 added to aa-robotics"
     },
     "url:https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/": {
       "date": "2026-11-22",
@@ -1412,6 +1702,11 @@
       "decision": "rejected",
       "note": "robot-trained world action model"
     },
+    "url:https://theaiinsider.tech/2026/11/24/china-physical-ai-roundup-simplexity-robotics-raises-100m-pre-a-plus-x-square-model-oymotion-and-agibot-deployment/": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "news roundup, robot VLAs and funding"
+    },
     "url:https://thinkingmachines.ai/news/inkling-2-mini/": {
       "date": "2026-11-22",
       "decision": "rejected",
@@ -1441,6 +1736,11 @@
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "secondary coverage of already-seen paper"
+    },
+    "url:https://www.xda-developers.com/gave-claude-code-codex-antigravity-control-of-desktop-apps-use-them-more-than-coding/": {
+      "date": "2026-11-26",
+      "decision": "rejected",
+      "note": "desktop automation, not embodied"
     },
     "url:https://x.com/robocurve/status/2125028977194786857": {
       "date": "2026-11-24",

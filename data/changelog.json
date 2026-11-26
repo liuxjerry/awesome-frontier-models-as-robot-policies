@@ -1,5 +1,34 @@
 [
   {
+    "date": "2026-11-26",
+    "added": [
+      "robolivemem",
+      "iclworld",
+      "worldleague",
+      "ruibench",
+      "robouniverse-10k",
+      "x-harness",
+      "roboharness-zero",
+      "regharness",
+      "roboevo2",
+      "agent-on-guard",
+      "evomisty",
+      "aa-robotics-sim"
+    ],
+    "updated": [
+      "aa-robotics"
+    ],
+    "screened": 60,
+    "milestones": [
+      {
+        "id": "robolivemem",
+        "change": "added",
+        "why": "first like-for-like evidence (same seeds and harness) that paused-simulator benchmarks overstate frontier robot performance: 97% paused vs 50% live"
+      }
+    ],
+    "note": "RoboLiveMem runs the same robot-memory tasks with the world paused and running: 8 Claude and GPT models drop from 97% to 50% success. Artificial Analysis launched AA-Robotics-Sim (simulated Unitree G1; GPT-6.2 Astra 71.0) and reported GPT-6.2 Astra at 79 on AA-Robotics."
+  },
+  {
     "date": "2026-11-24",
     "added": [
       "codex-vs-inspect-robots",
