@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-11-27",
+    "added": [
+      "solve",
+      "seek",
+      "skeptic",
+      "await-bench",
+      "roboinf",
+      "deconav-act",
+      "reset-one-demo",
+      "paper-context-quadruped",
+      "robodojo-mirror",
+      "roboarc",
+      "mfm-vla",
+      "roam-bench"
+    ],
+    "updated": [],
+    "screened": 28,
+    "note": "SOLVE has GPT-6 Astra write sparse end-effector keyposes instead of dense steps, reaching 74.5% on RoboDojo and 84.5% on RoboLab at $1.7 per episode, and 75 of 85 real UR12e episodes; RoboARC finds frontier coding agents solve 86% of physical puzzles with privileged state but 43% from their own sensors, while zero-shot VLAs solve none."
+  },
+  {
     "date": "2026-11-26",
     "added": [
       "robolivemem",

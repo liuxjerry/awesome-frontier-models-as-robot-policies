@@ -1447,6 +1447,11 @@
       "decision": "rejected",
       "note": "LLM self-editing, not embodied"
     },
+    "arxiv:2611.29558": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry await-bench"
+    },
     "arxiv:2611.29682": {
       "date": "2026-11-25",
       "decision": "rejected",
@@ -1486,6 +1491,11 @@
       "date": "2026-11-26",
       "decision": "added",
       "note": "-> entry roboharness-zero"
+    },
+    "arxiv:2611.30555": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry roboinf"
     },
     "arxiv:2611.30898": {
       "date": "2026-11-25",
@@ -1547,6 +1557,11 @@
       "decision": "added",
       "note": "-> entry evomisty"
     },
+    "arxiv:2611.31452": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry mfm-vla"
+    },
     "arxiv:2611.31577": {
       "date": "2026-11-26",
       "decision": "rejected",
@@ -1561,6 +1576,11 @@
       "date": "2026-11-26",
       "decision": "rejected",
       "note": "robot VLA/WAM, no frontier-model angle"
+    },
+    "arxiv:2611.31894": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry reset-one-demo"
     },
     "arxiv:2611.31974": {
       "date": "2026-11-26",
@@ -1612,6 +1632,11 @@
       "decision": "rejected",
       "note": "borderline: deterministic planner over frozen VLA; LLM orchestration deferred to Stage 2, VLMs only as baselines"
     },
+    "arxiv:2611.32381": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry paper-context-quadruped"
+    },
     "arxiv:2611.32533": {
       "date": "2026-11-26",
       "decision": "added",
@@ -1632,6 +1657,11 @@
       "decision": "added",
       "note": "-> entry iclworld"
     },
+    "arxiv:2611.32683": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry deconav-act"
+    },
     "arxiv:2611.32727": {
       "date": "2026-11-26",
       "decision": "rejected",
@@ -1647,6 +1677,11 @@
       "decision": "added",
       "note": "-> entry atomic-policy"
     },
+    "arxiv:2611.33010": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry robodojo-mirror"
+    },
     "arxiv:2611.33013": {
       "date": "2026-11-26",
       "decision": "rejected",
@@ -1657,15 +1692,90 @@
       "decision": "rejected",
       "note": "LLM weight editing, not embodied"
     },
+    "arxiv:2611.33143": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry roam-bench"
+    },
+    "arxiv:2611.33339": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "weight editing of video model, not embodied"
+    },
+    "arxiv:2611.33390": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry roboarc"
+    },
+    "arxiv:2611.33560": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry skeptic"
+    },
     "arxiv:2611.33739": {
       "date": "2026-11-26",
       "decision": "added",
       "note": "-> entry regharness"
     },
+    "arxiv:2611.33915": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry seek"
+    },
+    "arxiv:2611.33925": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "robot world model, no frontier-model angle"
+    },
+    "arxiv:2611.33972": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "text classifiers, not embodied"
+    },
+    "arxiv:2611.33973": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "RTL generation, not embodied"
+    },
+    "arxiv:2611.34257": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "VLA training from videos, no frontier-model angle"
+    },
+    "arxiv:2611.34416": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "borderline: planner model unnamed, results only as ranges"
+    },
+    "arxiv:2611.34449": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "robot VLA, no frontier-model angle"
+    },
+    "arxiv:2611.34538": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "borderline: benchmark scores VLAs only, no frontier-model policy"
+    },
+    "arxiv:2611.34612": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "weight-space programming, not embodied"
+    },
+    "arxiv:2611.34671": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "coding agents generate training data; deployed policy is learned"
+    },
     "arxiv:2611.34675": {
       "date": "2026-11-26",
       "decision": "added",
       "note": "-> entry roboevo2"
+    },
+    "arxiv:2611.34750": {
+      "date": "2026-11-27",
+      "decision": "added",
+      "note": "-> entry solve"
     },
     "arxiv:2611.34778": {
       "date": "2026-11-26",
@@ -1717,6 +1827,16 @@
       "decision": "rejected",
       "note": "robot WAM, no frontier-model angle"
     },
+    "url:https://bytebrief.ai/article/48a68f8da0fe1a66e8e0c2b34eeb32e3424814257b02ec2ea1ea3614ec0d6bfc": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "world action model, no frontier LLM, secondary"
+    },
+    "url:https://cnevpost.com/2026/11/25/xpeng-ramps-up-physical-ai-push-2026-ai-day/": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "in-house VLA, news only"
+    },
     "url:https://cryptobriefing.com/astra-agent-controls-humanoid-robot/": {
       "date": "2026-11-26",
       "decision": "rejected",
@@ -1762,6 +1882,16 @@
       "decision": "rejected",
       "note": "borderline: Q0-Preview adapter, model not named; leaderboard 74.2/68.87 starred"
     },
+    "url:https://globenewswire.com/news-release/2026/11/23/3408046/0/en/x-square-robot-introduces-wall-oss-1-0-understand-more-act-better-a-native-foundation-model-for-the-physical-world.html": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "trained VLA, no frontier-model angle"
+    },
+    "url:https://globenewswire.com/news-release/2026/11/24/3409036/0/en/x-square-robot-and-pos-malaysia-sign-moc-to-explore-embodied-ai-in-logistics-automation.html": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "business news"
+    },
     "url:https://itcanthink.substack.com/p/what-do-robotics-leaderboards-tell": {
       "date": "2026-11-26",
       "decision": "rejected",
@@ -1771,6 +1901,11 @@
       "date": "2026-11-25",
       "decision": "noted",
       "note": "companion post of bitter-lesson-robotics; link + grader caveat added"
+    },
+    "url:https://luma.com/1u8sl5mg": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "event listing, no results"
     },
     "url:https://mistral.ai/news/robostral-navigate/": {
       "date": "2026-11-22",
@@ -1866,6 +2001,11 @@
       "date": "2026-11-22",
       "decision": "rejected",
       "note": "borderline: secondary repost only; verify XPolicyLab repo and RoboDojo leaderboard"
+    },
+    "url:https://www.digitimes.com/news/a20261126PD228/japan-robot-foundation-models-nedo.html": {
+      "date": "2026-11-27",
+      "decision": "rejected",
+      "note": "funding news"
     },
     "url:https://www.fastcompany.com/91643258/foundation-future-industries-humanoid-robot-war": {
       "date": "2026-11-22",

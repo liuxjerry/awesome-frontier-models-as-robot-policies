@@ -123,6 +123,15 @@
           "setting": "1531 / 3000, 25 eps/task; leaderboard Score 65.3; best learned policy on the board",
           "measured_by": "RoboLab leaderboard",
           "source": "robolab"
+        },
+        {
+          "system": "SOLVE + experience",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: direct",
+          "value": "84.5%",
+          "setting": "120 tasks × 5 episodes (600), no guides; first rollout without notes 79.8%",
+          "measured_by": "Li et al. (SOLVE)",
+          "source": "solve"
         }
       ],
       "note": "π0.5 appears twice: 49.2% (leaderboard, cited by AMP1) vs 28.0% (Astranomy's own run). That 21-point gap on one benchmark is why every row says who measured it."
@@ -330,6 +339,24 @@
           "setting": "official leaderboard agent track, Avg. (w/o Open); starred: task-specific briefs, skills, experience and scene priors beyond the official Detail Description",
           "measured_by": "RoboDojo leaderboard (contributed by Xiaomi Robotics)",
           "source": "mibot-rua"
+        },
+        {
+          "system": "SOLVE + experience",
+          "model": "GPT-6 Astra (xhigh)",
+          "kind": "frontier: direct",
+          "value": "74.5% SR · Score 78.9",
+          "setting": "official evaluation, seed 3, 2,100 episodes (50 per task); per-task rules distilled from rollouts; GPT-6.1 Sol 68.0% (2 seeds × 5 eps/task)",
+          "measured_by": "Li et al. (SOLVE)",
+          "source": "solve"
+        },
+        {
+          "system": "SEEK (10 attempts)",
+          "model": "GPT-6 Astra (xhigh)",
+          "kind": "frontier: self-improving",
+          "value": "48.0% SR · Score 54.4",
+          "setting": "42 tasks, 50 evaluation episodes per task after 10 evolution attempts; no carryover 19.7% SR · 27.0",
+          "measured_by": "Guan et al. (SEEK)",
+          "source": "seek"
         }
       ],
       "note": "On the official leaderboard's agent track, Xiaomi Robotics' Mibot-RUA (GPT-6 Astra) leads at Avg. (w/o Open) 83.94 / 79.33% (added 2026-11-26), but RoboDojo stars it, like every other agent entry tested before its 2026-11-14 rules, for injecting task-specific information beyond the official Detail Description. The Astra direct-policy entry ranked above all 40 public policies at the time. See Critiques for leaderboard entries that did not survive retesting."
@@ -491,6 +518,24 @@
           "setting": "80 tasks, held-out seeds 1–10; harness optimized on seed 0 (≤10 rounds per task); seed harness H0 89.00%",
           "measured_by": "Xu et al. (ReWeave)",
           "source": "reweave"
+        },
+        {
+          "system": "Skeptic",
+          "model": "Qwen3.8-27B (open, FP8)",
+          "kind": "frontier: self-improving",
+          "value": "78.3%",
+          "setting": "all 80 tasks, held-out seeds (50 per task), mean of 2 campaigns; ASPIRE with the same model 63.4%",
+          "measured_by": "Sun et al. (Skeptic)",
+          "source": "skeptic"
+        },
+        {
+          "system": "MFM-VLA",
+          "model": "GPT-6 Astra + fine-tuned π0.5",
+          "kind": "frontier over System 1",
+          "value": "69.8%",
+          "setting": "full LIBERO-PRO, 8,000 episodes (50 inits per task); base π0.5 54.9%; with Code Policy extension 84.4%; zero-shot GPT-6 Astra 3.5%",
+          "measured_by": "Zheng et al. (MFM-VLA)",
+          "source": "mfm-vla"
         }
       ],
       "note": "Papers use different LIBERO-PRO conditions and subsets. Treat as indicative, not a single leaderboard."
@@ -1045,6 +1090,42 @@
           "setting": "same tasks; LingBot-VA base 50.7%",
           "measured_by": "Li et al. (JiL)",
           "source": "jil-wam-calibration"
+        },
+        {
+          "system": "SOLVE",
+          "model": "GPT-6 Astra",
+          "kind": "frontier: direct",
+          "value": "75 / 85",
+          "setting": "UR12e, 16 zero-shot tasks, 5 episodes per task (10 for shirt folding)",
+          "measured_by": "Li et al. (SOLVE)",
+          "source": "solve"
+        },
+        {
+          "system": "SEEK (5 attempts)",
+          "model": "GPT-6 Astra (xhigh)",
+          "kind": "frontier: self-improving",
+          "value": "83.3 avg score",
+          "setting": "Franka Panda, 4 tasks × 10 unseen episodes, operator-scored 0–100; GPT-6 Astra acting directly 66.9",
+          "measured_by": "Guan et al. (SEEK)",
+          "source": "seek"
+        },
+        {
+          "system": "RESET (frozen code)",
+          "model": "Claude Opus 5.5 (Claude Code) at practice time only",
+          "kind": "frontier: self-improving",
+          "value": "223 / 280",
+          "setting": "4 robots, 10 trials per task; fixed-base 210 / 240; Unitree G1 13 / 40; no runtime LLM calls",
+          "measured_by": "Sun et al. (RESET)",
+          "source": "reset-one-demo"
+        },
+        {
+          "system": "MFM-VLA",
+          "model": "GPT-6 Astra + fine-tuned π0.5",
+          "kind": "frontier over System 1",
+          "value": "31.7% multi-stage · 54.4% atomic",
+          "setting": "11 glassware tasks, 20 trials per setting; base π0.5 0.8% / 15.3%",
+          "measured_by": "Zheng et al. (MFM-VLA)",
+          "source": "mfm-vla"
         }
       ],
       "note": null
