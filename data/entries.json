@@ -5051,5 +5051,41 @@
     "caveats": "Single run per model; skills are executed by the simulator, so low-level control is not tested; most task types are spatial question answering rather than manipulation; the human sample is one person per task.",
     "title": "ROAM-Bench: Evaluating Embodied Active Spatial Intelligence through Evidence Verification",
     "added": "2026-11-27"
+  },
+  {
+    "id": "supernav-1-5",
+    "name": "SuperNav-1.5",
+    "title": "SuperNav-1.5: Structured Spatial Memory For Agentic Navigation Systems",
+    "org": "Zhejiang University · BYD New Technology Research Institute · Shenzhen University",
+    "authors": "Jiarui Guo et al.",
+    "date": "2026-11-23",
+    "kind": "paper",
+    "status": "preprint",
+    "section": "agentic",
+    "also": [
+      "self-improving"
+    ],
+    "links": {
+      "paper": "https://arxiv.org/abs/2611.29912",
+      "project": "https://zju3dv.github.io/SuperNav-1.5/",
+      "code": "https://github.com/zju3dv/SuperNav"
+    },
+    "arxiv": "2611.29912",
+    "models": [
+      "GPT-5.6-terra (high reasoning effort)",
+      "KIMI-k3-256k (ablation)",
+      "GLM-5.3-flash (ablation)",
+      "GPT-6.1-sol (embodied QA)"
+    ],
+    "mode": "agentic-code",
+    "system1": "analytic",
+    "interface": "Frontier MLLM agent makes tool calls to create, update, search and inspect map-grounded memory nodes on an agent-built area-segmented occupancy map, and picks a map marker or memory node as the destination; a geometric executor plans with A* and runs primitive actions; the agent ends each episode with an explicit Stop",
+    "eval": "sim+real",
+    "judged_by": "benchmark metrics in simulator (SR/SPL, 1 m threshold); real robot qualitative only",
+    "trials": "HM3D-OVON val-unseen 120 episodes; Habitat-GS 150 single- and 150 multi-object episodes; Demand-Bench 200 episodes; each episode run once; ablations on 40 tasks; real Unitree Go2: qualitative demonstrations, no trial counts",
+    "speed": null,
+    "summary": "Object-goal navigation, not manipulation: a frontier MLLM (GPT-5.6-terra) builds and reuses its own structured spatial memory and hands routes to a geometric executor. On Habitat-GS multi-object episodes it reaches 52.00 SR / 0.2494 SPL vs 34.00 / 0.1388 for SuperNav and at most 4.00 SR for learned navigators (OmniNav, NaVid, Uni-NaVid, StreamVLN); on HM3D-OVON val-unseen 80.00 SR vs 73.33 for SuperNav (3600 s group). Swapping in KIMI-k3-256k or GLM-5.3-flash gives 85.00 and 82.50 SR vs 82.50 on a 40-task ablation.",
+    "caveats": "Navigation only. Authors: the occupancy map and geometric navigation depend on accurate LiDAR or depth and odometry; sensor errors or drift may distort the geometry. Real-robot results on a Unitree Go2 are demonstrations with no reported trial counts or success rates. Latency and cost not reported. Infrastructure failures are retried.",
+    "added": "2026-11-28"
   }
 ]

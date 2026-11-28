@@ -1207,6 +1207,11 @@
       "decision": "rejected",
       "note": "borderline: agent designs controller offline; locomotion/control plants, no manipulation"
     },
+    "arxiv:2611.16981": {
+      "date": "2026-11-28",
+      "decision": "rejected",
+      "note": "games weight-space programming, not embodied"
+    },
     "arxiv:2611.19559": {
       "date": "2026-11-23",
       "decision": "rejected",
@@ -1461,6 +1466,11 @@
       "date": "2026-11-25",
       "decision": "rejected",
       "note": "weight-space programming on detectors, not embodied"
+    },
+    "arxiv:2611.29912": {
+      "date": "2026-11-28",
+      "decision": "added",
+      "note": "-> entry supernav-1-5"
     },
     "arxiv:2611.30047": {
       "date": "2026-11-26",
@@ -1961,6 +1971,36 @@
       "date": "2026-11-26",
       "decision": "added",
       "note": "-> Mibot-RUA row (new agent-track top) + entry mibot-rua"
+    },
+    "url:https://robodojo-benchmark.com/LeaderBoard#EmbodiedEvo": {
+      "date": "2026-11-28",
+      "decision": "rejected",
+      "note": "borderline: starred agent-track row, base model and write-up not disclosed"
+    },
+    "url:https://robodojo-benchmark.com/LeaderBoard#GO-3-Nano-Preview": {
+      "date": "2026-11-28",
+      "decision": "rejected",
+      "note": "borderline: starred agent-track row, base model and write-up not disclosed"
+    },
+    "url:https://robodojo-benchmark.com/LeaderBoard#HexaShell-Preview": {
+      "date": "2026-11-28",
+      "decision": "rejected",
+      "note": "borderline: starred agent-track row, base model and write-up not disclosed"
+    },
+    "url:https://robodojo-benchmark.com/LeaderBoard#JoyAI-VL": {
+      "date": "2026-11-28",
+      "decision": "rejected",
+      "note": "borderline: starred agent-track row, base model and write-up not disclosed"
+    },
+    "url:https://robodojo-benchmark.com/LeaderBoard#PhysicalRSI": {
+      "date": "2026-11-28",
+      "decision": "rejected",
+      "note": "borderline: starred agent-track row, base model and write-up not disclosed"
+    },
+    "url:https://robodojo-benchmark.com/LeaderBoard#WorldScape-R2SI": {
+      "date": "2026-11-28",
+      "decision": "rejected",
+      "note": "borderline: starred agent-track row, base model and write-up not disclosed"
     },
     "url:https://roboticsandautomationnews.com/2026/11/05/agibot-unveils-go-3-preview-and-takes-top-spot-on-three-embodied-ai-benchmarks/106711/": {
       "date": "2026-11-22",

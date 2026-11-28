@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-28",
+    "added": [
+      "supernav-1-5"
+    ],
+    "updated": [],
+    "screened": 8,
+    "note": "SuperNav-1.5: a GPT-5.6-terra agent that builds its own spatial memory over a geometric executor reaches 52.00 SR on Habitat-GS multi-object navigation, vs 34.00 for SuperNav and at most 4.00 for learned navigators."
+  },
+  {
     "date": "2026-11-27",
     "added": [
       "solve",
